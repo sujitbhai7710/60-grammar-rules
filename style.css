@@ -1237,10 +1237,230 @@ body {
   background: rgba(108, 92, 231, 0.08);
 }
 
+/* ===== Exam Tips Section ===== */
+.exam-tip-section {
+  margin-bottom: 8px;
+}
+
+.exam-tip-box {
+  background: linear-gradient(135deg, rgba(253, 203, 110, 0.08), rgba(233, 69, 96, 0.05));
+  border: 1px solid rgba(253, 203, 110, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.exam-tip-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--orange), var(--accent));
+}
+
+.exam-tip-box p {
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.tip-list {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.tip-list li {
+  position: relative;
+  padding: 4px 0 4px 8px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.tip-list li::before {
+  content: '▸';
+  position: absolute;
+  left: -14px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.tip-list li em {
+  color: var(--text-primary);
+  font-style: italic;
+  background: rgba(108, 92, 231, 0.06);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.tip-list li strong {
+  color: var(--green);
+}
+
+/* ===== PYQ Divider ===== */
+.pyq-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple-light), var(--accent-light), transparent);
+  margin: 24px 0 16px 0;
+  border-radius: 1px;
+  opacity: 0.5;
+}
+
+/* ===== PYQ Question Counter Badge ===== */
+.rule-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Star Rating Enhanced ===== */
+.rule-stars {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--orange);
+  letter-spacing: 3px;
+  text-shadow: 0 1px 2px rgba(253, 203, 110, 0.3);
+}
+
+.star-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  margin-left: 6px;
+  font-weight: 500;
+  background: rgba(253, 203, 110, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* ===== PYQ Section Enhanced ===== */
+.prev-year-questions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prev-year {
+  border-left: 3px solid var(--purple) !important;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.03), rgba(233, 69, 96, 0.02)) !important;
+  margin-bottom: 0;
+  padding: 14px 16px !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: var(--transition);
+  position: relative;
+}
+
+.prev-year:hover {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.06), rgba(233, 69, 96, 0.04)) !important;
+  border-left-width: 4px;
+  transform: translateX(2px);
+}
+
+.prev-year .example-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 6px 0;
+}
+
+.prev-year .options-grid {
+  margin: 10px 0 8px 0;
+}
+
+.prev-year .option {
+  padding: 7px 12px;
+  font-size: 0.84rem;
+  transition: var(--transition);
+}
+
+.prev-year .correct-option {
+  background: rgba(0, 184, 148, 0.12);
+  border: 1px solid rgba(0, 184, 148, 0.35);
+  color: var(--green);
+  font-weight: 600;
+}
+
+.prev-year .wrong-option {
+  background: rgba(214, 48, 49, 0.04);
+  border: 1px solid rgba(214, 48, 49, 0.12);
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.prev-year .correct-answer {
+  background: linear-gradient(135deg, rgba(0, 184, 148, 0.08), rgba(0, 206, 201, 0.05));
+  border: 1px solid rgba(0, 184, 148, 0.25);
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-size: 0.88rem;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.prev-year .explanation-detail {
+  background: rgba(108, 92, 231, 0.04);
+  border-left: 3px solid var(--purple-light);
+  padding: 10px 14px;
+  margin-top: 8px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.83rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.prev-year .exam-badge {
+  font-size: 0.72rem;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Dark Theme ===== */
+[data-theme="dark"] .exam-tip-box {
+  background: linear-gradient(135deg, rgba(253, 203, 110, 0.06), rgba(233, 69, 96, 0.03));
+  border-color: rgba(253, 203, 110, 0.15);
+}
+
+[data-theme="dark"] .tip-list li em {
+  background: rgba(108, 92, 231, 0.1);
+}
+
+[data-theme="dark"] .star-count {
+  background: rgba(253, 203, 110, 0.08);
+}
+
+[data-theme="dark"] .prev-year:hover {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(233, 69, 96, 0.06)) !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .exam-badge {
+    max-width: 200px;
+  }
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+  .exam-tip-box {
+    padding: 12px 16px;
+  }
+}
+
 /* ===== Print Styles ===== */
 @media print {
   .header, .sidebar, .back-to-top, .theme-toggle, .menu-toggle, .sidebar-overlay { display: none !important; }
   .main-content { margin: 0; padding: 20px; }
   .rule-card { break-inside: avoid; page-break-inside: avoid; }
   .prev-year { break-inside: avoid; }
+  .exam-tip-box { break-inside: avoid; }
 }
