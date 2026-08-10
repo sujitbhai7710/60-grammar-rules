@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Word Substitutions — SSC CGL Master Guide | 681 Questions</title>
+  <meta name="description" content="Master all 681 One Word Substitutions for SSC CGL with meanings, Hindi translations, synonyms, antonyms, and pronunciation. From Pinnacle SSC CGL study guide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== OWS-Specific Styles ===== */
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      padding: 20px 0;
+    }
+    .cat-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .cat-btn:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+      transform: translateY(-2px);
+    }
+    .cat-btn.active {
+      background: var(--gradient-2);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(233,69,96,0.3);
+    }
+    .cat-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.7rem;
+      margin-left: 6px;
+      padding: 0 5px;
+    }
+    .cat-btn:not(.active) .cat-count {
+      background: var(--bg-primary);
+      color: var(--text-muted);
+    }
+
+    /* OWS Card */
+    .ows-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .ows-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ows-card:hover {
+      box-shadow: 0 20px 60px var(--shadow-lg);
+      transform: translateY(-3px);
+      border-color: var(--purple-light);
+    }
+    .ows-card.visible:hover {
+      transform: translateY(-3px);
+    }
+
+    .ows-header {
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-primary));
+      flex-wrap: wrap;
+    }
+    .ows-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--gradient-2);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(233,69,96,0.3);
+    }
+    .ows-question-area { flex: 1; min-width: 200px; }
+    .ows-question {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .ows-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .ows-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(108,92,231,0.1);
+      color: var(--purple);
+    }
+    .ows-source {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: var(--bg-primary);
+    }
+
+    .ows-body { padding: 25px; }
+
+    /* Answer Section */
+    .ows-answer-box {
+      background: linear-gradient(135deg, rgba(0,184,148,0.08), rgba(0,206,201,0.05));
+      border: 2px solid rgba(0,184,148,0.2);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .ows-answer-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ows-answer-word {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pronunciation-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gradient-2);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--transition);
+      box-shadow: 0 3px 10px rgba(233,69,96,0.3);
+    }
+    .pronunciation-btn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 5px 20px rgba(233,69,96,0.5);
+    }
+    .pronunciation-btn:active {
+      transform: scale(0.95);
+    }
+    .ows-answer-meaning {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+    .ows-hindi {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(253,203,110,0.15);
+      color: #e17055;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* Options Grid */
+    .ows-options-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .ows-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .ows-option {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--bg-primary);
+      transition: var(--transition);
+    }
+    .ows-option:hover {
+      border-color: var(--purple-light);
+      transform: translateY(-2px);
+    }
+    .ows-option.correct-opt {
+      border-color: rgba(0,184,148,0.4);
+      background: linear-gradient(135deg, rgba(0,184,148,0.06), rgba(0,206,201,0.04));
+    }
+    .ows-option-word {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+    .ows-option.correct-opt .ows-option-word {
+      color: var(--green);
+    }
+    .ows-option-meaning {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Synonyms & Antonyms */
+    .ows-extras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .ows-extra-block {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+    }
+    .ows-extra-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+    .ows-extra-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .ows-extra-chip {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    .syn-chip {
+      background: rgba(0,184,148,0.1);
+      color: var(--green);
+    }
+    .ant-chip {
+      background: rgba(214,48,49,0.1);
+      color: var(--red);
+    }
+
+    /* Filter Info Bar */
+    .filter-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-info-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .filter-info-text strong {
+      color: var(--purple);
+    }
+    .filter-clear-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-clear-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* OWS Grid */
+    .ows-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Stats Row */
+    .ows-stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .ows-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .ows-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ows-stat-lbl {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      color: white;
+    }
+
+    /* Dark mode extras */
+    [data-theme="dark"] .ows-answer-box {
+      background: linear-gradient(135deg, rgba(0,184,148,0.06), rgba(0,206,201,0.03));
+      border-color: rgba(0,184,148,0.15);
+    }
+    [data-theme="dark"] .ows-option.correct-opt {
+      background: linear-gradient(135deg, rgba(0,184,148,0.04), rgba(0,206,201,0.02));
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ows-header { padding: 15px 18px; gap: 12px; }
+      .ows-body { padding: 18px; }
+      .ows-answer-word { font-size: 1.3rem; }
+      .ows-options-grid { grid-template-columns: 1fr; }
+      .category-filters { gap: 6px; }
+      .cat-btn { padding: 6px 12px; font-size: 0.78rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero { padding: 25px 18px; margin-bottom: 25px; }
+      .ows-stats { gap: 10px; }
+      .ows-stat-item { padding: 8px 12px; }
+      .ows-stat-num { font-size: 1.1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .ows-question { font-size: 0.92rem; }
+      .ows-meta { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar"></div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-left">
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.sidebar').classList.toggle('open');document.querySelector('.sidebar-overlay').classList.toggle('visible')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="logo">
+      <div class="logo-icon">G</div>
+      <span class="logo-text">Grammar Master</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search words, meanings... (Ctrl+K)" aria-label="Search OWS">
+      <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+    </div>
+    <span class="stats-badge" id="statsBadge">408 OWS</span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙 <span>Dark</span></button>
+  </div>
+</header>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('visible')"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar" aria-label="OWS navigation">
+  <div class="sidebar-header">
+    <div class="sidebar-title">Quick Navigation</div>
+  </div>
+  <ul class="nav-list">
+    <li class="nav-item"><a class="nav-link" href="index.html"><span class="nav-number">📚</span><span class="nav-label">60 Golden Rules</span></a></li>
+    <li class="nav-item"><a class="nav-link active" href="ows.html"><span class="nav-number">📝</span><span class="nav-label">One Word Substitutions</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="ows.pdf" target="_blank"><span class="nav-number">📄</span><span class="nav-label">OWS PDF</span></a></li>
+  </ul>
+  <div class="sidebar-header" style="margin-top:20px">
+    <div class="sidebar-title">Jump to Question</div>
+  </div>
+  <div style="padding:10px 20px;">
+    <input type="number" id="jumpInput" placeholder="Q number..." style="width:100%;padding:8px 12px;border:2px solid var(--border);border-radius:10px;background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',sans-serif;font-size:0.85rem;outline:none;" min="273" max="530">
+    <button onclick="jumpToQ()" style="margin-top:8px;width:100%;padding:8px;border:none;border-radius:10px;background:var(--gradient-2);color:white;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;">Go →</button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master <span class="highlight">One Word Substitutions</span> for SSC CGL</h1>
+      <p>A comprehensive collection of 681 One Word Substitutions from Pinnacle SSC CGL study guide. Each word comes with meaning, Hindi translation, options, synonyms, and antonyms. Click 🔊 to hear pronunciation!</p>
+      <div class="hero-stats ows-stats">
+        <div class="ows-stat-item">
+          <div class="ows-stat-num" id="totalQuestions">258</div>
+          <div class="ows-stat-lbl">Questions</div>
+        </div>
+        <div class="ows-stat-item">
+          <div class="ows-stat-num" id="totalCategories">0</div>
+          <div class="ows-stat-lbl">Categories</div>
+        </div>
+        <div class="ows-stat-item">
+          <div class="ows-stat-num">Pinnacle</div>
+          <div class="ows-stat-lbl">Source</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filters -->
+  <div class="category-filters" id="categoryFilters">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- Filter Info -->
+  <div class="filter-info" id="filterInfo" style="display:none">
+    <span class="filter-info-text">Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> questions</span>
+    <button class="filter-clear-btn" onclick="clearFilters()">✕ Clear Filters</button>
+  </div>
+
+  <!-- No Results -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>No questions found</h3>
+    <p>Try adjusting your search or category filter.</p>
+  </div>
+
+  <!-- OWS Grid -->
+  <div class="ows-grid" id="owsGrid">
+    <!-- Filled by JS -->
+  </div>
+
+</main>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+// ===== OWS DATA =====
+const OWS_DATA = [
+  { q:273, text:"Government by a powerful small group of people", answer:"Oligarchy", hindi:"कुलीनतंत्र", meaning:"Government by a small group of powerful people", options:[{w:"Oligarchy",m:"Government by a small group of powerful people"},{w:"Democracy",m:"Government by elected representatives"},{w:"Monarchy",m:"Government by a monarch"},{w:"Missionary",m:"Person sent on a religious mission"}], category:"Government", synonyms:["Elite rule","Junta"], antonyms:["Democracy","Mobocracy"] },
+  { q:274, text:"The time of evening when the sun has just set", answer:"Dusk", hindi:"सांझ", meaning:"The darker stage of twilight; evening", options:[{w:"Dusk",m:"Evening when sun has just set"},{w:"Night",m:"Period from sunset to sunrise"},{w:"Dawn",m:"First light appears in the sky"},{w:"Daybreak",m:"Morning light appears"}], category:"Time", synonyms:["Twilight","Sundown","Evening"], antonyms:["Dawn","Sunrise","Daybreak"] },
+  { q:275, text:"A person who deals with things sensibly and realistically", answer:"Pragmatic", hindi:"व्यावहारिक", meaning:"Dealing with things practically", options:[{w:"Pragmatic",m:"Dealing with things practically"},{w:"Sceptic",m:"Questions accepted opinions"},{w:"Stoic",m:"Endures without complaining"},{w:"Cynic",m:"Believes people are self-interested"}], category:"People", synonyms:["Practical","Realistic"], antonyms:["Idealistic","Impractical"] },
+  { q:276, text:"Pertaining to cats", answer:"Feline", hindi:"बिल्ली संबंधी", meaning:"Relating to or resembling cats", options:[{w:"Feline",m:"Pertaining to cats"},{w:"Bovine",m:"Relating to cattle"},{w:"Canine",m:"Relating to dogs"},{w:"Taurine",m:"Relating to a bull"}], category:"Animals", synonyms:["Cat-like"], antonyms:["Canine"] },
+  { q:277, text:"No longer in existence", answer:"Extinct", hindi:"लुप्त", meaning:"No longer in existence; having died out", options:[{w:"Extinct",m:"No longer in existence"}], category:"General", synonyms:["Vanished","Defunct","Obsolete"], antonyms:["Extant","Living","Thriving"] },
+  { q:278, text:"That which can be seen and touched", answer:"Tangible", hindi:"मूर्त", meaning:"Can be seen and touched; real", options:[{w:"Tangible",m:"Can be seen and touched"},{w:"Impalpable",m:"Cannot be felt by touch"},{w:"Spiritual",m:"Relating to the soul"},{w:"Inexpressible",m:"Too strong to describe"}], category:"General", synonyms:["Concrete","Palpable","Real"], antonyms:["Intangible","Abstract","Impalpable"] },
+  { q:279, text:"Fear of snakes", answer:"Ophidiophobia", hindi:"सर्प भय", meaning:"Abnormal fear of snakes", options:[{w:"Ophidiophobia",m:"Fear of snakes"},{w:"Claustrophobia",m:"Fear of closed spaces"},{w:"Syngenesophobia",m:"Fear of relatives"},{w:"Xenophobia",m:"Fear of strangers"}], category:"Phobias", synonyms:["Snake phobia"], antonyms:[] },
+  { q:280, text:"A performer's first public appearance", answer:"Debut", hindi:"पदार्पण", meaning:"First public appearance of a performer", options:[{w:"Debut",m:"Performer's first public appearance"},{w:"Foundation",m:"Underlying basis"},{w:"Premise",m:"Idea or theory"},{w:"Dawn",m:"First light before sunrise"}], category:"General", synonyms:["First appearance","Premiere","Launch"], antonyms:["Farewell","Finale"] },
+  { q:281, text:"To go through an area causing damage", answer:"Rampage", hindi:"उत्पात", meaning:"Go through an area causing violent damage", options:[{w:"Rampage",m:"Go through area causing damage"},{w:"Brutality",m:"Savage violence"},{w:"Cacophony",m:"Unpleasant loud sounds"},{w:"Violence",m:"Use of physical force"}], category:"Actions", synonyms:["Riot","Destruction"], antonyms:["Peace","Calm"] },
+  { q:282, text:"A journey by water or sea", answer:"Voyage", hindi:"समुद्री यात्रा", meaning:"A long journey by water or sea", options:[{w:"Voyage",m:"Journey by water/sea"},{w:"Rendezvous",m:"Meeting at agreed time"},{w:"Verso",m:"Reverse of something"},{w:"Vespers",m:"Christian evening prayer"}], category:"General", synonyms:["Journey","Cruise","Expedition"], antonyms:[] },
+  { q:283, text:"Repetition of initial consonant sounds in nearby words", answer:"Alliteration", hindi:"अनुप्रास", meaning:"Repetition of initial consonant sounds", options:[{w:"Alliteration",m:"Repetition of initial consonant sounds"},{w:"Epithet",m:"Adjective expressing quality"},{w:"Simile",m:"Comparing two different things"},{w:"Allegory",m:"Story with hidden meaning"}], category:"Literature", synonyms:["Head rhyme","Initial rhyme"], antonyms:[] },
+  { q:284, text:"A short sword fixed to the end of a gun", answer:"Bayonet", hindi:"संगीन", meaning:"Short sword fixed to end of a rifle", options:[{w:"Bayonet",m:"Short sword fixed to end of gun"},{w:"Baron",m:"Important person in industry"},{w:"Bigot",m:"Person with strong unreasonable beliefs"},{w:"Baton",m:"Thick stick used by police"}], category:"Objects", synonyms:["Blade","Dagger"], antonyms:[] },
+  { q:285, text:"A person who dabbles in arts, science, or literature", answer:"Dilettante", hindi:"शौकीन व्यक्ति", meaning:"Dabbler in arts/science/literature", options:[{w:"Dilettante",m:"Dabbler in arts/science/literature"},{w:"Connoisseur",m:"Expert judge of taste"},{w:"Taciturn",m:"Reserved in speech"},{w:"Ignoramus",m:"Ignorant person"}], category:"People", synonyms:["Amateur","Dabbler"], antonyms:["Expert","Professional","Connoisseur"] },
+  { q:286, text:"Loud enough to be heard", answer:"Audible", hindi:"सुनाई देने योग्य", meaning:"Loud enough to be heard", options:[{w:"Audible",m:"Loud enough to be heard"},{w:"Audit",m:"Official inspection of accounts"},{w:"Audacious",m:"Boldly daring"},{w:"Audacity",m:"Willingness to take bold risks"}], category:"General", synonyms:["Hearable","Perceptible"], antonyms:["Inaudible","Silent","Faint"] },
+  { q:287, text:"Study of flying airplanes", answer:"Aviation", hindi:"विमानन", meaning:"The study and practice of flying airplanes", options:[{w:"Aviation",m:"Study of flying airplanes"},{w:"Alchemy",m:"Magical transformation"},{w:"Astronomy",m:"Study of celestial objects"},{w:"Acoustics",m:"Physics of sound"}], category:"Studies", synonyms:["Aeronautics","Flying"], antonyms:[] },
+  { q:288, text:"A hospital for mentally ill people", answer:"Asylum", hindi:"पागलखाना", meaning:"Hospital/institution for mentally ill", options:[{w:"Asylum",m:"Hospital for mentally ill"},{w:"Druggist",m:"Person who sells medicines"},{w:"Shelter",m:"Temporary protection"},{w:"Hangar",m:"Building for aircraft"}], category:"Places", synonyms:["Sanatorium","Mental hospital"], antonyms:[] },
+  { q:289, text:"That which cannot be seen through", answer:"Opaque", hindi:"अपारदर्शी", meaning:"Cannot be seen through; not transparent", options:[{w:"Opaque",m:"Cannot be seen through"},{w:"Dirty",m:"Marked with mud"},{w:"Transparent",m:"Can be seen through"}], category:"General", synonyms:["Cloudy","Murky","Non-transparent"], antonyms:["Transparent","Clear","Translucent"] },
+  { q:290, text:"A professional rider in horse races", answer:"Jockey", hindi:"घुड़सवार", meaning:"Professional rider in horse races", options:[{w:"Jockey",m:"Professional rider in horse races"},{w:"Batsman",m:"Person who hits the ball"},{w:"Stuntman",m:"Performs dangerous stunts"},{w:"Southpaw",m:"Left-handed person"}], category:"People", synonyms:["Rider","Equestrian"], antonyms:[] },
+  { q:291, text:"A woman having multiple husbands", answer:"Polyandry", hindi:"बहुपतित्व", meaning:"Practice of a woman having multiple husbands", options:[{w:"Polyandry",m:"Woman having multiple husbands"},{w:"Monogamy",m:"Having one spouse"},{w:"Polymathy",m:"Wide knowledge"},{w:"Endogamy",m:"Marrying within community"}], category:"General", synonyms:["Multi-husband marriage"], antonyms:["Monogamy","Polygyny"] },
+  { q:292, text:"Affecting greater importance than is actually possessed", answer:"Pretentious", hindi:"दिखावटी", meaning:"Affecting greater importance than is possessed", options:[{w:"Pretentious",m:"Affecting greater importance"},{w:"Airy",m:"Showing no worry"},{w:"Glorious",m:"Deserving admiration"},{w:"Imperious",m:"Proudly expecting obedience"}], category:"People", synonyms:["Showy","Pompous","Ostentatious"], antonyms:["Modest","Humble","Unassuming"] },
+  { q:293, text:"Pleasant or comfortable features of a place", answer:"Amenities", hindi:"सुविधाएं", meaning:"Convenient or pleasant features", options:[{w:"Amenities",m:"Convenient features"},{w:"Equipment",m:"Necessary tools"},{w:"Facilitate",m:"Make easier"},{w:"System",m:"Things working together"}], category:"General", synonyms:["Facilities","Comforts","Conveniences"], antonyms:["Hardships","Discomforts"] },
+  { q:294, text:"A story teaching moral lessons", answer:"Parable", hindi:"दृष्टांत कथा", meaning:"A story teaching moral or spiritual lessons", options:[{w:"Parable",m:"Story teaching moral lessons"},{w:"Parole",m:"Early release of prisoner"},{w:"Parasite",m:"Lives on another organism"},{w:"Parboil",m:"Partly boil food"}], category:"Literature", synonyms:["Fable","Allegory","Story"], antonyms:[] },
+  { q:295, text:"A feeling of having experienced something before", answer:"Déjà-vu", hindi:"पूर्वाभास", meaning:"Feeling of having experienced something before", options:[{w:"Déjà-vu",m:"Feeling of having experienced before"},{w:"Spirituality",m:"Concerned with the soul"},{w:"Delusion",m:"False belief"},{w:"Illusion",m:"False impression"}], category:"Feelings", synonyms:["Familiarity","Recognition"], antonyms:[] },
+  { q:296, text:"An unpleasant mixture of loud sounds", answer:"Cacophony", hindi:"कर्कश ध्वनि", meaning:"Unpleasant mixture of loud sounds", options:[{w:"Cacophony",m:"Unpleasant loud sounds"},{w:"Irony",m:"Opposite result from expected"},{w:"Harmony",m:"Pleasing musical combination"},{w:"Hegemony",m:"Leadership/dominance"}], category:"General", synonyms:["Discord","Noise","Din"], antonyms:["Harmony","Melody","Euphony"] },
+  { q:297, text:"A rectangular open space in a building", answer:"Quadrangle", hindi:"चौक", meaning:"Rectangular open space in a building", options:[{w:"Quadrangle",m:"Rectangular open space in building"},{w:"Quinton",m:"Queen's settlement"},{w:"Quintessential",m:"Most perfect example"},{w:"Quadruped",m:"Four-footed animal"}], category:"Places", synonyms:["Courtyard","Quad","Patio"], antonyms:[] },
+  { q:298, text:"Going from simple to complex forms of life", answer:"Evolution", hindi:"विकास", meaning:"Process of development from simple to complex", options:[{w:"Evolution",m:"Going from simple to complex"},{w:"Wither",m:"Dry up"},{w:"Ennoblement",m:"Raising to nobility"},{w:"Flourishing",m:"Healthy growth"}], category:"General", synonyms:["Development","Progression","Growth"], antonyms:["Devolution","Regression","Decline"] },
+  { q:299, text:"A person who believes in God", answer:"Theist", hindi:"आस्तिक", meaning:"One who believes in the existence of God", options:[{w:"Theist",m:"Believes in God"},{w:"Atheist",m:"Does not believe in God"},{w:"Fatalist",m:"Believes in predetermined events"},{w:"Protagonist",m:"Main character"}], category:"People", synonyms:["Believer","Devotee"], antonyms:["Atheist","Agnostic","Non-believer"] },
+  { q:300, text:"An agreement in a company or organization", answer:"Contract", hindi:"अनुबंध", meaning:"Written legal agreement between parties", options:[{w:"Contract",m:"Agreement in company"},{w:"Conformity",m:"Compliance with rules"},{w:"Acceptance",m:"Taking something offered"},{w:"Concurrence",m:"Agreement of opinion"}], category:"General", synonyms:["Agreement","Deal","Pact"], antonyms:["Disagreement"] },
+  { q:301, text:"A doctor who deals with the female reproductive system", answer:"Gynaecologist", hindi:"स्त्री रोग विशेषज्ञ", meaning:"Doctor specializing in female reproductive system", options:[{w:"Gynaecologist",m:"Deals with female reproductive system"},{w:"Orthodontist",m:"Straightens teeth"},{w:"Cardiologist",m:"Heart specialist"},{w:"Ophthalmologist",m:"Eye specialist"}], category:"People", synonyms:["Women's doctor"], antonyms:[] },
+  { q:302, text:"A lover of mankind", answer:"Philanthropist", hindi:"परोपकारी", meaning:"One who loves and seeks to benefit mankind", options:[{w:"Philanthropist",m:"Lover of mankind"},{w:"Recluse",m:"Lives in solitude"},{w:"Cynic",m:"Believes in self-interest"},{w:"Psychiatrist",m:"Treats mental illness"}], category:"People", synonyms:["Humanitarian","Benefactor","Altruist"], antonyms:["Misanthropist","Egoist"] },
+  { q:303, text:"Weak and cowardly", answer:"Pusillanimous", hindi:"कायर", meaning:"Showing a lack of courage; cowardly", options:[{w:"Pusillanimous",m:"Weak and cowardly"},{w:"Timid",m:"Lacking courage"},{w:"Meek",m:"Gentle and quiet"},{w:"Anxious",m:"Feeling worried"}], category:"People", synonyms:["Cowardly","Spineless","Timid"], antonyms:["Brave","Courageous","Valiant"] },
+  { q:304, text:"A place for burying the dead", answer:"Cemetery", hindi:"कब्रिस्तान", meaning:"Place where dead are buried", options:[{w:"Cemetery",m:"Place for burying dead"},{w:"Clementi",m:"Apostolic father"},{w:"Mansion",m:"Large house"},{w:"Demise",m:"Person's death"}], category:"Places", synonyms:["Graveyard","Burial ground","Necropolis"], antonyms:[] },
+  { q:305, text:"Careful and persistent hard work", answer:"Diligence", hindi:"परिश्रम", meaning:"Careful and persistent effort", options:[{w:"Diligence",m:"Careful and hardworking"},{w:"Extraordinary",m:"Very unusual"},{w:"Elegance",m:"Graceful appearance"},{w:"Business mindedness",m:"Good for business"}], category:"General", synonyms:["Industry","Assiduity","Perseverance"], antonyms:["Laziness","Negligence","Sloth"] },
+  { q:306, text:"A lively, cheerful, and outgoing person", answer:"Extrovert", hindi:"बहिर्मुखी व्यक्ति", meaning:"Outgoing, lively, socially confident person", options:[{w:"Extrovert",m:"Lively, cheerful, outgoing"},{w:"Ambivert",m:"Both extrovert and introvert"},{w:"Introvert",m:"Turns thoughts inwards"},{w:"Orator",m:"Eloquent speaker"}], category:"People", synonyms:["Outgoing person","Social butterfly"], antonyms:["Introvert","Recluse"] },
+  { q:307, text:"Study of mankind", answer:"Anthropology", hindi:"मानवशास्त्र", meaning:"Study of human societies and cultures", options:[{w:"Anthropology",m:"Study of man"},{w:"Biography",m:"Life written by another"},{w:"Autobiography",m:"Life written by self"},{w:"Biology",m:"Study of living organisms"}], category:"Studies", synonyms:["Human science"], antonyms:[] },
+  { q:308, text:"Extremely painful", answer:"Excruciating", hindi:"अत्यंत पीड़ादायक", meaning:"Intensely painful; agonizing", options:[{w:"Excruciating",m:"Extremely painful"}], category:"Feelings", synonyms:["Agonizing","Tormenting","Unbearable"], antonyms:["Pleasant","Soothing","Comfortable"] },
+  { q:309, text:"A film shown in the afternoon", answer:"Matinee", hindi:"दोपहर का शो", meaning:"An afternoon performance or showing", options:[{w:"Matinee",m:"Film shown in afternoon"},{w:"Theatre",m:"Building for performances"},{w:"Dramatics",m:"Study of acting"},{w:"Cinema",m:"Theatre for films"}], category:"General", synonyms:["Afternoon show"], antonyms:[] },
+  { q:310, text:"Easy to shape or bend", answer:"Malleable", hindi:"लचीला", meaning:"Easily shaped or influenced", options:[{w:"Malleable",m:"Easy to shape"},{w:"Rigid",m:"Unable to bend"},{w:"Immutable",m:"Cannot be changed"},{w:"Gullible",m:"Easily persuaded"}], category:"General", synonyms:["Flexible","Pliable","Adaptable"], antonyms:["Rigid","Inflexible","Immutable"] },
+  { q:311, text:"A list of books", answer:"Catalogue", hindi:"सूची", meaning:"A complete list of items arranged systematically", options:[{w:"Catalogue",m:"List of books"},{w:"Bibliography",m:"List of references"},{w:"Lexicon",m:"List of words"},{w:"Manuscript",m:"Handwritten document"}], category:"General", synonyms:["List","Inventory","Register"], antonyms:[] },
+  { q:312, text:"The period of developing from a child into an adult", answer:"Adolescence", hindi:"किशोरावस्था", meaning:"Period of development from child to adult", options:[{w:"Adolescence",m:"Developing into adult"},{w:"Teenage",m:"13-19 years old"},{w:"Childhood",m:"Being a child"},{w:"Adultery",m:"Extramarital relations"}], category:"General", synonyms:["Youth","Puberty","Teenage years"], antonyms:["Adulthood","Childhood"] },
+  { q:313, text:"A huge fire for celebration", answer:"Bonfire", hindi:"जलसा", meaning:"Large outdoor fire for celebration", options:[{w:"Bonfire",m:"Huge fire for celebration"},{w:"Flash",m:"Sudden burst of light"},{w:"Lohri",m:"Winter harvest festival"},{w:"Firecracker",m:"Loud firework"}], category:"General", synonyms:["Blaze","Conflagration"], antonyms:[] },
+  { q:314, text:"A consonance of sounds", answer:"Symphony", hindi:"सममेलन", meaning:"Harmonious combination of sounds; orchestral composition", options:[{w:"Symphony",m:"Consonance of sounds"},{w:"Orchestration",m:"Arrangement of music"},{w:"Woodwinds",m:"Blown instruments"},{w:"Troupe",m:"Group of performers"}], category:"General", synonyms:["Harmony","Consonance","Orchestra"], antonyms:["Discord","Cacophony"] },
+  { q:315, text:"Careful examination of one's own motives", answer:"Introspect", hindi:"आत्मनिरीक्षण", meaning:"Examine one's own thoughts and feelings", options:[{w:"Introspect",m:"Examine own thoughts"},{w:"Suspect",m:"Doubtful examination of motives"},{w:"Circumspect",m:"Think carefully before acting"},{w:"Retrospect",m:"Review of past events"}], category:"Actions", synonyms:["Self-examine","Reflect"], antonyms:[] },
+  { q:316, text:"Vivacious and enthusiastic", answer:"Effervescent", hindi:"उत्साही", meaning:"Vivacious, enthusiastic, bubbly", options:[{w:"Effervescent",m:"Vivacious and enthusiastic"},{w:"Introverted",m:"Shy and quiet"},{w:"Brazen",m:"Obvious without shame"},{w:"Rowdy",m:"Noisy and troublesome"}], category:"People", synonyms:["Bubbly","Lively","Vivacious"], antonyms:["Flat","Dull","Lethargic"] },
+  { q:317, text:"Dwarf trees grown in pots", answer:"Bonsai", hindi:"बोनसाई", meaning:"Art of growing dwarf trees in pots", options:[{w:"Bonsai",m:"Dwarf trees in pots"},{w:"Bonafide",m:"Real or genuine"},{w:"Orchard",m:"Land with fruit trees"},{w:"Botanical",m:"Relating to plants"}], category:"General", synonyms:["Miniature tree"], antonyms:[] },
+  { q:318, text:"Favoring family members over merit", answer:"Nepotism", hindi:"भाई-भतीजावाद", meaning:"Favoritism shown to relatives based on relationship", options:[{w:"Nepotism",m:"Favoring family over merit"},{w:"Egotism",m:"Excessive self-absorption"},{w:"Neologism",m:"New word or expression"},{w:"Mannerism",m:"Habitual gesture"}], category:"General", synonyms:["Favoritism","Cronyism"], antonyms:["Meritocracy"] },
+  { q:319, text:"A storage place for arms and ammunition", answer:"Arsenal", hindi:"शस्त्रागार", meaning:"Storage place for weapons and ammunition", options:[{w:"Arsenal",m:"Storage for arms and ammunition"},{w:"Mint",m:"Where coins are made"},{w:"Scullery",m:"Room for washing dishes"}], category:"Places", synonyms:["Armory","Armoury","Depot"], antonyms:[] },
+  { q:320, text:"Words inscribed on a tombstone", answer:"Epitaph", hindi:"समाधि लेख", meaning:"Words inscribed on a tomb in memory of the dead", options:[{w:"Epitaph",m:"Words on a tomb"},{w:"Prologue",m:"Introduction to a play"},{w:"Epilogue",m:"End speech"},{w:"Post-script",m:"Added after signing"}], category:"Literature", synonyms:["Memorial","Inscription"], antonyms:["Prologue","Introduction"] },
+  { q:321, text:"A fertile place in a desert", answer:"Oasis", hindi:"मरुद्यान", meaning:"Fertile spot in a desert with water", options:[{w:"Oasis",m:"Fertile place in desert"},{w:"Ode",m:"Praising poem"},{w:"Obsolete",m:"No longer useful"},{w:"Obscure",m:"Hard to understand"}], category:"Places", synonyms:["Haven","Refuge","Watering hole"], antonyms:[] },
+  { q:322, text:"A person who speaks multiple languages", answer:"Polyglot", hindi:"बहुभाषी", meaning:"One who speaks multiple languages", options:[{w:"Polyglot",m:"Speaks multiple languages"},{w:"Insolvent",m:"Unable to pay debts"},{w:"Heretic",m:"Holds contrary beliefs"},{w:"Fatalist",m:"Believes in predetermined fate"}], category:"People", synonyms:["Multilingual","Linguist"], antonyms:["Monolingual"] },
+  { q:323, text:"A death notice published in a newspaper", answer:"Obituary", hindi:"मृत्यु सूचना", meaning:"Published notice of a death with biography", options:[{w:"Obituary",m:"Death notice in newspaper"},{w:"Centenary",m:"100th anniversary"},{w:"Culinary",m:"Related to cooking"},{w:"Mortuary",m:"Room for dead bodies"}], category:"General", synonyms:["Death notice","Memorial"], antonyms:[] },
+  { q:324, text:"The original inhabitants of a place", answer:"Aborigines", hindi:"आदिवासी", meaning:"Original or earliest known inhabitants", options:[{w:"Aborigines",m:"Original inhabitants"},{w:"Primitive",m:"Very simple"},{w:"Citizen",m:"Legal member of country"},{w:"Aliens",m:"Creatures from outer space"}], category:"People", synonyms:["Natives","Indigenous people","Autochthons"], antonyms:["Settlers","Immigrants","Colonists"] },
+  { q:325, text:"The approach or style of teaching", answer:"Pedagogy", hindi:"शिक्षण विधि", meaning:"Method and practice of teaching", options:[{w:"Pedagogy",m:"Approach/style of teaching"},{w:"Platform",m:"Raised surface"},{w:"Philology",m:"Study of language"},{w:"Media",m:"Mass communication"}], category:"Studies", synonyms:["Teaching method","Instruction"], antonyms:[] },
+  { q:326, text:"To stay cheerful during difficulty", answer:"Keep chin up", hindi:"हिम्मत रखना", meaning:"Remain optimistic during hard times", options:[{w:"Keep chin up",m:"Stay cheerful during difficulty"}], category:"General", synonyms:["Stay positive","Brave it out"], antonyms:["Give up","Despair"] },
+  { q:327, text:"Something from the past, of high quality", answer:"Vintage", hindi:"पुरानी उत्कृष्ट वस्तु", meaning:"Of high quality from the past", options:[{w:"Vintage",m:"From past, high quality"},{w:"Outdated",m:"Old-fashioned"},{w:"Culture",m:"Customs of people"},{w:"Epoch",m:"Particular period in history"}], category:"General", synonyms:["Classic","Retro","Antique"], antonyms:["Modern","Contemporary"] },
+  { q:328, text:"A saltwater lake separated from the sea", answer:"Lagoon", hindi:"लैगून", meaning:"Saltwater lake separated from the sea by a sandbank", options:[{w:"Lagoon",m:"Saltwater lake separated from sea"},{w:"Sea",m:"Large salt water body"},{w:"Ditch",m:"Narrow channel"},{w:"River",m:"Natural stream of water"}], category:"Places", synonyms:["Lake","Pool","Inlet"], antonyms:[] },
+  { q:329, text:"Government by the few", answer:"Oligarchy", hindi:"कुलीनतंत्र", meaning:"Government by a small group of powerful people", options:[{w:"Oligarchy",m:"Government by the few"},{w:"Plutocracy",m:"Government by the wealthy"},{w:"Democracy",m:"Government by elected people"},{w:"Autocracy",m:"Government by one person"}], category:"Government", synonyms:["Elite rule"], antonyms:["Democracy"] },
+  { q:330, text:"Filled with excessive enthusiasm about oneself", answer:"Narcissist", hindi:"आत्ममुग्ध व्यक्ति", meaning:"Person excessively admiring themselves", options:[{w:"Extrovert",m:"Filled with excessive enthusiasm"},{w:"Horticulturist",m:"Garden expert"},{w:"Narcissist",m:"Excessive self-admiration"},{w:"Introvert",m:"Shy and quiet"}], category:"People", synonyms:["Egoist","Self-admirer"], antonyms:["Altruist","Humble person"] },
+  { q:331, text:"Always disapproving of others' opinions", answer:"Critical of others", hindi:"दूसरों की आलोचना करने वाला", meaning:"Habitually finding fault with others", options:[{w:"Critical of others",m:"Always disapproving opinions"}], category:"People", synonyms:["Judgmental","Hypercritical","Fault-finding"], antonyms:["Tolerant","Accepting","Forgiving"] },
+  { q:332, text:"A soldier who fights for money", answer:"Mercenary", hindi:"भाड़े का सैनिक", meaning:"Soldier fighting purely for money", options:[{w:"Mercenary",m:"Soldier fighting for money"},{w:"Marine",m:"Trained for land/sea"},{w:"Admiral",m:"Senior fleet commander"},{w:"Veteran",m:"Experienced person"}], category:"People", synonyms:["Hired soldier","Sell-sword"], antonyms:["Patriot","Volunteer"] },
+  { q:333, text:"Excessive sexual desire (for males)", answer:"Andromania", hindi:"पुरुषों के प्रति आकर्षण", meaning:"Madness or obsession with males", options:[{w:"Andromania",m:"Madness/obsession with males"},{w:"Loquacious",m:"Talks a lot"},{w:"Polygamy",m:"Multiple spouses"},{w:"Misandrist",m:"Hates men"}], category:"General", synonyms:["Nymphomania"], antonyms:[] },
+  { q:334, text:"A mythological one-horned animal", answer:"Unicorn", hindi:"एक सींग वाला पौराणिक जानवर", meaning:"Mythological horse-like creature with one horn", options:[{w:"Unicorn",m:"Mythological one-horned animal"},{w:"Unific",m:"Producing unity"},{w:"Unipod",m:"One-legged support"},{w:"Unicameral",m:"Single legislative chamber"}], category:"General", synonyms:["One-horned horse"], antonyms:[] },
+  { q:335, text:"A person who does not express feelings freely", answer:"Introvert", hindi:"अंतर्मुखी व्यक्ति", meaning:"Person who turns thoughts inward; shy", options:[{w:"Introvert",m:"Does not express freely"},{w:"Outgoing",m:"Socially confident"},{w:"Approachable",m:"Easy to talk to"},{w:"Immodest",m:"Too high opinion of self"}], category:"People", synonyms:["Shy person","Recluse"], antonyms:["Extrovert","Outgoing person"] },
+  { q:336, text:"A person who betrays their own country", answer:"Traitor", hindi:"देशद्रोही", meaning:"One who betrays their own country", options:[{w:"Traitor",m:"Betrays own country"},{w:"Gangster",m:"Gang criminal"},{w:"Terrorist",m:"Uses violence for political aims"},{w:"Conman",m:"Cheats by gaining trust"}], category:"People", synonyms:["Betrayer","Turncoat","Defector"], antonyms:["Patriot","Loyalist"] },
+  { q:337, text:"A person who speaks two languages", answer:"Bilingual", hindi:"द्विभाषी", meaning:"Able to speak two languages fluently", options:[{w:"Bilingual",m:"Speaks two languages"},{w:"Bidialectical",m:"Proficient in two dialects"},{w:"Lingual",m:"Relating to language"},{w:"Bicultural",m:"Representing two cultures"}], category:"People", synonyms:["Two-language speaker"], antonyms:["Monolingual"] },
+  { q:338, text:"Shyness resulting from lack of confidence", answer:"Diffidence", hindi:"हीनता की भावना", meaning:"Shyness or modesty from lack of confidence", options:[{w:"Diffidence",m:"Shyness from lack of confidence"},{w:"Determination",m:"Firm decision"},{w:"Assurance",m:"Promise of certainty"},{w:"Conviction",m:"Strong belief"}], category:"Feelings", synonyms:["Timidity","Shyness","Self-doubt"], antonyms:["Confidence","Boldness","Assurance"] },
+  { q:339, text:"A person who is critical of others' motives", answer:"Cynic", hindi:"आलोचक", meaning:"Person who believes people are motivated by self-interest", options:[{w:"Cynic",m:"Critical of others' motives"},{w:"Chauffeur",m:"Drives a car"},{w:"Curator",m:"Museum custodian"},{w:"Interviewer",m:"Conducts interviews"}], category:"People", synonyms:["Sceptic","Pessimist","Doubter"], antonyms:["Optimist","Idealist"] },
+  { q:340, text:"A person who loves women", answer:"Philogynist", hindi:"स्त्री प्रेमी", meaning:"One who loves or admires women", options:[{w:"Philogynist",m:"Lover of women"},{w:"Monogamist",m:"One partner at a time"},{w:"Misogynist",m:"Hates women"},{w:"Philologist",m:"Studies language"}], category:"People", synonyms:["Women-lover"], antonyms:["Misogynist"] },
+  { q:341, text:"A person who does not care about rules", answer:"Nonconformist", hindi:"विद्रोही", meaning:"One who does not conform to established rules", options:[{w:"Nonconformist",m:"Does not care about rules"},{w:"Illegitimate",m:"Not authorized by law"},{w:"Tyrant",m:"Cruel ruler"},{w:"Vampire",m:"Blood-sucking undead"}], category:"People", synonyms:["Rebel","Dissenter","Maverick"], antonyms:["Conformist","Traditionalist"] },
+  { q:342, text:"Not in agreement or harmony", answer:"Incongruence", hindi:"असंगति", meaning:"Lack of agreement or harmony", options:[{w:"Incongruence",m:"Not in agreement/harmony"},{w:"Liquidity",m:"Easily converted to cash"},{w:"Congeniality",m:"Friendly and pleasant"},{w:"Diplomacy",m:"Tactful dealing"}], category:"General", synonyms:["Incompatibility","Inconsistency","Disagreement"], antonyms:["Congruence","Harmony","Agreement"] },
+  { q:343, text:"A speech delivered without preparation", answer:"Extempore", hindi:"बिना तैयारी का भाषण", meaning:"Speech delivered without preparation", options:[{w:"Extempore",m:"Speech without preparation"},{w:"Debate",m:"Formal discussion"},{w:"Lecture",m:"Formal presentation"},{w:"Rambling",m:"Confused lengthy speech"}], category:"General", synonyms:["Impromptu","Off-the-cuff","Spontaneous"], antonyms:["Prepared","Rehearsed","Scripted"] },
+  { q:344, text:"The reasons causing beliefs or actions", answer:"Rationale", hindi:"तर्कसंगत कारण", meaning:"Set of reasons or logical basis for action", options:[{w:"Rationale",m:"Reasons causing beliefs/actions"},{w:"Practical",m:"Focused on actual use"},{w:"Thinkable",m:"Possible to imagine"},{w:"Motive",m:"Reason for action"}], category:"General", synonyms:["Reasoning","Logic","Basis"], antonyms:[] },
+  { q:345, text:"To move into or through something", answer:"Penetrate", hindi:"भेदना", meaning:"To pass into or through something", options:[{w:"Penetrate",m:"Move into/through something"},{w:"Perpetuate",m:"Cause to continue"},{w:"Transparent",m:"Allowing light through"},{w:"Cross",m:"Intersecting mark"}], category:"Actions", synonyms:["Enter","Pierce","Permeate"], antonyms:["Exit","Withdraw"] },
+  { q:346, text:"A verdict of not guilty", answer:"Acquittal", hindi:"दोषमुक्ति", meaning:"Legal verdict of not guilty", options:[{w:"Acquittal",m:"Verdict of not guilty"},{w:"Petition",m:"Formal request"},{w:"Appellant",m:"One who appeals"},{w:"Writ",m:"Legal court document"}], category:"General", synonyms:["Exoneration","Vindication","Clearing"], antonyms:["Conviction","Guilty verdict"] },
+  { q:347, text:"Cruel and violent", answer:"Brutal", hindi:"क्रूर", meaning:"Savagely violent; cruel", options:[{w:"Brutal",m:"Cruel and violent"},{w:"Barbarous",m:"Extremely cruel"},{w:"Matured",m:"Developed mentally"},{w:"Dull",m:"Not interesting"}], category:"General", synonyms:["Savage","Vicious","Cruel"], antonyms:["Gentle","Kind","Humane"] },
+  { q:348, text:"Engaged to be married", answer:"Betrothed", hindi:"मंगेतर", meaning:"Formally engaged to be married", options:[{w:"Betrothed",m:"Engaged to be married"},{w:"Betrayed",m:"Not loyal"},{w:"Bestowed",m:"Given as honor"},{w:"Baptised",m:"Christian water ceremony"}], category:"General", synonyms:["Engaged","Promised","Fiancé(e)"], antonyms:["Single","Unmarried"] },
+  { q:349, text:"One who eats meat but not seafood", answer:"Carnitarian", hindi:"मांसाहारी (समुद्री भोजन छोड़कर)", meaning:"Eats meat but avoids seafood", options:[{w:"Carnitarian",m:"Eats meat but not seafood"},{w:"Herbivorous",m:"Eats only plants"},{w:"Carnivorous",m:"Eats meat"},{w:"Omnivorous",m:"Eats both plants and meat"}], category:"People", synonyms:[] , antonyms:["Herbivore"] },
+  { q:350, text:"An inscription on a grave", answer:"Epitaph", hindi:"समाधि लेख", meaning:"Inscription on a tombstone commemorating the dead", options:[{w:"Epitaph",m:"Inscription on grave"},{w:"Monograph",m:"Article on one subject"},{w:"Epistle",m:"Literary letter"},{w:"Prologue",m:"Introductory section"}], category:"Literature", synonyms:["Memorial","Inscription"], antonyms:["Prologue"] },
+  { q:351, text:"Fear of confined spaces", answer:"Claustrophobia", hindi:"बंद जगह का डर", meaning:"Abnormal fear of enclosed spaces", options:[{w:"Claustrophobia",m:"Fear of confined space"},{w:"Acrophobia",m:"Fear of heights"},{w:"Glossophobia",m:"Fear of public speaking"},{w:"Selenophobia",m:"Fear of moon"}], category:"Phobias", synonyms:["Enclosed space fear"], antonyms:[] },
+  { q:352, text:"To frighten someone into doing something", answer:"Intimidate", hindi:"डराना", meaning:"To frighten or threaten someone to persuade", options:[{w:"Intimidate",m:"Frighten to persuade"},{w:"Forceless",m:"Lacking force"},{w:"Compel",m:"Force to do something"},{w:"Authoritative",m:"Trusted as accurate"}], category:"Actions", synonyms:["Bully","Threaten","Menace"], antonyms:["Encourage","Reassure","Comfort"] },
+  { q:353, text:"Cannot be satisfied", answer:"Insatiable", hindi:"अतृप्त", meaning:"Impossible to satisfy; always wanting more", options:[{w:"Insatiable",m:"Cannot be satisfied"},{w:"Stubborn",m:"Refusing to change"},{w:"Drastic",m:"Severe and sudden"},{w:"Prickly",m:"Easily offended"}], category:"General", synonyms:["Unquenchable","Voracious","Greedy"], antonyms:["Satisfied","Content","Modest"] },
+  { q:354, text:"Absolute government by one person", answer:"Autocracy", hindi:"निरंकुशतंत्र", meaning:"System of government by one person with absolute power", options:[{w:"Autocracy",m:"Absolute government by one"},{w:"Supremacy",m:"Ultimate authority"},{w:"Communism",m:"Goods owned in common"},{w:"Aristocracy",m:"Power held by nobility"}], category:"Government", synonyms:["Dictatorship","Tyranny","Despotism"], antonyms:["Democracy","Republic"] },
+  { q:355, text:"A person in charge of a hostel or home", answer:"Warden", hindi:"वार्डन", meaning:"Person in charge of a hostel or institution", options:[{w:"Warden",m:"Person in charge of hostel/home"},{w:"Watchman",m:"Guards building at night"},{w:"Guard",m:"Protects from danger"},{w:"Warder",m:"Prison guard"}], category:"People", synonyms:["Custodian","Superintendent","Keeper"], antonyms:[] },
+  { q:356, text:"Easily broken", answer:"Brittle", hindi:"भंगुर", meaning:"Hard but easily broken", options:[{w:"Brittle",m:"Easily broken"},{w:"Amateur",m:"Unpaid participant"},{w:"Tenacious",m:"Holding on with determination"},{w:"Precious",m:"Of great value"}], category:"General", synonyms:["Fragile","Breakable","Delicate"], antonyms:["Tough","Flexible","Durable"] },
+  { q:357, text:"Jealousy", answer:"Green eyed monster", hindi:"ईर्ष्या", meaning:"Jealousy (metaphorical expression)", options:[{w:"Green eyed monster",m:"Jealousy"}], category:"Feelings", synonyms:["Envy","Jealousy"], antonyms:["Generosity","Contentment"] },
+  { q:358, text:"A person who physically travels in space", answer:"Astronaut", hindi:"अंतरिक्ष यात्री", meaning:"Person trained to travel in space", options:[{w:"Astronaut",m:"Physically travels in space"},{w:"Anarchist",m:"Rebels against authority"},{w:"Pilot",m:"Flies aircraft"},{w:"Astrologer",m:"Predicts future from stars"}], category:"People", synonyms:["Space traveler","Cosmonaut"], antonyms:[] },
+  { q:359, text:"A book written about one's own life", answer:"Autobiography", hindi:"आत्मकथा", meaning:"Life story written by oneself", options:[{w:"Autobiography",m:"Book about own life"},{w:"Biography",m:"Life by someone else"},{w:"Historiography",m:"Study of history writing"},{w:"Anthology",m:"Collection of writings"}], category:"Literature", synonyms:["Memoir","Life story","Personal history"], antonyms:["Biography"] },
+  { q:360, text:"No longer in use", answer:"Obsolete", hindi:"लुप्तप्राय", meaning:"No longer produced or used; outdated", options:[{w:"Obsolete",m:"No longer in use"},{w:"Omnipotent",m:"Unlimited power"},{w:"Outpour",m:"Strong uncontrollable feeling"},{w:"Obscure",m:"Not clearly understood"}], category:"General", synonyms:["Outdated","Archaic","Antiquated"], antonyms:["Modern","Current","Contemporary"] },
+  { q:361, text:"Killing one's sister", answer:"Sororicide", hindi:"बहन की हत्या", meaning:"Act of killing one's own sister", options:[{w:"Sororicide",m:"Killing one's sister"},{w:"Uxoricide",m:"Killing one's wife"},{w:"Parricide",m:"Killing a parent"},{w:"Regicide",m:"Killing a king"}], category:"General", synonyms:[], antonyms:[] },
+  { q:362, text:"Copying behavior or speech", answer:"Mimicry", hindi:"नकल", meaning:"Act of imitating behavior or speech", options:[{w:"Mimicry",m:"Copying behavior/speech"},{w:"Pedantry",m:"Excessive concern with details"},{w:"Oratory",m:"Art of public speaking"},{w:"Parody",m:"Imitation for comic effect"}], category:"Actions", synonyms:["Imitation","Copying","Impersonation"], antonyms:["Originality"] },
+  { q:363, text:"Beliefs not explained by science", answer:"Superstitions", hindi:"अंधविश्वास", meaning:"Irrational beliefs not based on science", options:[{w:"Superstitions",m:"Beliefs unexplained by science"},{w:"Marvels",m:"Causes of wonder"},{w:"Wonders",m:"Causes of astonishment"}], category:"General", synonyms:["Myths","Folk beliefs","Old wives' tales"], antonyms:["Science","Rationalism","Logic"] },
+  { q:364, text:"A person who renounces religious or political beliefs", answer:"Apostate", hindi:"धर्मत्यागी", meaning:"One who renounces a religious or political belief", options:[{w:"Apostate",m:"Renounces religious/political beliefs"},{w:"Agnostic",m:"Unsure about God"},{w:"Ascetic",m:"Avoids physical pleasures"},{w:"Atheist",m:"Does not believe in God"}], category:"People", synonyms:["Defector","Renegade","Turncoat"], antonyms:["Devotee","Believer","Loyalist"] },
+  { q:365, text:"Killing a king", answer:"Regicide", hindi:"राजहत्या", meaning:"Act of killing a king", options:[{w:"Regicide",m:"Killing a king"},{w:"Pesticide",m:"Chemical for pests"},{w:"Homicide",m:"Killing a person"},{w:"Genocide",m:"Killing an ethnic group"}], category:"General", synonyms:["Royal murder"], antonyms:[] },
+  { q:366, text:"Study of earth's structure", answer:"Geology", hindi:"भूविज्ञान", meaning:"Study of earth's physical structure and substance", options:[{w:"Geology",m:"Study of earth's structure"},{w:"Geography",m:"Study of earth's features"},{w:"Meteorology",m:"Study of atmosphere"},{w:"Biology",m:"Study of living things"}], category:"Studies", synonyms:["Earth science"], antonyms:[] },
+  { q:367, text:"Great tiredness", answer:"Fatigue", hindi:"थकान", meaning:"Extreme tiredness from exertion", options:[{w:"Fatigue",m:"Great tiredness"},{w:"Vigour",m:"Physical strength"},{w:"Rejuvenation",m:"Giving new energy"},{w:"Potent",m:"Having great power"}], category:"Feelings", synonyms:["Exhaustion","Weariness","Tiredness"], antonyms:["Energy","Vigor","Freshness"] },
+  { q:368, text:"The science of teaching", answer:"Pedagogy", hindi:"शिक्षाशास्त्र", meaning:"The science and art of teaching", options:[{w:"Pedagogy",m:"Science of teaching"},{w:"Technology",m:"Machinery from science"},{w:"Astrology",m:"Study of celestial movements"},{w:"Zoology",m:"Study of animals"}], category:"Studies", synonyms:["Teaching","Education","Instruction"], antonyms:[] },
+  { q:369, text:"A person who investigates and settles complaints", answer:"Ombudsman", hindi:"लोकपाल", meaning:"Official who investigates complaints against organizations", options:[{w:"Ombudsman",m:"Investigates and settles complaints"},{w:"Spokesman",m:"Makes statements for group"},{w:"Bildungsroman",m:"Novel about formative years"},{w:"Superhuman",m:"Greater than normal human"}], category:"People", synonyms:["Mediator","Arbiter","Complaint officer"], antonyms:[] },
+  { q:370, text:"A character speaking to self or audience in a play", answer:"Soliloquy", hindi:"एकालाप", meaning:"Act of speaking one's thoughts aloud when alone on stage", options:[{w:"Soliloquy",m:"Character speaks to self/audience in play"},{w:"Scream",m:"Loud piercing cry"},{w:"Eloquence",m:"Fluent speaking"},{w:"Dogmatic",m:"Laying down principles as true"}], category:"Literature", synonyms:["Monologue","Aside"], antonyms:["Dialogue","Conversation"] },
+  { q:371, text:"Arrangement in order of occurrence", answer:"Chronology", hindi:"कालक्रम", meaning:"Arrangement of events in order of time", options:[{w:"Chronology",m:"Arrangement in order of occurrence"},{w:"Topography",m:"Arrangement of physical features"},{w:"Plutocracy",m:"Ruled by wealthy"},{w:"Allegory",m:"Story with hidden meaning"}], category:"General", synonyms:["Timeline","Sequence","Order"], antonyms:[] },
+  { q:372, text:"Inability to sleep", answer:"Insomnia", hindi:"अनिद्रा", meaning:"Chronic inability to fall asleep", options:[{w:"Insomnia",m:"Inability to sleep"},{w:"Mythomania",m:"Tendency to lie"},{w:"Andromania",m:"Excessive sexual desire"},{w:"Pyromania",m:"Urge to set fires"}], category:"General", synonyms:["Sleeplessness","Wakefulness"], antonyms:["Sleepiness","Drowsiness"] },
+  { q:373, text:"A drug that induces sleep", answer:"Sedative", hindi:"शामक औषधि", meaning:"Drug that induces calmness or sleep", options:[{w:"Sedative",m:"Drug that induces sleep"},{w:"Energetic",m:"Very active"},{w:"Reviver",m:"Makes strong again"},{w:"Stimulant",m:"Increases body activity"}], category:"General", synonyms:["Tranquilizer","Sleeping pill","Narcotic"], antonyms:["Stimulant","Awakener"] },
+  { q:374, text:"A sudden violent destructive event", answer:"Catastrophe", hindi:"विपत्ति", meaning:"Sudden great disaster or misfortune", options:[{w:"Catastrophe",m:"Sudden violent destructive event"},{w:"Blockbuster",m:"Hugely successful film"},{w:"Farce",m:"Badly organized situation"},{w:"Intrigue",m:"Strong curiosity"}], category:"General", synonyms:["Disaster","Calamity","Cataclysm"], antonyms:["Blessing","Miracle","Triumph"] },
+  { q:375, text:"Excessive self-admiration", answer:"Narcissist", hindi:"आत्ममुग्ध", meaning:"Person with excessive love and admiration for themselves", options:[{w:"Narcissist",m:"Excessive self-admiration"},{w:"Pantheist",m:"Believes God is in everything"},{w:"Misogamist",m:"Hatred of marriage"},{w:"Misanthropist",m:"Dislikes humankind"}], category:"People", synonyms:["Egoist","Self-admirer","Vain person"], antonyms:["Altruist","Humble person"] },
+  { q:376, text:"Husks separated by threshing", answer:"Chaff", hindi:"भूसी", meaning:"Husks of grain separated by threshing", options:[{w:"Chaff",m:"Husks separated by threshing"},{w:"Hay",m:"Dried grass for fodder"},{w:"Peel",m:"Outer skin of fruit"},{w:"Fodder",m:"Food for farm animals"}], category:"General", synonyms:["Husks","Straw","Shucks"], antonyms:["Grain","Kernel"] },
+  { q:377, text:"Fear of water", answer:"Hydrophobia", hindi:"जल भय", meaning:"Abnormal fear of water (also rabies)", options:[{w:"Hydrophobia",m:"Fear of water"},{w:"Claustrophobia",m:"Fear of enclosed spaces"},{w:"Acrophobia",m:"Fear of heights"},{w:"Cacophobia",m:"Fear of ugliness"}], category:"Phobias", synonyms:["Aquaphobia","Water fear"], antonyms:[] },
+  { q:378, text:"A skilled and eloquent speaker", answer:"Orator", hindi:"वक्ता", meaning:"A skilled and eloquent public speaker", options:[{w:"Orator",m:"Skilled eloquent speaker"},{w:"Lecturer",m:"Delivers informative talks"},{w:"Spokesperson",m:"Communicates for organization"},{w:"Actor",m:"Acts on stage/film"}], category:"People", synonyms:["Speaker","Rhetorician","Elocutionist"], antonyms:[] },
+  { q:379, text:"A legal document authorizing arrest or search", answer:"Warrant", hindi:"वारंट", meaning:"Legal document authorizing police action", options:[{w:"Warrant",m:"Legal document for arrest/search"},{w:"Decree",m:"Official order becoming law"},{w:"Licence",m:"Permission document"},{w:"Permit",m:"Legal permission document"}], category:"General", synonyms:["Authorization","Order","Summons"], antonyms:[] },
+  { q:380, text:"Open to multiple interpretations", answer:"Ambiguous", hindi:"अस्पष्ट", meaning:"Open to more than one interpretation", options:[{w:"Ambiguous",m:"Open to multiple interpretations"},{w:"Explicit",m:"Clearly stated"},{w:"Palpable",m:"Very obvious"},{w:"Tangible",m:"Real and not imaginary"}], category:"General", synonyms:["Vague","Unclear","Equivocal"], antonyms:["Clear","Explicit","Unambiguous"] },
+  { q:381, text:"To skip about playfully", answer:"Gambol", hindi:"कूदना", meaning:"To run or jump about playfully", options:[{w:"Gambol",m:"Skip about playfully"},{w:"Trundle",m:"Roll slowly"},{w:"Scramble",m:"Move quickly carelessly"},{w:"Amble",m:"Walk slowly"}], category:"Actions", synonyms:["Frolic","Skip","Romp"], antonyms:["Trudge","Plod"] },
+  { q:382, text:"A natural talent or ability", answer:"Flair", hindi:"सहज प्रतिभा", meaning:"Natural talent or aptitude", options:[{w:"Flair",m:"Natural talent"},{w:"Flavour",m:"Distinctive taste"},{w:"Favour",m:"Support/approval"},{w:"Feeling",m:"Emotional state"}], category:"General", synonyms:["Talent","Gift","Knack","Aptitude"], antonyms:["Inability","Incompetence"] },
+  { q:383, text:"A wooden frame for an artist's work", answer:"Easel", hindi:"चित्रफलक", meaning:"Wooden frame to support an artist's canvas", options:[{w:"Easel",m:"Wooden frame for artist's work"},{w:"Lectern",m:"Stand for books"},{w:"Platform",m:"Raised surface"},{w:"Podium",m:"Small raised platform"}], category:"Objects", synonyms:["Stand","Frame","Support"], antonyms:[] },
+  { q:384, text:"A place for storing grains", answer:"Granary", hindi:"अन्न भंडार", meaning:"Storehouse for threshed grain", options:[{w:"Granary",m:"Place for storing grains"},{w:"Apiary",m:"Place for bees"},{w:"Archive",m:"Historical document collection"},{w:"Dormitory",m:"Large bedroom"}], category:"Places", synonyms:["Warehouse","Storehouse","Silo"], antonyms:[] },
+  { q:385, text:"Ability to communicate effectively", answer:"Articulation", hindi:"स्पष्ट उच्चारण", meaning:"Clear and effective communication", options:[{w:"Articulation",m:"Ability to communicate effectively"},{w:"Incoherence",m:"Not clearly expressed"},{w:"Mumbling",m:"Speaking quietly/indistinctly"},{w:"Rambling",m:"Lengthy and confused"}], category:"General", synonyms:["Expression","Clarity","Eloquence"], antonyms:["Incoherence","Mumbling","Muttering"] },
+  { q:386, text:"A person with no means of livelihood", answer:"Pauper", hindi:"गरीब", meaning:"Very poor person with no means of livelihood", options:[{w:"Pauper",m:"No means of livelihood"},{w:"Worker",m:"Person who works"},{w:"Mason",m:"Skilled in stone work"},{w:"Unemployed",m:"Not in paid work"}], category:"People", synonyms:["Beggar","Destitute","Indigent"], antonyms:["Rich person","Wealthy","Millionaire"] },
+  { q:387, text:"Working quickly and effectively", answer:"Efficient", hindi:"कुशल", meaning:"Achieving maximum productivity with minimum waste", options:[{w:"Efficient",m:"Working quickly and effectively"},{w:"Effusive",m:"Expressing feelings heartily"},{w:"Extensive",m:"Covering large area"},{w:"Excellent",m:"Extremely good"}], category:"General", synonyms:["Productive","Effective","Competent"], antonyms:["Inefficient","Ineffective","Wasteful"] },
+  { q:388, text:"The art of beautiful handwriting", answer:"Calligraphy", hindi:"सुलेखन", meaning:"Art of beautiful and decorative handwriting", options:[{w:"Calligraphy",m:"Art of beautiful handwriting"},{w:"Lexicography",m:"Writing dictionaries"},{w:"Graphology",m:"Study of handwriting"},{w:"Demography",m:"Study of populations"}], category:"General", synonyms:["Penmanship","Lettering","Handwriting art"], antonyms:[] },
+  { q:389, text:"A death notice with biography", answer:"Obituary", hindi:"मृत्यु सूचना", meaning:"Published notice of a death with brief biography", options:[{w:"Obituary",m:"Death notice with biography"},{w:"Elegy",m:"Poem expressing grief"},{w:"Oblivion",m:"State of being unaware"},{w:"Advertisement",m:"Public promotion"}], category:"Literary Forms", synonyms:["Death notice","Memorial","Tribute"], antonyms:[] },
+  { q:390, text:"A person who settles in another country", answer:"Immigrant", hindi:"आप्रवासी", meaning:"Person who comes to live permanently in another country", options:[{w:"Immigrant",m:"Settles in another country"},{w:"Traveller",m:"Travels frequently"},{w:"Resident",m:"Lives in particular place"},{w:"Refugee",m:"Forced to flee country"}], category:"People", synonyms:["Newcomer","Settler","Arrival"], antonyms:["Emigrant","Native","Citizen"] },
+  { q:391, text:"Study of insects", answer:"Entomology", hindi:"कीट विज्ञान", meaning:"Scientific study of insects", options:[{w:"Entomology",m:"Study of insects"},{w:"Microbiology",m:"Study of microscopic organisms"},{w:"Anthropology",m:"Study of humans"},{w:"Ecology",m:"Study of organisms and environment"}], category:"Studies", synonyms:["Insect science"], antonyms:[] },
+  { q:392, text:"A substance that counteracts poison", answer:"Antidote", hindi:"विषहर", meaning:"Medicine or remedy to counteract poison", options:[{w:"Antidote",m:"Counteracts poison"}], category:"General", synonyms:["Counteragent","Cure","Remedy"], antonyms:["Poison","Toxin","Venom"] },
+  { q:393, text:"Happening repeatedly", answer:"Recurrent", hindi:"बार-बार होने वाला", meaning:"Occurring again periodically", options:[{w:"Recurrent",m:"Happening repeatedly"},{w:"Rapport",m:"Harmonious relationship"},{w:"Regression",m:"Return to previous state"},{w:"Recuperate",m:"Recover from illness"}], category:"General", synonyms:["Repeated","Recurring","Periodic"], antonyms:["Rare","One-time","Isolated"] },
+  { q:394, text:"A person who manages a museum collection", answer:"Curator", hindi:"संग्रहालय अधीक्षक", meaning:"Keeper or custodian of a museum's collection", options:[{w:"Curator",m:"Museum custodian"},{w:"Cartographer",m:"Map maker"},{w:"Chauffeur",m:"Paid driver"},{w:"Calligrapher",m:"Beautiful handwriting artist"}], category:"People", synonyms:["Keeper","Custodian","Guardian"], antonyms:[] },
+  { q:395, text:"Pretending to have virtues one lacks", answer:"Hypocrisy", hindi:"पाखंड", meaning:"Practice of claiming to have moral standards one does not possess", options:[{w:"Hypocrisy",m:"Pretending to have virtues one lacks"},{w:"Gullibility",m:"Easily tricked"},{w:"Shrewdness",m:"Clever and practical"},{w:"Naivety",m:"Lack of experience"}], category:"General", synonyms:["Insincerity","Deception","Falseness"], antonyms:["Sincerity","Honesty","Authenticity"] },
+  { q:396, text:"Intense happiness", answer:"Euphoria", hindi:"अत्यंत प्रसन्नता", meaning:"Feeling of intense excitement and happiness", options:[{w:"Euphoria",m:"Intense happiness"},{w:"Touché",m:"Acknowledgment of hit"},{w:"Intoxication",m:"Being drunk"},{w:"Oblivion",m:"Being completely unaware"}], category:"Feelings", synonyms:["Elation","Ecstasy","Bliss"], antonyms:["Depression","Misery","Despair"] },
+  { q:397, text:"To criticise severely", answer:"Chastise", hindi:"फटकारना", meaning:"To criticize or punish severely", options:[{w:"Chastise",m:"Criticise severely"},{w:"Rate",m:"Speed of change"},{w:"Scoff",m:"Laugh mockingly"},{w:"Remonstrate",m:"Protest about something"}], category:"Actions", synonyms:["Scold","Rebuke","Punish"], antonyms:["Praise","Commend","Compliment"] },
+  { q:398, text:"A huge fire for celebration", answer:"Bonfire", hindi:"होलिका", meaning:"Large outdoor fire for celebration or ritual", options:[{w:"Bonfire",m:"Huge fire for celebration"},{w:"Agenda",m:"List for meeting"},{w:"Campaign",m:"Organized activities for goal"},{w:"Crossfire",m:"Caught in conflict"}], category:"General", synonyms:["Blaze","Conflagration"], antonyms:[] },
+  { q:399, text:"A cat's contentment sound", answer:"Purr", hindi:"बिल्ली की गुर्राहट", meaning:"Low continuous vibrating sound made by a contented cat", options:[{w:"Purr",m:"Cat's contentment sound"},{w:"Meow",m:"Cat's cry"},{w:"Buzz",m:"Insect humming sound"},{w:"Roar",m:"Lion's deep cry"}], category:"Animals", synonyms:["Vibrating sound"], antonyms:[] },
+  { q:400, text:"Minimum number of people needed for a meeting", answer:"Quorum", hindi:"कोरम", meaning:"Minimum number of members needed for a valid meeting", options:[{w:"Quorum",m:"Minimum people for meeting"},{w:"Forum",m:"Place for discussion"},{w:"Addendum",m:"Additional information"},{w:"Decorum",m:"Polite behavior"}], category:"General", synonyms:["Minimum attendance"], antonyms:[] },
+  { q:401, text:"A place where coins are made", answer:"Mint", hindi:"टकसाल", meaning:"Place where coins are manufactured", options:[{w:"Mint",m:"Where coins are made"},{w:"Post Office",m:"For stamps and mail"},{w:"Grove",m:"Group of trees"},{w:"Trough",m:"Animal feeding container"}], category:"Places", synonyms:["Coin factory","Foundry"], antonyms:[] },
+  { q:402, text:"Something of monstrous size or power", answer:"Behemoth", hindi:"विशालकाय", meaning:"Something enormous in size or power", options:[{w:"Behemoth",m:"Monstrous size/power"},{w:"Heavyweight",m:"Heaviest boxer class"},{w:"Bulk",m:"Mass/size"},{w:"Amazon",m:"Tall strong woman"}], category:"General", synonyms:["Giant","Colossus","Leviathan"], antonyms:["Dwarf","Miniature","Tiny thing"] },
+  { q:403, text:"Doing several things at once", answer:"Multitasking", hindi:"बहुकार्य करना", meaning:"Performing multiple tasks simultaneously", options:[{w:"Multitasking",m:"Doing several things at once"},{w:"Unitasking",m:"One task at a time"},{w:"Indictment",m:"Formal criminal charge"},{w:"Blasphemy",m:"Disrespecting sacred things"}], category:"Actions", synonyms:["Juggling tasks"], antonyms:["Single-tasking","Focusing"] },
+  { q:404, text:"Without preparation", answer:"Extempore", hindi:"बिना तैयारी", meaning:"Done without preparation; impromptu", options:[{w:"Extempore",m:"Without preparation"},{w:"Inaugural",m:"Marking beginning"},{w:"Initiative",m:"Power to act first"},{w:"Maiden",m:"First attempt"}], category:"General", synonyms:["Impromptu","Spontaneous","Off-the-cuff"], antonyms:["Prepared","Rehearsed"] },
+  { q:405, text:"A person who pretends to have moral standards they don't have", answer:"Hypocrite", hindi:"पाखंडी", meaning:"Person who pretends to be virtuous but is not", options:[{w:"Hypocrite",m:"Pretends moral standards they don't have"},{w:"Actor",m:"Professional performer"},{w:"Sinner",m:"Breaks moral/religious law"},{w:"Spy",m:"Secretly obtains information"}], category:"People", synonyms:["Fraud","Pretender","Deceiver"], antonyms:["Sincere person","Saint","Honest person"] },
+  { q:406, text:"Compulsion to tell lies", answer:"Mythomania", hindi:"झूठ बोलने की लत", meaning:"Compulsive tendency to tell lies", options:[{w:"Mythomania",m:"Compulsion to tell lies"},{w:"Nymphomania",m:"Excessive female sexual desire"},{w:"Megalomania",m:"Strong wish for power"},{w:"Pyromania",m:"Desire to set fires"}], category:"General", synonyms:["Pathological lying","Pseudologia"], antonyms:[] },
+  { q:407, text:"A disease prevalent in a specific region or time", answer:"Epidemic", hindi:"महामारी", meaning:"Widespread occurrence of a disease in a community", options:[{w:"Epidemic",m:"Disease in specific region/time"},{w:"Eradicate",m:"Destroy completely"},{w:"Pandemic",m:"Disease throughout world"},{w:"Endemic",m:"Constantly present in location"}], category:"General", synonyms:["Outbreak","Plague","Pestilence"], antonyms:[] },
+  { q:408, text:"Not willing to do something", answer:"Reluctant", hindi:"अनिच्छुक", meaning:"Unwilling and hesitant", options:[{w:"Reluctant",m:"Not willing"},{w:"Comprehensive",m:"Including all elements"},{w:"Dejecting",m:"Causing sadness"},{w:"Curious",m:"Wanting to learn"}], category:"Feelings", synonyms:["Unwilling","Hesitant","Disinclined"], antonyms:["Willing","Eager","Enthusiastic"] },
+  { q:409, text:"To have a strong emotional effect on someone", answer:"Overwhelm", hindi:"अभिभूत करना", meaning:"To affect deeply with strong emotion", options:[{w:"Overwhelm",m:"Strong emotional effect"},{w:"Yield",m:"Produce/give something"},{w:"Smother",m:"Cover preventing air"},{w:"Forfeit",m:"Give up as penalty"}], category:"Feelings", synonyms:["Overcome","Devastate","Stun"], antonyms:["Underwhelm","Bore"] },
+  { q:410, text:"Very attractive and lovable", answer:"Adorable", hindi:"प्यारा", meaning:"Inspiring great affection; delightful", options:[{w:"Adorable",m:"Very attractive and lovable"},{w:"Flamboyant",m:"Attracting attention"},{w:"Laudable",m:"Deserving praise"},{w:"Mysterious",m:"Hard to understand"}], category:"General", synonyms:["Charming","Cute","Endearing","Lovely"], antonyms:["Ugly","Repulsive","Unpleasant"] },
+  { q:411, text:"One who eats all types of food", answer:"Omnivore", hindi:"सर्वाहारी", meaning:"Animal or person that eats both plants and meat", options:[{w:"Omnivore",m:"Eats all types of food"},{w:"Vegetarian",m:"No meat"},{w:"Herbivore",m:"Eats plants"},{w:"Carnivore",m:"Eats animals"}], category:"People", synonyms:["All-eater"], antonyms:["Herbivore","Carnivore"] },
+  { q:412, text:"Extremely beautiful or impressive", answer:"Magnificent", hindi:"भव्य", meaning:"Impressively beautiful, elaborate, or extravagant", options:[{w:"Magnificent",m:"Extremely beautiful/impressive"},{w:"Transient",m:"Lasting short time"},{w:"Proficient",m:"Competent/skilled"},{w:"Deficient",m:"Not enough quality"}], category:"General", synonyms:["Splendid","Grand","Glorious","Majestic"], antonyms:["Modest","Plain","Unimpressive"] },
+  { q:413, text:"A garden structure for climbing plants", answer:"Pergola", hindi:"बेलगाड़ी", meaning:"Garden feature forming a shaded walkway with climbing plants", options:[{w:"Pergola",m:"Garden structure for climbing plants"},{w:"Tomb",m:"Underground burial chamber"},{w:"Outhouse",m:"Small outside building"},{w:"Treehouse",m:"Structure in tree branches"}], category:"Places", synonyms:["Arbor","Gazebo","Arbour"], antonyms:[] },
+  { q:414, text:"A collection of historical documents", answer:"Archive", hindi:"अभिलेखागार", meaning:"Collection of historical documents or records", options:[{w:"Archive",m:"Historical document collection"},{w:"Asylum",m:"Institution for mentally ill"},{w:"Museum",m:"Building for historical objects"},{w:"Apostate",m:"Renounces beliefs"}], category:"Places", synonyms:["Repository","Records","Depository"], antonyms:[] },
+  { q:415, text:"Centre of public attention", answer:"Limelight", hindi:"सुर्खियों में", meaning:"Centre of public attention and interest", options:[{w:"Limelight",m:"Centre of public attention"},{w:"Ambiguity",m:"Open to interpretation"},{w:"Fuzziness",m:"Not clear"},{w:"Obscurity",m:"Hard to understand"}], category:"General", synonyms:["Spotlight","Public eye","Center stage"], antonyms:["Obscurity","Anonymity"] },
+  { q:416, text:"One who goes place to place begging", answer:"Mendicant", hindi:"भिखारी", meaning:"A beggar; one who lives by begging", options:[{w:"Mendicant",m:"Goes place to place begging"},{w:"Malleable",m:"Easily shaped"},{w:"Meticulous",m:"Very careful"},{w:"Misogamist",m:"Hatred of marriage"}], category:"People", synonyms:["Beggar","Vagrant","Tramp"], antonyms:["Wealthy person","Donor"] },
+  { q:417, text:"Determining disease from symptoms", answer:"Diagnosis", hindi:"निदान", meaning:"Identification of disease from symptoms", options:[{w:"Diagnosis",m:"Determining disease from symptoms"},{w:"Design",m:"Plan before making"},{w:"Decisive",m:"Quick at decisions"},{w:"Dosage",m:"Medicine amount"}], category:"General", synonyms:["Identification","Analysis","Examination"], antonyms:[] },
+  { q:418, text:"A book published after the author's death", answer:"Posthumous publication", hindi:"मरणोपरांत प्रकाशन", meaning:"Book released after the author's death", options:[{w:"Posthumous publication",m:"Book after author's death"}], category:"Literature", synonyms:["Post-mortem edition"], antonyms:[] },
+  { q:419, text:"Requiring exceptional skill or caution", answer:"Tricky", hindi:"मुश्किल", meaning:"Requiring care and skill; difficult", options:[{w:"Tricky",m:"Requiring exceptional skill/caution"},{w:"Blunt",m:"Not sharp"},{w:"Abstract",m:"Not physical"},{w:"Sustainable",m:"Maintainable"}], category:"General", synonyms:["Difficult","Challenging","Deceptive"], antonyms:["Easy","Simple","Straightforward"] },
+  { q:420, text:"Exchanging information between people", answer:"Communication", hindi:"संचार", meaning:"Act of exchanging information between people", options:[{w:"Communication",m:"Exchanging information"},{w:"Touch",m:"Physical contact"},{w:"Hold",m:"Grasp firmly"},{w:"Collaboration",m:"Working together"}], category:"General", synonyms:["Exchange","Transmission","Correspondence"], antonyms:["Silence","Isolation"] },
+  { q:421, text:"To go away secretly to escape", answer:"Abscond", hindi:"भाग जाना", meaning:"To leave hurriedly and secretly to escape", options:[{w:"Abscond",m:"Go away secretly to escape"},{w:"Vanish",m:"Disappear completely"},{w:"Excavate",m:"Dig up from ground"},{w:"Extradite",m:"Hand over accused to foreign state"}], category:"Actions", synonyms:["Flee","Escape","Decamp"], antonyms:["Remain","Stay","Surrender"] },
+  { q:422, text:"To put an end to something", answer:"Abolish", hindi:"समाप्त करना", meaning:"To formally put an end to a system or practice", options:[{w:"Abolish",m:"Put an end to"},{w:"Absorb",m:"Take in liquid"},{w:"Abide",m:"Follow a rule"},{w:"Abduct",m:"Kidnap someone"}], category:"Actions", synonyms:["Eliminate","Eradicate","End"], antonyms:["Establish","Create","Introduce"] },
+  { q:423, text:"Study of sound waves", answer:"Acoustics", hindi:"ध्वितक्स", meaning:"Branch of physics dealing with sound", options:[{w:"Acoustics",m:"Study of sound waves"},{w:"Botany",m:"Study of plants"},{w:"Physics",m:"Study of matter and energy"},{w:"Demography",m:"Study of populations"}], category:"Studies", synonyms:["Sound science"], antonyms:[] },
+  { q:424, text:"Formally accusing a public official of misconduct", answer:"Impeachment", hindi:"महाभियोग", meaning:"Process of charging a public official with misconduct", options:[{w:"Impeachment",m:"Formally accusing public official"},{w:"Condemnation",m:"Strong disapproval"},{w:"Summon",m:"Call to appear"},{w:"Allegation",m:"Statement without proof"}], category:"Government", synonyms:["Charges","Accusation","Indictment"], antonyms:["Acquittal","Exoneration"] },
+  { q:425, text:"A number used to divide another number", answer:"Divisor", hindi:"भाजक", meaning:"Number by which another number is divided", options:[{w:"Divisor",m:"Number used to divide another"},{w:"Divisible",m:"Can be divided evenly"},{w:"Remainder",m:"Leftover in division"},{w:"Quotient",m:"Result of division"}], category:"General", synonyms:["Factor","Divider"], antonyms:["Dividend"] },
+  { q:426, text:"A person who loves or collects books", answer:"Bibliophile", hindi:"पुस्तक प्रेमी", meaning:"One who loves or collects books", options:[{w:"Bibliophile",m:"Loves/collects books"},{w:"Anglophile",m:"Admires English culture"},{w:"Heliophile",m:"Attracted to sunlight"},{w:"Paedophile",m:"Attracted to children"}], category:"People", synonyms:["Book lover","Bookworm","Bibliomaniac"], antonyms:[] },
+  { q:427, text:"A group of bees", answer:"Swarm", hindi:"मधुमक्खियों का झुंड", meaning:"Large group of bees moving together", options:[{w:"Swarm",m:"Group of bees"},{w:"Gaggle",m:"Group of geese"},{w:"Shoal",m:"Group of fish"},{w:"Pack",m:"Group of dogs/wolves"}], category:"Animals", synonyms:["Cloud","Hive","Colony"], antonyms:[] },
+  { q:428, text:"To convey information calmly", answer:"Speak", hindi:"बोलना", meaning:"To convey information or express feelings in words", options:[{w:"Speak",m:"Convey information calmly"},{w:"Dictate",m:"Give orders with authority"},{w:"Teach",m:"Impart knowledge through instruction"},{w:"Spell",m:"Form words with letters"}], category:"Actions", synonyms:["Talk","Converse","Communicate"], antonyms:["Silence","Listen"] },
+  { q:429, text:"Happening every two years", answer:"Biennial", hindi:"द्विवार्षिक", meaning:"Occurring every two years", options:[{w:"Biennial",m:"Happens every two years"},{w:"Century",m:"100 years"},{w:"Annual",m:"Once a year"},{w:"Bi-monthly",m:"Every two months"}], category:"General", synonyms:["Two-yearly"], antonyms:["Annual","Monthly"] },
+  { q:430, text:"Hatred towards mankind", answer:"Misanthrope", hindi:"मानवद्वेषी", meaning:"Person who dislikes humankind", options:[{w:"Misanthrope",m:"Hatred towards mankind"},{w:"Insolvent",m:"Unable to pay debts"},{w:"Philogynist",m:"Lover of women"},{w:"Mercenary",m:"Fights for money"}], category:"People", synonyms:["People-hater","Cynic"], antonyms:["Philanthropist","Humanitarian"] },
+  { q:431, text:"A poem of lamentation on someone's death", answer:"Elegy", hindi:"विलाप गीत", meaning:"Poem of serious reflection, typically a lament for the dead", options:[{w:"Elegy",m:"Poem of lamentation on death"},{w:"Soliloquy",m:"Character's speech in play"},{w:"Tragedy",m:"Drama with downfall"},{w:"Epitaph",m:"Inscription on tombstone"}], category:"Literature", synonyms:["Lament","Dirge","Requiem"], antonyms:["Celebration","Ode","Praise poem"] },
+  { q:432, text:"Killing one's own father", answer:"Patricide", hindi:"पितृहत्या", meaning:"Act of killing one's own father", options:[{w:"Patricide",m:"Killing one's own father"},{w:"Matricide",m:"Killing one's mother"},{w:"Filicide",m:"Killing one's child"},{w:"Suicide",m:"Taking own life"}], category:"General", synonyms:["Father-killing"], antonyms:[] },
+  { q:433, text:"Life history of someone", answer:"Biography", hindi:"जीवनी", meaning:"Written account of someone's life", options:[{w:"Biography",m:"Life history of someone"}], category:"Literature", synonyms:["Life story","Profile","Memoir"], antonyms:["Autobiography","Fiction"] },
+  { q:434, text:"Study of religion", answer:"Theology", hindi:"धर्मशास्त्र", meaning:"Study of the nature of God and religious belief", options:[{w:"Theology",m:"Study of religion"},{w:"Psephology",m:"Study of elections"},{w:"Philology",m:"Study of languages"},{w:"Psychology",m:"Study of mind and behavior"}], category:"Studies", synonyms:["Divinity","Religious studies"], antonyms:[] },
+  { q:435, text:"Examination of a body after death", answer:"Post mortem", hindi:"शव परीक्षण", meaning:"Medical examination to determine cause of death", options:[{w:"Post mortem",m:"Examination after death"}], category:"General", synonyms:["Autopsy","Necropsy","Coroner's exam"], antonyms:[] },
+  { q:436, text:"Removed from a place for safety", answer:"Evacuated", hindi:"निकाला गया", meaning:"Removed from a place of danger to safety", options:[{w:"Evacuated",m:"Removed from a place"}], category:"Actions", synonyms:["Removed","Relocated","Cleared"], antonyms:["Remained","Stayed","Housed"] },
+  { q:437, text:"One who lives in solitude for religious purposes", answer:"Hermit", hindi:"संन्यासी", meaning:"Person living in solitude for religious reasons", options:[{w:"Hermit",m:"Lives in solitude for religion"},{w:"Cretin",m:"Person with disability"},{w:"Heir",m:"Entitled to inherit"},{w:"Heretic",m:"Holds contrary beliefs"}], category:"People", synonyms:["Recluse","Ascetic","Monk"], antonyms:["Socialite","Extrovert"] },
+  { q:438, text:"One who lends money at high interest", answer:"Usurer", hindi:"सूदखोर", meaning:"Person who lends money at unreasonably high interest", options:[{w:"Usurer",m:"Lends money at high interest"},{w:"Curator",m:"Manages museum collection"},{w:"Bankrupt",m:"Unable to pay debts"},{w:"Numismatist",m:"Collects/studies coins"}], category:"People", synonyms:["Loan shark","Moneylender"], antonyms:["Borrower","Benefactor"] },
+  { q:439, text:"Repeated performance of a skill to learn it", answer:"Practice", hindi:"अभ्यास", meaning:"Repeated exercise to acquire skill", options:[{w:"Practice",m:"Repeated performance of skill"}], category:"Actions", synonyms:["Training","Rehearsal","Drill"], antonyms:["Theory","Rest"] },
+  { q:440, text:"A small shop for fashionable clothes", answer:"Boutique", hindi:"बुटीक", meaning:"Small shop selling fashionable clothes or accessories", options:[{w:"Boutique",m:"Small shop for fashionable clothes"},{w:"Store",m:"Place where goods are sold"},{w:"Tailoring",m:"Making custom clothes"},{w:"Couture",m:"Custom fashion design"}], category:"Places", synonyms:["Shop","Fashion store","Outlet"], antonyms:[] },
+  { q:441, text:"To pause indecisively", answer:"Hesitate", hindi:"हिचकिचाना", meaning:"To pause before saying or doing something due to uncertainty", options:[{w:"Hesitate",m:"Pause indecisively"},{w:"Hibernate",m:"Dormant inactive state"},{w:"Hoist",m:"Lift or raise"},{w:"Hobble",m:"Walk with difficulty"}], category:"Actions", synonyms:["Waver","Falter","Dither"], antonyms:["Proceed","Continue","Decide"] },
+  { q:442, text:"An endless period of time", answer:"Eternity", hindi:"अनंतकाल", meaning:"Infinite or unending time", options:[{w:"Eternity",m:"Endless period of time"},{w:"Longevity",m:"Long life"},{w:"Impurity",m:"Being impure"},{w:"Frailty",m:"Weakness"}], category:"General", synonyms:["Infinity","Perpetuity","Forever"], antonyms:["Moment","Instant","Second"] },
+  { q:443, text:"Spreads by physical contact", answer:"Contagious", hindi:"संक्रामक", meaning:"Disease that spreads by direct contact", options:[{w:"Contagious",m:"Spreads by physical contact"}], category:"General", synonyms:["Infectious","Communicable","Transmissible"], antonyms:["Non-contagious","Non-infectious"] },
+  { q:444, text:"One who regards the whole world as their country", answer:"Cosmopolitan", hindi:"विश्व नागरिक", meaning:"Person at home in all parts of the world", options:[{w:"Cosmopolitan",m:"Regards whole world as country"},{w:"Pacifist",m:"Opposes violence"},{w:"Contemporary",m:"Living at same time"},{w:"Celibate",m:"No sexual relations"}], category:"People", synonyms:["World citizen","Globalist","Citizen of the world"], antonyms:["Nationalist","Provincial","Parochial"] },
+  { q:445, text:"A place that stores water for future use", answer:"Reservoir", hindi:"जलाशय", meaning:"Large natural or artificial lake for storing water", options:[{w:"Reservoir",m:"Stores water for future use"},{w:"Aquarium",m:"Container for aquatic life"},{w:"Resort",m:"Recreational facility"},{w:"Sanatorium",m:"Chronic illness hospital"}], category:"Places", synonyms:["Lake","Tank","Storage"], antonyms:[] },
+  { q:446, text:"To make into powder by crushing", answer:"Grind", hindi:"पीसना", meaning:"To reduce something to small particles by crushing", options:[{w:"Grind",m:"Powder by crushing"},{w:"Gain",m:"Increase in something"},{w:"Greet",m:"Welcome someone"},{w:"Guess",m:"Make assumption"}], category:"Actions", synonyms:["Crush","Mill","Pulverize"], antonyms:["Assemble","Build"] },
+  { q:447, text:"Copying others' work as one's own", answer:"Plagiarism", hindi:"साहित्यिक चोरी", meaning:"Practice of taking someone else's work and passing it off as one's own", options:[{w:"Plagiarism",m:"Copying others' work as own"},{w:"Polygamy",m:"Multiple spouses"},{w:"Preamble",m:"Introductory statement"},{w:"Extempore",m:"Without planning"}], category:"General", synonyms:["Copying","Piracy","Theft of ideas"], antonyms:["Originality","Attribution"] },
+  { q:448, text:"To fail to function normally", answer:"Malfunction", hindi:"खराबी", meaning:"Failure to function normally or adequately", options:[{w:"Malfunction",m:"Fail to function normally"},{w:"Maltreat",m:"Treat cruelly"},{w:"Mangle",m:"Damage by crushing"},{w:"Manipulate",m:"Control cleverly"}], category:"General", synonyms:["Breakdown","Failure","Glitch"], antonyms:["Function","Work","Operate"] },
+  { q:449, text:"A person skilled in making maps", answer:"Cartographer", hindi:"मानचित्रकार", meaning:"Person who makes maps", options:[{w:"Cartographer",m:"Skilled in making maps"},{w:"Calligrapher",m:"Beautiful handwriting"},{w:"Curator",m:"Museum incharge"},{w:"Cacographer",m:"Poor handwriting"}], category:"People", synonyms:["Mapmaker","Cartographist"], antonyms:[] },
+  { q:450, text:"Easily set on fire", answer:"Inflammable", hindi:"ज्वलनशील", meaning:"Easily set on fire; flammable", options:[{w:"Inflammable",m:"Easily set on fire"},{w:"Innocuous",m:"Not harmful"},{w:"Ingrained",m:"Deeply established"},{w:"Inimical",m:"Hostile or harmful"}], category:"General", synonyms:["Flammable","Combustible","Volatile"], antonyms:["Non-flammable","Fireproof","Incombustible"] },
+  { q:451, text:"A vehicle carrying dead bodies", answer:"Hearse", hindi:"शवयात्रा गाड़ी", meaning:"Vehicle for carrying a coffin to a funeral", options:[{w:"Hearse",m:"Vehicle carrying dead bodies"},{w:"Coffin",m:"Burial box"},{w:"Ambulance",m:"Vehicle for sick/injured"},{w:"Corpse",m:"Dead body"}], category:"Objects", synonyms:["Funeral car","Casket car"], antonyms:[] },
+  { q:452, text:"Mental or emotional strain", answer:"Stress", hindi:"तनाव", meaning:"State of mental or emotional strain", options:[{w:"Stress",m:"Mental/emotional strain"},{w:"Reluctance",m:"Unwillingness"},{w:"Penalty",m:"Punishment for breaking law"},{w:"Depression",m:"Permanent sadness"}], category:"Feelings", synonyms:["Tension","Pressure","Anxiety"], antonyms:["Calm","Relaxation","Peace"] },
+  { q:453, text:"A book of names and addresses", answer:"Directory", hindi:"निर्देशिका", meaning:"Book listing names, addresses, and telephone numbers", options:[{w:"Directory",m:"Book of names and addresses"},{w:"Diary",m:"Daily record book"},{w:"Encyclopaedia",m:"Information on all subjects"},{w:"Library",m:"Collection of books"}], category:"General", synonyms:["Register","List","Almanac"], antonyms:[] },
+  { q:454, text:"Generous and forgiving", answer:"Magnanimous", hindi:"उदार", meaning:"Very generous or forgiving, especially toward a rival", options:[{w:"Magnanimous",m:"Generous and forgiving"},{w:"Altruistic",m:"Devoted to others' welfare"},{w:"Fainthearted",m:"Lacking courage"},{w:"Venomous",m:"Extremely poisonous"}], category:"People", synonyms:["Generous","Noble","Big-hearted"], antonyms:["Petty","Mean","Vindictive"] },
+  { q:455, text:"A doctor who treats bone problems", answer:"Orthopaedist", hindi:"हड्डी रोग विशेषज्ञ", meaning:"Doctor specializing in bone and muscle disorders", options:[{w:"Orthopaedist",m:"Treats bone problems"},{w:"Obstetrician",m:"Delivers babies"},{w:"Gynaecologist",m:"Women's diseases"},{w:"Physiotherapist",m:"Treats movement injuries"}], category:"People", synonyms:["Bone doctor"], antonyms:[] },
+  { q:456, text:"A person who conforms to accepted behavior", answer:"Conformist", hindi:"परंपरावादी", meaning:"One who follows established customs or rules", options:[{w:"Conformist",m:"Conforms to accepted behavior"},{w:"Psychologist",m:"Studies mind/behavior"},{w:"Socialist",m:"Believes in shared resources"},{w:"Rebelist",m:"Opposes government"}], category:"People", synonyms:["Traditionalist","Orthodox person"], antonyms:["Nonconformist","Rebel","Maverick"] },
+  { q:457, text:"A lot of happiness", answer:"Joy", hindi:"आनंद", meaning:"A feeling of great happiness", options:[{w:"Joy",m:"A lot of happiness"}], category:"Feelings", synonyms:["Happiness","Delight","Bliss"], antonyms:["Sorrow","Sadness","Misery"] },
+  { q:458, text:"The constitutional right to vote", answer:"Franchise", hindi:"मताधिकार", meaning:"Right to vote in political elections", options:[{w:"Franchise",m:"Constitutional right to vote"},{w:"Polling",m:"Collecting opinions"},{w:"Voting",m:"Making choice in election"},{w:"Buttoning",m:"Fastening with buttons"}], category:"Government", synonyms:["Suffrage","Voting right","Enfranchisement"], antonyms:["Disenfranchisement"] },
+  { q:459, text:"One who lives a secluded religious life", answer:"Monk", hindi:"भिक्षु", meaning:"Person living in a monastery devoted to religious life", options:[{w:"Monk",m:"Secluded religious life"},{w:"Extrovert",m:"Outgoing person"},{w:"Chauvinist",m:"Believes group superiority"},{w:"Hypochondriac",m:"Constantly fears being sick"}], category:"People", synonyms:["Friar","Brother","Ascetic"], antonyms:["Layman","Secular person"] },
+  { q:460, text:"To argue about unimportant things", answer:"Squabble", hindi:"झगड़ना", meaning:"Noisy quarrel about petty things", options:[{w:"Squabble",m:"Argue about unimportant things"},{w:"Maintain",m:"Keep in existence"},{w:"Disagree",m:"Different opinion"},{w:"Agree",m:"Same opinion"}], category:"Actions", synonyms:["Bicker","Quarrel","Wrangle"], antonyms:["Agree","Concur","Harmonize"] },
+  { q:461, text:"A house for a dog or cat", answer:"Kennel", hindi:"कुत्ते का घर", meaning:"Small shelter for a dog or cat", options:[{w:"Kennel",m:"House for dog/cat"}], category:"Places", synonyms:["Doghouse","Pound","Cattery"], antonyms:[] },
+  { q:462, text:"Relatives or family members", answer:"Kin", hindi:"रिश्तेदार", meaning:"One's family and relations", options:[{w:"Kin",m:"Relatives or family"},{w:"Kilt",m:"Knee-length skirt"},{w:"Kindle",m:"Start a fire"},{w:"Kine",m:"Archaic for cattle"}], category:"People", synonyms:["Relatives","Family","Kinsfolk"], antonyms:["Strangers","Enemies"] },
+  { q:463, text:"Without conscious control", answer:"Involuntary", hindi:"अनैच्छिक", meaning:"Done without conscious control; automatic", options:[{w:"Involuntary",m:"Without conscious control"},{w:"Invincible",m:"Cannot be defeated"},{w:"Invoke",m:"Appeal to authority"},{w:"Invitro",m:"In test tube"}], category:"General", synonyms:["Automatic","Unconscious","Reflex"], antonyms:["Voluntary","Deliberate","Intentional"] },
+  { q:464, text:"Deserving respect and admiration", answer:"Honourable", hindi:"सम्मानित", meaning:"Deserving of respect and high regard", options:[{w:"Honourable",m:"Deserving respect/admiration"},{w:"Decent",m:"Conforming to standards"},{w:"Respectable",m:"Regarded as proper"},{w:"Trustworthy",m:"Can be relied on"}], category:"People", synonyms:["Respected","Esteemed","Noble"], antonyms:["Dishonourable","Shameful","Disreputable"] },
+  { q:465, text:"Exceptionally clever or talented", answer:"Ingenious", hindi:"चतुर", meaning:"Very clever and inventive", options:[{w:"Ingenious",m:"Exceptionally clever/talented"},{w:"Indigenous",m:"Originating naturally"},{w:"Studious",m:"Spends time studying"},{w:"Assiduous",m:"Showing great care"}], category:"People", synonyms:["Clever","Brilliant","Inventive"], antonyms:["Stupid","Dull","Unimaginative"] },
+  { q:466, text:"The character or atmosphere of a place", answer:"Ambiance", hindi:"वातावरण", meaning:"The character and atmosphere of a place", options:[{w:"Ambiance",m:"Character/atmosphere of place"},{w:"Haven",m:"Place of safety"},{w:"Cartography",m:"Art of drawing maps"},{w:"Ligament",m:"Connecting tissue"}], category:"General", synonyms:["Atmosphere","Mood","Aura","Vibe"], antonyms:[] },
+  { q:467, text:"Study of skin", answer:"Dermatology", hindi:"त्वचा विज्ञान", meaning:"Branch of medicine dealing with skin", options:[{w:"Dermatology",m:"Study of skin"},{w:"Cytology",m:"Study of cells"},{w:"Congenital",m:"Present from birth"},{w:"Dementia",m:"Loss of thinking ability"}], category:"Studies", synonyms:["Skin science"], antonyms:[] },
+  { q:468, text:"Skillful especially with hands", answer:"Dexterous", hindi:"कुशल", meaning:"Showing great skill with the hands", options:[{w:"Dexterous",m:"Skillful especially with hands"},{w:"Meticulous",m:"Very careful and precise"},{w:"Pertinent",m:"Relevant to matter"},{w:"Insomniac",m:"Difficulty sleeping"}], category:"People", synonyms:["Deft","Nimble","Adroit","Skilled"], antonyms:["Clumsy","Awkward","Unskilled"] },
+  { q:469, text:"A group of people travelling together", answer:"Caravan", hindi:"कारवां", meaning:"Group of people travelling together, often on camels", options:[{w:"Caravan",m:"Group travelling together"},{w:"Alibi",m:"Proves was elsewhere"},{w:"Bohemian",m:"Unconventional lifestyle"}], category:"People", synonyms:["Convoy","Procession","Group"], antonyms:[] },
+  { q:470, text:"Completely or thoroughly", answer:"Out and out", hindi:"पूरी तरह से", meaning:"In every way; completely", options:[{w:"Out and out",m:"Completely/thoroughly"}], category:"General", synonyms:["Completely","Totally","Utterly"], antonyms:["Partially","Slightly"] },
+  { q:471, text:"The theory or philosophy of law", answer:"Jurisprudence", hindi:"न्यायशास्त्र", meaning:"Theory or philosophy of law", options:[{w:"Jurisprudence",m:"Theory/philosophy of law"},{w:"Cosmology",m:"Study of universe origin"},{w:"Philia",m:"Strong affection"},{w:"Pacifism",m:"Opposing war"}], category:"Studies", synonyms:["Legal theory","Law philosophy"], antonyms:[] },
+  { q:472, text:"Farm animals considered as an asset", answer:"Livestock", hindi:"पशुधन", meaning:"Farm animals regarded as an asset", options:[{w:"Livestock",m:"Farm animals as asset"},{w:"Livid",m:"Extremely angry"},{w:"Livery stable",m:"Horse rental"},{w:"Livelihood",m:"Way of earning money"}], category:"Animals", synonyms:["Cattle","Farm animals","Herd"], antonyms:[] },
+  { q:473, text:"The insignia of royalty", answer:"Regalia", hindi:"राजसी चिह्न", meaning:"Emblems or insignia of royalty", options:[{w:"Regalia",m:"Insignia of royalty"},{w:"Ornaments",m:"Decorative items"},{w:"Regals",m:"Royal things"},{w:"Spectres",m:"Ghostly apparitions"}], category:"General", synonyms:["Royal insignia","Crown jewels","Emblems"], antonyms:[] },
+  { q:474, text:"A person with outstanding technical ability", answer:"Virtuoso", hindi:"कुशल कलाकार", meaning:"Person highly skilled in music or another art", options:[{w:"Virtuoso",m:"Outstanding technical ability"},{w:"Virtuous",m:"Moral excellence"},{w:"Gourmand",m:"Enjoys expensive food"},{w:"Amateur",m:"For enjoyment not profession"}], category:"People", synonyms:["Master","Expert","Genius","Prodigy"], antonyms:["Amateur","Novice","Beginner"] },
+  { q:475, text:"Money paid to a wife on separation", answer:"Alimony", hindi:"गुजारा भत्ता", meaning:"Financial support paid to a spouse after separation", options:[{w:"Alimony",m:"Paid to wife on separation"},{w:"Racism",m:"Race discrimination"},{w:"Dowry",m:"Bride's family payment"},{w:"Money",m:"Currency for transactions"}], category:"General", synonyms:["Maintenance","Spousal support"], antonyms:[] },
+  { q:476, text:"A word formed by rearranging letters of another word", answer:"Anagram", hindi:"व्यंजना", meaning:"Word formed by rearranging letters of another word", options:[{w:"Anagram",m:"Word formed by rearranging another"},{w:"Anaphora",m:"Repetition at clause start"},{w:"Amateur",m:"Hobbyist"},{w:"Accessible",m:"Easy to reach"}], category:"Literature", synonyms:["Letter rearrangement"], antonyms:[] },
+  { q:477, text:"A person who believes events are predetermined", answer:"Fatalist", hindi:"भाग्यवादी", meaning:"Person who believes all events are predetermined by fate", options:[{w:"Fatalist",m:"Believes events are predetermined"},{w:"Credulous",m:"Easily believes"},{w:"Egotist",m:"Excessively self-centered"},{w:"Aristocrat",m:"Upper class member"}], category:"People", synonyms:["Determinist","Predestinarian"], antonyms:["Free will advocate"] },
+  { q:478, text:"A person who raises money for a cause", answer:"Fundraiser", hindi:"धन संग्रहकर्ता", meaning:"Event or person organized to raise money", options:[{w:"Fundraiser",m:"Raises money for cause"},{w:"Donation",m:"Given to charity"},{w:"Volunteer",m:"Freely offers help"},{w:"Charity",m:"Generous actions for needy"}], category:"People", synonyms:["Sponsor","Collector","Organizer"], antonyms:[] },
+  { q:479, text:"Power held by the nobility or upper class", answer:"Aristocracy", hindi:"कुलीन वर्ग", meaning:"Government or rule by a privileged upper class", options:[{w:"Aristocracy",m:"Power held by nobility"},{w:"Democracy",m:"People choose rulers"},{w:"Republic",m:"Power in citizens"},{w:"Nobility",m:"Upper social class"}], category:"Government", synonyms:["Nobility","Elite","Upper class"], antonyms:["Democracy","Commonalty","Proletariat"] },
+  { q:480, text:"Money paid all at one time", answer:"Lump sum", hindi:"एकमुश्त राशि", meaning:"Single payment made at one time", options:[{w:"Lump sum",m:"Paid at one time"},{w:"Advanced amount",m:"Paid before receiving"},{w:"Credit",m:"Pay later method"},{w:"Mortgage",m:"Loan for property"}], category:"General", synonyms:["Single payment","One-time payment"], antonyms:["Installment","Recurring payment"] },
+  { q:481, text:"A person against violence and war", answer:"Pacifist", hindi:"शांतिवादी", meaning:"Person who believes in peaceful resolution of conflicts", options:[{w:"Pacifist",m:"Against violence and war"},{w:"Fatalist",m:"Believes in fate"},{w:"Hedonist",m:"Pursues pleasure"},{w:"Misogynist",m:"Dislikes women"}], category:"People", synonyms:["Peacemaker","Passivist","Peace-lover"], antonyms:["Warmonger","Militarist","Hawk"] },
+  { q:482, text:"A person new to a trade or profession", answer:"Novice", hindi:"नवसिखिया", meaning:"Person new to a field or activity; beginner", options:[{w:"Novice",m:"New to trade/profession"},{w:"Philistine",m:"No interest in art"},{w:"Martyr",m:"Dies for beliefs"},{w:"Omnipresent",m:"Present everywhere"}], category:"People", synonyms:["Beginner","Newcomer","Rookie"], antonyms:["Expert","Veteran","Professional"] },
+  { q:483, text:"A person who does not consume alcohol", answer:"Teetotaller", hindi:"मद्य त्यागी", meaning:"Person who abstains from alcohol completely", options:[{w:"Teetotaller",m:"Does not consume alcohol"}], category:"People", synonyms:["Abstainer","Non-drinker"], antonyms:["Drunkard","Alcoholic","Tippler"] },
+  { q:484, text:"A perfect example of a quality", answer:"Epitome", hindi:"साकार रूप", meaning:"Perfect example or embodiment of a quality", options:[{w:"Epitome",m:"Perfect example of quality"}], category:"General", synonyms:["Model","Embodiment","Archetype","Quintessence"], antonyms:["Antithesis","Contrary"] },
+  { q:485, text:"Bends easily without breaking", answer:"Flexible", hindi:"लचीला", meaning:"Capable of bending easily without breaking", options:[{w:"Flexible",m:"Bends easily without breaking"},{w:"Adherent",m:"Strongly supports ideas"},{w:"Inadaptable",m:"Cannot adjust"},{w:"Versatile",m:"Able to do many things"}], category:"General", synonyms:["Pliable","Supple","Elastic"], antonyms:["Rigid","Stiff","Inflexible"] },
+  { q:486, text:"To keep delaying what must be done", answer:"Procrastinate", hindi:"टालमटोल करना", meaning:"To delay or postpone action habitually", options:[{w:"Procrastinate",m:"Keep delaying what must be done"}], category:"Actions", synonyms:["Delay","Postpone","Dawdle"], antonyms:["Expedite","Hurry","Act promptly"] },
+  { q:487, text:"Unpleasantly rough or sharp", answer:"Harsh", hindi:"कठोर", meaning:"Unpleasantly rough or jarring", options:[{w:"Harsh",m:"Unpleasantly rough/sharp"},{w:"Haslet",m:"Minced pig organs food"},{w:"Hart",m:"Male deer"},{w:"Hasp",m:"Metal door clasp"}], category:"General", synonyms:["Rough","Severe","Cruel"], antonyms:["Gentle","Soft","Pleasant"] },
+  { q:488, text:"An imperfection or defect", answer:"Flaw", hindi:"दोष", meaning:"A mark or imperfection that mars a substance", options:[{w:"Flaw",m:"Imperfection/defect"},{w:"Flaunt",m:"Show off conspicuously"},{w:"Fleck",m:"Tiny spot"},{w:"Flea",m:"Blood-feeding insect"}], category:"General", synonyms:["Defect","Blemish","Fault","Weakness"], antonyms:["Perfection","Strength","Virtue"] },
+  { q:489, text:"Not guilty, lacking awareness of wrongdoing", answer:"Innocent", hindi:"निर्दोष", meaning:"Not guilty of a crime; free from moral wrong", options:[{w:"Innocent",m:"Not guilty, lacking awareness"},{w:"Ignorant",m:"Lacking knowledge"},{w:"Inexperienced",m:"Limited experience"},{w:"Cruel",m:"Causing pain intentionally"}], category:"People", synonyms:["Guileless","Pure","Blameless"], antonyms:["Guilty","Culpable","Wicked"] },
+  { q:490, text:"Renouncing the throne", answer:"Abdication", hindi:"त्यागपत्र", meaning:"Act of renouncing or giving up the throne", options:[{w:"Abdication",m:"Renouncing the throne"},{w:"Coronation",m:"Crowning ceremony"},{w:"Extradition",m:"Sending criminal back"},{w:"Exoneration",m:"Clearing of blame"}], category:"Government", synonyms:["Resignation","Renunciation","Stepping down"], antonyms:["Accession","Coronation","Enthronement"] },
+  { q:491, text:"Free time at one's disposal", answer:"Leisure", hindi:"फुर्सत", meaning:"Free time available for enjoyment", options:[{w:"Leisure",m:"Free time at disposal"},{w:"Legible",m:"Easily readable"},{w:"Lethal",m:"Capable of causing death"},{w:"Legion",m:"Large number"}], category:"General", synonyms:["Free time","Spare time","Relaxation"], antonyms:["Work","Labor","Toil"] },
+  { q:492, text:"A poem telling a story with rhythm and rhyme", answer:"Ballad", hindi:"लोकगीत", meaning:"A poem or song narrating a story in short stanzas", options:[{w:"Ballad",m:"Poem telling story with rhythm/rhyme"},{w:"Epic",m:"Long heroic poem"},{w:"Haiku",m:"17-syllable Japanese poem"},{w:"Sonnet",m:"14-line poem"}], category:"Literature", synonyms:["Song","Folk song","Narrative poem"], antonyms:[] },
+  { q:493, text:"A substance that speeds up a chemical reaction", answer:"Catalyst", hindi:"उत्प्रेरक", meaning:"Substance that increases the rate of a chemical reaction", options:[{w:"Catalyst",m:"Speeds up chemical reaction"},{w:"Reactant",m:"Participates in reaction"},{w:"Enzyme",m:"Biological catalyst"},{w:"Solute",m:"Dissolved substance"}], category:"General", synonyms:["Accelerator","Stimulus","Trigger"], antonyms:["Inhibitor","Suppressant"] },
+  { q:494, text:"Sentimental longing for the past", answer:"Nostalgia", hindi:"पुरानी यादों का अहसास", meaning:"Sentimental longing for the past", options:[{w:"Nostalgia",m:"Sentimental longing for past"},{w:"Affection",m:"Gentle fondness"},{w:"Homesickness",m:"Longing for home"},{w:"Inertia",m:"Tendency to remain in state"}], category:"Feelings", synonyms:["Longing","Wistfulness","Yearning"], antonyms:["Anticipation","Excitement"] },
+  { q:495, text:"A collection of written or spoken texts", answer:"Corpus", hindi:"संग्रह", meaning:"Large collection of written or spoken texts for analysis", options:[{w:"Corpus",m:"Collection of written/spoken texts"},{w:"Data bank",m:"Searchable information collection"},{w:"Dictionary",m:"Alphabetical word list"},{w:"Circa",m:"Approximately"}], category:"Literature", synonyms:["Collection","Compilation","Archive"], antonyms:[] },
+  { q:496, text:"A form of language peculiar to a region or group", answer:"Dialect", hindi:"बोली", meaning:"Form of a language specific to a region or social group", options:[{w:"Dialect",m:"Language form peculiar to region"},{w:"Singular",m:"Referring to one"},{w:"Slang",m:"Informal vocabulary"},{w:"Referendum",m:"Public vote"}], category:"General", synonyms:["Vernacular","Tongue","Idiom"], antonyms:["Standard language"] },
+  { q:497, text:"A person who studies the evolution of mankind", answer:"Anthropologist", hindi:"मानवशास्त्री", meaning:"Person who studies human societies and cultures", options:[{w:"Anthropologist",m:"Studies evolution of mankind"},{w:"Anarchist",m:"Believes no government needed"},{w:"Amateur",m:"Hobbyist"},{w:"Antagonist",m:"Opposes another"}], category:"People", synonyms:["Human scientist","Social scientist"], antonyms:[] },
+  { q:498, text:"Poor physical or mental condition", answer:"Ill health", hindi:"कमजोर स्वास्थ्य", meaning:"Condition of poor physical or mental well-being", options:[{w:"Ill health",m:"Poor physical/mental condition"},{w:"Ill nature",m:"Bad temper"},{w:"Illicit",m:"Forbidden by law"},{w:"Ill-fated",m:"Ending sadly"}], category:"General", synonyms:["Poor health","Unwellness","Sickness"], antonyms:["Good health","Wellness","Fitness"] },
+  { q:499, text:"A person who believes laws and government are unnecessary", answer:"Anarchist", hindi:"अराजकतावादी", meaning:"Person who advocates the abolition of government", options:[{w:"Anarchist",m:"Believes laws/government unnecessary"},{w:"Antagonist",m:"Opponent"},{w:"Antichrist",m:"Opposes Christ"},{w:"Adversary",m:"Enemy"}], category:"People", synonyms:["Rebel","Revolutionary","Nihilist"], antonyms:["Loyalist","Patriot","Conformist"] },
+  { q:500, text:"Information on all areas of knowledge", answer:"Encyclopedia", hindi:"विश्वकोश", meaning:"Comprehensive reference work covering all branches of knowledge", options:[{w:"Encyclopedia",m:"Information on all areas"},{w:"Dictionary",m:"Word meanings"},{w:"Volume",m:"Single book"},{w:"Anthology",m:"Selected writings collection"}], category:"Literature", synonyms:["Compendium","Reference work","Almanac"], antonyms:[] },
+  { q:501, text:"A place to play games and bet", answer:"Casino", hindi:"जुआघर", meaning:"Public building for gambling and entertainment", options:[{w:"Casino",m:"Place to play games and bet"},{w:"Motel",m:"Budget traveler accommodation"},{w:"Hotel",m:"Building with rooms"},{w:"Pub",m:"Social drinking place"}], category:"Places", synonyms:["Gambling house","Gaming club"], antonyms:[] },
+  { q:502, text:"A female animal that feeds its young with milk", answer:"Mammal", hindi:"स्तनधारी", meaning:"Warm-blooded vertebrate that feeds young with milk", options:[{w:"Mammal",m:"Female animal feeding young with milk"},{w:"Vertebrate",m:"Animal with backbone"},{w:"Parasite",m:"Lives on host organism"},{w:"Fauna",m:"Animal life of region"}], category:"Animals", synonyms:["Warm-blooded animal"], antonyms:["Reptile","Bird"] },
+  { q:503, text:"Certain to happen", answer:"Inevitable", hindi:"अपरिहार्य", meaning:"Certain to happen; unavoidable", options:[{w:"Inevitable",m:"Certain to happen"},{w:"Justifiable",m:"Explainable with reason"},{w:"Indispensable",m:"Absolutely necessary"},{w:"Convertible",m:"Can be transformed"}], category:"General", synonyms:["Unavoidable","Certain","Inescapable"], antonyms:["Avoidable","Preventable","Optional"] },
+  { q:504, text:"A person who makes sculptures", answer:"Sculptor", hindi:"मूर्तिकार", meaning:"Person who makes three-dimensional art forms", options:[{w:"Sculptor",m:"Makes sculptures"},{w:"Painter",m:"Creates art with paint"},{w:"Artisan",m:"Makes things skillfully"},{w:"Potter",m:"Shapes clay"}], category:"People", synonyms:["Artist","Carver","Statuary"], antonyms:[] },
+  { q:505, text:"A similarity drawn for comparison", answer:"Analogy", hindi:"सादृश्य", meaning:"Comparison between things for explanation", options:[{w:"Analogy",m:"Similarity for comparison"},{w:"Amalgamation",m:"Merging into one"},{w:"Apathy",m:"Lack of interest"},{w:"Ambiguity",m:"Lack of clarity"}], category:"General", synonyms:["Comparison","Parallel","Correspondence"], antonyms:["Contrast","Difference"] },
+  { q:506, text:"A group of people travelling together in a van", answer:"Caravan", hindi:"कारवां", meaning:"Group travelling together in a vehicle", options:[{w:"Caravan",m:"Group travelling in van"},{w:"Gypsies",m:"People without fixed home"},{w:"Brood",m:"Young birds from one mother"},{w:"Constellation",m:"Star pattern"}], category:"People", synonyms:["Convoy","Procession"], antonyms:[] },
+  { q:507, text:"A detailed description of events over a long time", answer:"Saga", hindi:"गाथा", meaning:"Long story of heroic achievement or events", options:[{w:"Saga",m:"Detailed description of events over long time"},{w:"Witness",m:"Observes events"},{w:"Journal",m:"Written daily record"},{w:"Case study",m:"In-depth analysis"}], category:"Literature", synonyms:["Epic","Chronicle","Narrative"], antonyms:[] },
+  { q:508, text:"A lengthy and aggressive speech", answer:"Harangue", hindi:"लंबा भाषण", meaning:"A lengthy and aggressive speech; tirade", options:[{w:"Harangue",m:"Lengthy aggressive speech"}], category:"General", synonyms:["Tirade","Rant","Diatribe","Rhetoric"], antonyms:["Whisper","Murmur","Brief comment"] },
+  { q:509, text:"Under the influence of drugs or alcohol", answer:"Inebriated", hindi:"नशे में", meaning:"Drunk or intoxicated", options:[{w:"Inebriated",m:"Under influence of drugs/alcohol"},{w:"Simonised",m:"Polished to high sheen"},{w:"Ponied",m:"Paid financially"},{w:"Pocked",m:"Having holes on surface"}], category:"General", synonyms:["Drunk","Intoxicated","Tipsy"], antonyms:["Sober","Temperate"] },
+  { q:510, text:"A large number of fish swimming together", answer:"Shoal", hindi:"मछलियों का झुंड", meaning:"A large number of fish swimming together", options:[{w:"Shoal",m:"Large number of fish together"},{w:"Stream",m:"Flowing body of water"},{w:"Sheaf",m:"Bundle of crops/papers"},{w:"String",m:"Thin cord"}], category:"Animals", synonyms:["School","Swarm","Group"], antonyms:[] },
+  { q:511, text:"A secret plan, usually harmful", answer:"Conspiracy", hindi:"साजिश", meaning:"Secret plan by a group to do something unlawful", options:[{w:"Conspiracy",m:"Secret plan usually wrong"},{w:"Strategy",m:"Plan for goal"},{w:"Planning",m:"Organizing in advance"},{w:"Conditioning",m:"Training to behave certain way"}], category:"General", synonyms:["Plot","Scheme","Collusion"], antonyms:["Transparency","Openness"] },
+  { q:512, text:"To put off from laziness", answer:"Procrastinate", hindi:"टालमटोल", meaning:"To delay or postpone action due to laziness", options:[{w:"Procrastinate",m:"Put off from laziness"},{w:"Accelerate",m:"Increase speed"},{w:"Lacerate",m:"Tear deeply"},{w:"Recuperate",m:"Recover from illness"}], category:"Actions", synonyms:["Delay","Dawdle","Dilly-dally"], antonyms:["Expedite","Hurry"] },
+  { q:513, text:"Wanting every detail to be correct", answer:"Fastidious", hindi:"अति सावधान", meaning:"Very attentive to accuracy and detail", options:[{w:"Fastidious",m:"Every detail correct"},{w:"Squeamish",m:"Easily disgusted"},{w:"Stubborn",m:"Refusing to change"},{w:"Impregnable",m:"Impossible to beat"}], category:"People", synonyms:["Meticulous","Particular","Fussy"], antonyms:["Careless","Sloppy","Negligent"] },
+  { q:514, text:"Absolutely necessary", answer:"Indispensable", hindi:"अपरिहार्य", meaning:"Absolutely necessary; essential", options:[{w:"Indispensable",m:"Absolutely necessary"},{w:"Insular",m:"Narrow-minded"},{w:"Isolated",m:"Separated from others"},{w:"Intolerant",m:"Unable to accept differences"}], category:"General", synonyms:["Essential","Vital","Crucial"], antonyms:["Unnecessary","Optional","Dispensable"] },
+  { q:515, text:"An animal that lives on land and in water", answer:"Amphibian", hindi:"उभयचर", meaning:"Cold-blooded vertebrate living both on land and in water", options:[{w:"Amphibian",m:"Lives on land and water"},{w:"Marine",m:"Inhabits oceans"},{w:"Arboreal",m:"Lives in trees"},{w:"Terrestrial",m:"Lives on land"}], category:"Animals", synonyms:["Semi-aquatic animal"], antonyms:[] },
+  { q:516, text:"A person who betrays their own country", answer:"Traitor", hindi:"देशद्रोही", meaning:"One who is disloyal to their own country", options:[{w:"Traitor",m:"Betrays own country"},{w:"Mascot",m:"Brings good luck symbol"},{w:"Icon",m:"Representative symbol"},{w:"Paragon",m:"Perfect example"}], category:"People", synonyms:["Betrayer","Turncoat","Defector"], antonyms:["Patriot","Loyalist","Hero"] },
+  { q:517, text:"A child who has lost both parents", answer:"Orphan", hindi:"अनाथ", meaning:"Child whose parents are dead or have abandoned them", options:[{w:"Orphan",m:"Child who lost parents"},{w:"Destitute",m:"Extremely poor"},{w:"Lout",m:"Rude person"},{w:"Desolate",m:"Deserted/abandoned"}], category:"People", synonyms:["Parentless child"], antonyms:[] },
+  { q:518, text:"Does not yield to pressure", answer:"Firm", hindi:"मजबूत", meaning:"Having a solid, almost unyielding surface or structure", options:[{w:"Firm",m:"Does not yield to pressure"},{w:"Substantial",m:"Large in amount"},{w:"Ramrod",m:"Cleaning rod for firearms"},{w:"Close",m:"Near or tight"}], category:"General", synonyms:["Solid","Hard","Steadfast"], antonyms:["Soft","Flexible","Yielding"] },
+  { q:519, text:"A person who enjoys dangerous things", answer:"Daredevil", hindi:"साहसी", meaning:"Person who enjoys doing dangerous things", options:[{w:"Daredevil",m:"Enjoys dangerous things"},{w:"Cavalier",m:"Confident about risks"},{w:"Lunatic",m:"Behaves crazily"},{w:"Gallant",m:"Brave and courteous"}], category:"People", synonyms:["Adventurer","Risk-taker","Thrill-seeker"], antonyms:["Coward","Timid person"] },
+  { q:520, text:"A neglected or homeless child", answer:"Waif", hindi:"बेसहारा बच्चा", meaning:"A homeless, neglected, or abandoned person, especially a child", options:[{w:"Waif",m:"Neglected homeless child"},{w:"Fugitive",m:"Running from law"},{w:"Vulnerable",m:"Easily harmed"},{w:"Miscreant",m:"Breaks the law"}], category:"People", synonyms:["Street child","Vagrant","Orphan"], antonyms:[] },
+  { q:521, text:"Gradual recovery of health after illness", answer:"Convalescence", hindi:"स्वास्थ्य लाभ", meaning:"Time spent recovering from illness", options:[{w:"Convalescence",m:"Gradual recovery of health"},{w:"Potency",m:"Strength/power"},{w:"Benefaction",m:"Charitable giving"},{w:"Rejuvenation",m:"Making younger/energetic"}], category:"General", synonyms:["Recovery","Recuperation","Healing"], antonyms:["Deterioration","Relapse"] },
+  { q:522, text:"Can be bent or pulled into shapes", answer:"Ductile", hindi:"तन्य", meaning:"Capable of being drawn out into wire or thread", options:[{w:"Ductile",m:"Can be bent/pulled into shapes"},{w:"Lithe",m:"Gracefully thin and flexible"},{w:"Willowy",m:"Tall, slim, graceful"},{w:"Lissome",m:"Graceful and flexible"}], category:"General", synonyms:["Malleable","Pliable","Flexible"], antonyms:["Brittle","Rigid","Inflexible"] },
+  { q:523, text:"A person who deceives under an assumed character", answer:"Imposter", hindi:"धोखेबाज", meaning:"Person who pretends to be someone else to deceive", options:[{w:"Imposter",m:"Deceives under assumed character"},{w:"Imitator",m:"Copies others' behavior"},{w:"Explorer",m:"Travels to discover"},{w:"Imbecile",m:"Low intelligence"}], category:"People", synonyms:["Fraud","Charlatan","Pretender","Fake"], antonyms:["Genuine person","Authentic"] },
+  { q:524, text:"To waver between different opinions", answer:"Vacillate", hindi:"डगमगाना", meaning:"To alternate between different opinions or actions", options:[{w:"Vacillate",m:"Waver between opinions"},{w:"Sway",m:"Move side to side"},{w:"Viaduct",m:"Bridge over valley"},{w:"Thrifty",m:"Careful with money"}], category:"Actions", synonyms:["Hesitate","Waver","Dither","Falter"], antonyms:["Decide","Resolve","Commit"] },
+  { q:525, text:"Killing a large number from an ethnic group", answer:"Genocide", hindi:"नरसंहार", meaning:"Deliberate killing of a large ethnic or national group", options:[{w:"Genocide",m:"Killing large number from ethnic group"},{w:"Homicide",m:"Killing another person"},{w:"Suicide",m:"Taking own life"},{w:"Feticide",m:"Killing a fetus"}], category:"General", synonyms:["Ethnic cleansing","Mass murder","Extermination"], antonyms:[] },
+  { q:526, text:"A group of worshippers", answer:"Congregation", hindi:"मंडली", meaning:"Group of people gathered for religious worship", options:[{w:"Congregation",m:"Group of worshippers"},{w:"Crowd",m:"Large gathering"},{w:"Caravan",m:"Group of travelers"},{w:"Constellation",m:"Star pattern"}], category:"General", synonyms:["Assembly","Flock","Gathering","Audience"], antonyms:[] },
+  { q:527, text:"A permanent home", answer:"Domicile", hindi:"स्थायी निवास", meaning:"A person's permanent legal residence", options:[{w:"Domicile",m:"Permanent home"},{w:"Oasis",m:"Fertile desert spot"},{w:"Embankment",m:"Raised earth bank"},{w:"Resort",m:"Relaxation place"}], category:"Places", synonyms:["Residence","Abode","Dwelling"], antonyms:[] },
+  { q:528, text:"Easily turns between different tasks", answer:"Versatile", hindi:"बहुमुखी", meaning:"Able to adapt to many different functions or activities", options:[{w:"Versatile",m:"Easily turns between tasks"},{w:"Turncoat",m:"Switches loyalties"},{w:"Talented",m:"Natural ability"},{w:"Flexible",m:"Adapts easily"}], category:"People", synonyms:["Multi-talented","Adaptable","All-round"], antonyms:["Limited","Specialized","Inflexible"] },
+  { q:529, text:"A big, clumsy, slow-witted person", answer:"Oaf", hindi:"मूर्ख", meaning:"A stupid, uncultivated, or clumsy person", options:[{w:"Oaf",m:"Big clumsy slow-witted person"},{w:"Slouch",m:"Stand/sit lazily"},{w:"Chump",m:"Easily deceived person"},{w:"Ape",m:"Clumsy person"}], category:"People", synonyms:["Fool","Lout","Dolt","Buffoon"], antonyms:["Genius","Intellectual"] },
+  { q:530, text:"That which cannot be heard", answer:"Inaudible", hindi:"अश्रव्य", meaning:"Unable to be heard; too quiet to hear", options:[{w:"Deaf",m:"Cannot hear"},{w:"Illegible",m:"Cannot be read"},{w:"Inaudible",m:"Cannot be heard"},{w:"Dumb",m:"Lacking intelligence"}], category:"General", synonyms:["Unhearable","Faint","Imperceptible"], antonyms:["Audible","Loud","Clear"] },
+  { q:531, text:"Causing or wanting to cause  harm or evil to someone", answer:"Malevolent", hindi:"", meaning:"Malevolent - causing or  wanting to cause harm or evil to  someone", options:[{w:"Chaotic​",m:"Chaotic​"},{w:"Malevolent",m:"Malevolent"},{w:"Insipid ​",m:"Insipid ​"},{w:"Rancour",m:"Rancour"}], category:"General", synonyms:[], antonyms:[] },
+  { q:532, text:"Causing or ending in death.", answer:"Fatal​​", hindi:"", meaning:"Fatal - causing or ending in death", options:[{w:"Gruesome​",m:"Gruesome​"},{w:"Foster",m:"Foster"},{w:"Fatal​​",m:"Fatal​​"},{w:"Grotesque",m:"Grotesque"}], category:"General", synonyms:[], antonyms:[] },
+  { q:533, text:"A person whose age is between  70 and 79 years old", answer:"Septuagenaria", hindi:"", meaning:"Septuagenarian - a person whose age is  between 70 and 79 years old", options:[{w:"Septuagenaria",m:"Septuagenaria"},{w:"Aged",m:"Aged"},{w:"Pensioner",m:"Pensioner"},{w:"Oldie",m:"Oldie"}], category:"People", synonyms:[], antonyms:[] },
+  { q:534, text:"A formal agreement between two  or more nations or peoples", answer:"Pact", hindi:"", meaning:"Pact - a formal agreement between two  or more nations or people", options:[{w:"Pact",m:"Pact"},{w:"Concord",m:"Concord"},{w:"Bond",m:"Bond"},{w:"Charter",m:"Charter"}], category:"General", synonyms:[], antonyms:[] },
+  { q:535, text:"To move or travel back and forth  frequently", answer:"Shuttle", hindi:"", meaning:"Shuttle - to move or travel  back and forth frequently", options:[{w:"Grapple​",m:"Grapple​"},{w:"Shuttle",m:"Shuttle"},{w:"Rupture ​",m:"Rupture ​"},{w:"Foster",m:"Foster"}], category:"General", synonyms:[], antonyms:[] },
+  { q:536, text:"Willing to take risks and try new  ideas.", answer:"Adventurous ​", hindi:"", meaning:"Adventurous - willing to take  risks or try new ideas", options:[{w:"Resolute​",m:"Resolute​"},{w:"Desperate",m:"Desperate"},{w:"Adventurous ​",m:"Adventurous ​"},{w:"Mythical",m:"Mythical"}], category:"General", synonyms:[], antonyms:[] },
+  { q:537, text:"A speech by an actor at the end  of a play", answer:"Epilogue  ​", hindi:"", meaning:"Epilogue - a speech by an  actor at the end of a play", options:[{w:"Prologue ​",m:"Prologue ​"},{w:"Monologue",m:"Monologue"},{w:"Epilogue  ​",m:"Epilogue  ​"},{w:"Duologue",m:"Duologue"}], category:"Literature", synonyms:[], antonyms:[] },
+  { q:538, text:"Author's explanatory remarks at  the beginning of a book", answer:"Preface ​", hindi:"", meaning:"Preface  -  Author's  explanatory remarks at the beginning of  a book  Foreword - An introduction or comments  written b", options:[{w:"Preface ​",m:"Preface ​"},{w:"Foreward",m:"Foreward"},{w:"Bibliography ​",m:"Bibliography ​"},{w:"Biography",m:"Biography"}], category:"Literature", synonyms:[], antonyms:[] },
+  { q:539, text:"Never changing and therefore   boring.", answer:"Monotonous", hindi:"", meaning:"Monotonous  -  Never  changing and therefore boring", options:[{w:"Outdated  ​",m:"Outdated  ​"},{w:"Impractical",m:"Impractical"},{w:"Idealistic  ​",m:"Idealistic  ​"},{w:"Monotonous",m:"Monotonous"}], category:"General", synonyms:[], antonyms:[] },
+  { q:540, text:"Changing secret and coded  messages in a readable form", answer:"Decoding​", hindi:"", meaning:"Decoding - Changing secret  and coded messages in a readable form  Decoupling - separating or disconnecting  elements th", options:[{w:"Decoupling​",m:"Decoupling​"},{w:"Encoding",m:"Encoding"},{w:"Decoding​",m:"Decoding​"},{w:"Encrypting",m:"Encrypting"}], category:"General", synonyms:[], antonyms:[] },
+  { q:541, text:"Enjoying or affording warm  secure shelter or cover and opportunity  for ease and contentment", answer:"Snug", hindi:"", meaning:"Snug - Enjoying or affording   warm secure shelter or cover and  opportunity for ease and contentment  Undisturbed  -  n", options:[{w:"Undisturbed​",m:"Undisturbed​"},{w:"Easeful",m:"Easeful"},{w:"Untroubled​",m:"Untroubled​"},{w:"Snug",m:"Snug"}], category:"General", synonyms:[], antonyms:[] },
+  { q:542, text:"Which cannot be read.", answer:"Illegible", hindi:"", meaning:"Illegible - which cannot be read", options:[{w:"Illiterate​",m:"Illiterate​"},{w:"Inaudible",m:"Inaudible"},{w:"Invisible​",m:"Invisible​"},{w:"Illegible",m:"Illegible"}], category:"General", synonyms:[], antonyms:[] },
+  { q:543, text:"The murder of a large number of  people from a particular nation or ethnic  group.", answer:"Genocide​", hindi:"", meaning:"Genocide - The murder of a  large number of people from a particular  nation or ethnic group", options:[{w:"Geronticide  ​",m:"Geronticide  ​"},{w:"Honour killing",m:"Honour killing"},{w:"Genocide​",m:"Genocide​"},{w:"Mariticide",m:"Mariticide"}], category:"General", synonyms:[], antonyms:[] },
+  { q:544, text:"Something  belonging  to  or  surviving from an earlier period", answer:"Relic", hindi:"", meaning:"Relic - something belonging  to or surviving from an earlier period", options:[{w:"Vestige",m:"Vestige"},{w:"Dinosaur",m:"Dinosaur"},{w:"Ruin",m:"Ruin"},{w:"Relic",m:"Relic"}], category:"Time", synonyms:[], antonyms:[] },
+  { q:545, text:"Not informed about or aware of  something", answer:"Oblivious​", hindi:"", meaning:"Oblivious - Not informed  about or aware of something  Uneducated - lacking education or  knowledge", options:[{w:"Oblivious​",m:"Oblivious​"},{w:"Uneducated",m:"Uneducated"},{w:"Absent​",m:"Absent​"},{w:"Inconscient",m:"Inconscient"}], category:"General", synonyms:[], antonyms:[] },
+  { q:546, text:"Filled with fear or dread", answer:"Tremulous", hindi:"", meaning:"Tremulous - Filled with fear or dread  Prudent - showing careful and sensible  judgment; cautious in decision-making", options:[{w:"Prudent​",m:"Prudent​"},{w:"Tremulous",m:"Tremulous"},{w:"Corpulent ​",m:"Corpulent ​"},{w:"Hysterical",m:"Hysterical"}], category:"Phobias", synonyms:[], antonyms:[] },
+  { q:547, text:"Select the option that can be used  as a one-word substitute for the italicised  group of words in the given sentence.  The prime minister paid tributes to the  martyrs by laying circular arrangement of  flowers.", answer:"wreaths", hindi:"", meaning:"Wreaths  -  circular  arrangement of flowers", options:[{w:"buds ​",m:"buds ​"},{w:"posies",m:"posies"},{w:"bouquets ​",m:"bouquets ​"},{w:"wreaths",m:"wreaths"}], category:"General", synonyms:[], antonyms:[] },
+  { q:548, text:"Outer protective layer of a tree.", answer:"Bark", hindi:"", meaning:"Bark - Outer protective layer of a tree", options:[{w:"Bark",m:"Bark"},{w:"Shrub",m:"Shrub"},{w:"Rind",m:"Rind"},{w:"Peel",m:"Peel"}], category:"General", synonyms:[], antonyms:[] },
+  { q:549, text:"The war resulted in ruthless  killing of many people.", answer:"carnage ​", hindi:"", meaning:"Carnage - killing of many people", options:[{w:"sacrilege ​",m:"sacrilege ​"},{w:"fratricide",m:"fratricide"},{w:"carnage ​",m:"carnage ​"},{w:"murder",m:"murder"}], category:"General", synonyms:[], antonyms:[] },
+  { q:550, text:"The two women chatted in a  friendly and peaceable manner, as if  they'd known one another for a lifetime.", answer:"amicably", hindi:"", meaning:"Amicably - in a friendly and  peaceable manner", options:[{w:"apparently ​",m:"apparently ​"},{w:"assuredly",m:"assuredly"},{w:"absurdly ​",m:"absurdly ​"},{w:"amicably",m:"amicably"}], category:"Time", synonyms:[], antonyms:[] },
+  { q:551, text:"Social organisation where males  are heads of families", answer:"Patriarchy", hindi:"", meaning:"Patriarchy - Social organisation where  males are heads of families", options:[{w:"Matriarchy​",m:"Matriarchy​"},{w:"Patriarchy",m:"Patriarchy"},{w:"Polygamy​",m:"Polygamy​"},{w:"Hierarchy",m:"Hierarchy"}], category:"General", synonyms:[], antonyms:[] },
+  { q:552, text:"A building containing interesting,  rare, and old objects", answer:"Museum", hindi:"", meaning:"Museum  -  A  building  containing interesting, rare, and old  objects", options:[{w:"Auditorium​",m:"Auditorium​"},{w:"Museum",m:"Museum"},{w:"Stockroom​",m:"Stockroom​"},{w:"Mansion",m:"Mansion"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:553, text:"Something which lasts forever", answer:"Eternal", hindi:"", meaning:"Eternal - Something which  lasts forever  Transitory - Something that is temporary,  or not lasting for a long time", options:[{w:"Transitory​",m:"Transitory​"},{w:"Memorable",m:"Memorable"},{w:"Pertinent​",m:"Pertinent​"},{w:"Eternal",m:"Eternal"}], category:"General", synonyms:[], antonyms:[] },
+  { q:554, text:"The wide variety of shared and  different  personal  and  group  characteristics among human beings", answer:"Diversity​", hindi:"", meaning:"Diversity - The wide variety  of shared and different personal and  group characteristics among human  beings", options:[{w:"Diversity​",m:"Diversity​"},{w:"Viscosity",m:"Viscosity"},{w:"Community ​",m:"Community ​"},{w:"Intensity",m:"Intensity"}], category:"People", synonyms:[], antonyms:[] },
+  { q:555, text:"A floating container anchored to  the sea bottom, so used for directing  ships and warning them of possible  danger", answer:"Buoy​", hindi:"", meaning:"Buoy - a floating container  anchored to the sea bottom, so used for  directing ships and warning them of   possible dan", options:[{w:"Buoy​",m:"Buoy​"},{w:"Deck",m:"Deck"},{w:"Cabin",m:"Cabin"},{w:"Channel",m:"Channel"}], category:"General", synonyms:[], antonyms:[] },
+  { q:556, text:"Jokes  and  funny  remarks  amongst friends.", answer:"Banter ​", hindi:"", meaning:"Banter - Jokes and funny  remarks amongst friends", options:[{w:"Banter ​",m:"Banter ​"},{w:"Discussion",m:"Discussion"},{w:"Meet  ​",m:"Meet  ​"},{w:"Saunter",m:"Saunter"}], category:"General", synonyms:[], antonyms:[] },
+  { q:557, text:"Substitute one word for the  italicised expression.  As a port it was notorious for its  smuggling and the trade was prohibited  by law.", answer:"illicit", hindi:"", meaning:"Illicit - As a port it was  notorious for its smuggling and the trade  was prohibited by law", options:[{w:"licit",m:"licit"},{w:"chaste",m:"chaste"},{w:"legitimate",m:"legitimate"},{w:"illicit",m:"illicit"}], category:"General", synonyms:[], antonyms:[] },
+  { q:558, text:"Giving cause for legal action", answer:"Actionable​", hindi:"", meaning:"Actionable - Giving cause for legal action  Lawful - Permitted by law", options:[{w:"Lawful​",m:"Lawful​"},{w:"Actionable​",m:"Actionable​"},{w:"Legalizing​",m:"Legalizing​"},{w:"Objectionable",m:"Objectionable"}], category:"General", synonyms:[], antonyms:[] },
+  { q:559, text:"The young of a frog", answer:"Tadpole", hindi:"", meaning:"Tadpole - the young of a frog  Kitten - a young cat", options:[{w:"Kitten",m:"Kitten"},{w:"Pup",m:"Pup"},{w:"Tadpole",m:"Tadpole"},{w:"Antelope",m:"Antelope"}], category:"General", synonyms:[], antonyms:[] },
+  { q:560, text:"Tending to associate with others  of one's kind", answer:"Gregarious​", hindi:"", meaning:"Gregarious - Tending to  associate with others of one’s kind", options:[{w:"Pedantic​",m:"Pedantic​"},{w:"Pungent",m:"Pungent"},{w:"Gregarious​",m:"Gregarious​"},{w:"Venial",m:"Venial"}], category:"General", synonyms:[], antonyms:[] },
+  { q:561, text:"The art of cutting gems", answer:"Lapidary", hindi:"", meaning:"Lapidary - The art of cutting gems  Jewelry - ornaments that are typically  made from jewels and precious metal", options:[{w:"Jewelry ​",m:"Jewelry ​"},{w:"Philately",m:"Philately"},{w:"Mining ​",m:"Mining ​"},{w:"Lapidary",m:"Lapidary"}], category:"Studies", synonyms:[], antonyms:[] },
+  { q:562, text:"The sound made by frogs", answer:"Croak", hindi:"", meaning:"Croak - The sound made by frogs", options:[{w:"Trumpet",m:"Trumpet"},{w:"Moo",m:"Moo"},{w:"Croak",m:"Croak"},{w:"Roar",m:"Roar"}], category:"General", synonyms:[], antonyms:[] },
+  { q:563, text:"That can be seen through", answer:"Transparent", hindi:"", meaning:"Transparent  -  That can be seen through  Defatigable  -  who easily gets tired", options:[{w:"Defatigable​",m:"Defatigable​"},{w:"Transparent",m:"Transparent"},{w:"Opaque​",m:"Opaque​"},{w:"Reverent",m:"Reverent"}], category:"General", synonyms:[], antonyms:[] },
+  { q:564, text:"A diagram showing the path of  planets.", answer:"Zodiac", hindi:"", meaning:"Zodiac - A diagram showing  the path of planets  Horoscope - a forecast of a person's  future", options:[{w:"Horoscope​",m:"Horoscope​"},{w:"Zodiac",m:"Zodiac"},{w:"Planetarium",m:"Planetarium"},{w:"Platitude",m:"Platitude"}], category:"General", synonyms:[], antonyms:[] },
+  { q:565, text:"Something that is necessary or  crucial", answer:"Indispensable​", hindi:"", meaning:"Indispensable - Something  that is necessary  Pedantic - concerned with minor details  or rules  Trivial - something of", options:[{w:"Pedantic​",m:"Pedantic​"},{w:"Trivial",m:"Trivial"},{w:"Indispensable​",m:"Indispensable​"},{w:"Auxiliary",m:"Auxiliary"}], category:"General", synonyms:[], antonyms:[] },
+  { q:566, text:"Persons who are unfairly blamed  for something that others have done", answer:"Scapegoat        www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS", hindi:"", meaning:"Scapegoat -  Persons who  are unfairly blamed for something that  others have done  Expedition - An organized journey fo", options:[{w:"Expedition ​",m:"Expedition ​"},{w:"Epitome",m:"Epitome"},{w:"Disdain ​",m:"Disdain ​"},{w:"Scapegoat        www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS",m:"Scapegoat        www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS"}], category:"People", synonyms:[], antonyms:[] },
+  { q:567, text:"Extreme physical or mental  sufferings", answer:"Agony​", hindi:"", meaning:"Agony - Extreme physical or  mental sufferings   Autonomy - the right or condition of  self-government", options:[{w:"Agony​",m:"Agony​"},{w:"Autonomy",m:"Autonomy"},{w:"Aviary  ​",m:"Aviary  ​"},{w:"Autocracy",m:"Autocracy"}], category:"General", synonyms:[], antonyms:[] },
+  { q:568, text:"Beginning  to exist; recently  formed or developed", answer:"Nascent", hindi:"", meaning:"Nascent - Beginning to exist;  recently formed or developed", options:[{w:"Herald​",m:"Herald​"},{w:"Blasphemy",m:"Blasphemy"},{w:"Knave​",m:"Knave​"},{w:"Nascent",m:"Nascent"}], category:"General", synonyms:[], antonyms:[] },
+  { q:569, text:"Difficult to interpret or understand", answer:"Enigmatic​", hindi:"", meaning:"Enigmatic  - Difficult to  interpret or understand", options:[{w:"Explicable​",m:"Explicable​"},{w:"Emulate",m:"Emulate"},{w:"Enigmatic​",m:"Enigmatic​"},{w:"Endemic",m:"Endemic"}], category:"General", synonyms:[], antonyms:[] },
+  { q:570, text:"Abundant garbage kept at one  place.", answer:"Heap of garbage", hindi:"", meaning:"Heap of garbage - Abundant  garbage kept at one place", options:[{w:"Mound of garbage",m:"Mound of garbage"},{w:"Hill of garbage",m:"Hill of garbage"},{w:"Lot of garbage​",m:"Lot of garbage​"},{w:"Heap of garbage",m:"Heap of garbage"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:571, text:"A person who easily believes  without demanding proof", answer:"Credulous", hindi:"", meaning:"Credulous - A person who  easily believes without demanding proof  Cosmopolitan  -  someone who has  experience of many", options:[{w:"Cosmopolitan",m:"Cosmopolitan"},{w:"Credulous",m:"Credulous"},{w:"Streetwise​",m:"Streetwise​"},{w:"Wary",m:"Wary"}], category:"People", synonyms:[], antonyms:[] },
+  { q:572, text:"A person appointed by two  parties to solve a problem", answer:"Arbitrator​", hindi:"", meaning:"Arbitrator  -  A  person  appointed by two parties to solve a  problem  Advocate - a person who publicly  supports or re", options:[{w:"Advocate​",m:"Advocate​"},{w:"Judge",m:"Judge"},{w:"Arbitrator​",m:"Arbitrator​"},{w:"Jury",m:"Jury"}], category:"People", synonyms:[], antonyms:[] },
+  { q:573, text:"The editor of a dictionary", answer:"Lexicographer​", hindi:"", meaning:"Lexicographer - The editor of  a dictionary  Scenographer - the art or job of  designing and creating scenery", options:[{w:"Scenographer",m:"Scenographer"},{w:"Stenographer",m:"Stenographer"},{w:"Lexicographer​",m:"Lexicographer​"},{w:"Hagiographer",m:"Hagiographer"}], category:"General", synonyms:[], antonyms:[] },
+  { q:574, text:"The  act  of  destroying  or  damaging something", answer:"Sabotage​", hindi:"", meaning:"Sabotage - The act of  destroying or damaging something", options:[{w:"Vengeance​",m:"Vengeance​"},{w:"Avenge",m:"Avenge"},{w:"Sabotage​",m:"Sabotage​"},{w:"Revenge",m:"Revenge"}], category:"General", synonyms:[], antonyms:[] },
+  { q:575, text:"Experiences  that  are  very  unpleasant or difficult", answer:"Ordeal", hindi:"", meaning:"Ordeal -  Experiences that  are very unpleasant or difficult  Pitfall - a hidden or unsuspected danger  or difficulty", options:[{w:"Pitfall",m:"Pitfall"},{w:"Ordeal",m:"Ordeal"},{w:"Strident",m:"Strident"},{w:"Knack",m:"Knack"}], category:"General", synonyms:[], antonyms:[] },
+  { q:576, text:"To enter unlawfully upon the land  of another", answer:"Trespass​", hindi:"", meaning:"Trespass  -  To  enter  unlawfully upon the land of another  Delinquent  -  tending to commit crime,  particularly minor", options:[{w:"Trespass​",m:"Trespass​"},{w:"Delinquent",m:"Delinquent"},{w:"Transgression​",m:"Transgression​"},{w:"Culprit",m:"Culprit"}], category:"General", synonyms:[], antonyms:[] },
+  { q:577, text:"A local meeting of party members  to select candidates, elect convention  delegates, etc", answer:"Caucus", hindi:"", meaning:"Caucus - a local meeting of  party members to select candidates,  elect convection delegates, etc", options:[{w:"Claque​",m:"Claque​"},{w:"Clique",m:"Clique"},{w:"Caravan ​",m:"Caravan ​"},{w:"Caucus",m:"Caucus"}], category:"General", synonyms:[], antonyms:[] },
+  { q:578, text:"Scientific tests or techniques  used in connection with the detection of  crime", answer:"Forensics ​", hindi:"", meaning:"Forensics - Scientific tests or  techniques used in connection with the  detection of crime  Post-mortem - an examinatio", options:[{w:"Post-mortem ​",m:"Post-mortem ​"},{w:"Autopsy",m:"Autopsy"},{w:"Forensics ​",m:"Forensics ​"},{w:"Etymology",m:"Etymology"}], category:"General", synonyms:[], antonyms:[] },
+  { q:579, text:"A portable case for holding  papers, drawing etc.", answer:"Portfolio​", hindi:"", meaning:"Portfolio - A portable case  for holding papers, drawing etc", options:[{w:"Archives​",m:"Archives​"},{w:"Creche",m:"Creche"},{w:"Portfolio​",m:"Portfolio​"},{w:"Cache",m:"Cache"}], category:"General", synonyms:[], antonyms:[] },
+  { q:580, text:"One hard to please (very selective   in his habits)", answer:"Fastidious", hindi:"", meaning:"Fastidious - One who is very  selective in his habits", options:[{w:"Dexterous​",m:"Dexterous​"},{w:"Incorrigible",m:"Incorrigible"},{w:"Sadist ​",m:"Sadist ​"},{w:"Fastidious",m:"Fastidious"}], category:"General", synonyms:[], antonyms:[] },
+  { q:581, text:"One appointed to act in place of  another", answer:"Deputy​", hindi:"", meaning:"Deputy - One appointed to  act in place of another  Minister - A head of a government  department", options:[{w:"Deputy​",m:"Deputy​"},{w:"Minister",m:"Minister"},{w:"Officer ​",m:"Officer ​"},{w:"Delegate",m:"Delegate"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:582, text:"The sound of owls", answer:"Hoot", hindi:"", meaning:"Hoot - The sound of owls  Honk - Loud horn sound made by  vehicles", options:[{w:"Honk",m:"Honk"},{w:"Neigh",m:"Neigh"},{w:"Croak",m:"Croak"},{w:"Hoot",m:"Hoot"}], category:"General", synonyms:[], antonyms:[] },
+  { q:583, text:"Rights to vote in an election", answer:"Suffrage​", hindi:"", meaning:"Suffrage - Rights to vote in an election  Potable - Safe to drink", options:[{w:"Potable​",m:"Potable​"},{w:"Propaganda",m:"Propaganda"},{w:"Suffrage​",m:"Suffrage​"},{w:"Orchard",m:"Orchard"}], category:"General", synonyms:[], antonyms:[] },
+  { q:584, text:"An adventurous or bold person", answer:"Foolhardy", hindi:"", meaning:"Foolhardy - An adventurous  or bold person  Judgemental - tending to form opinions  too quickly  Debonair  -  confident,", options:[{w:"Judgemental​",m:"Judgemental​"},{w:"Foolhardy",m:"Foolhardy"},{w:"Debonair​",m:"Debonair​"},{w:"Assaultive",m:"Assaultive"}], category:"People", synonyms:[], antonyms:[] },
+  { q:585, text:"Someone who knows a lot about  the arts, food, drink or some other  subject", answer:"Connoisseur", hindi:"", meaning:"Connoisseur - Someone who  knows a lot about the arts, food, drink or  some other subject  Pacifist - one who opposes th", options:[{w:"Pacifist ​",m:"Pacifist ​"},{w:"Gourmand",m:"Gourmand"},{w:"Cynic ​",m:"Cynic ​"},{w:"Connoisseur",m:"Connoisseur"}], category:"People", synonyms:[], antonyms:[] },
+  { q:586, text:"An exact copy of handwriting,  printing", answer:"Facsimile", hindi:"", meaning:"Facsimile - An exact copy of  handwriting, printing  Platitude - A trite or overused statement,  often lacking originali", options:[{w:"Platitude ​",m:"Platitude ​"},{w:"Maiden",m:"Maiden"},{w:"Potable ​",m:"Potable ​"},{w:"Facsimile",m:"Facsimile"}], category:"General", synonyms:[], antonyms:[] },
+  { q:587, text:"The sound of elephants", answer:"Trumpet​", hindi:"", meaning:"Trumpet - The sound of elephants  Quack - Sound made by a duck", options:[{w:"Trumpet​",m:"Trumpet​"},{w:"Quack",m:"Quack"},{w:"Laurel​",m:"Laurel​"},{w:"Screech",m:"Screech"}], category:"General", synonyms:[], antonyms:[] },
+  { q:588, text:"Government by two rulers or  authorities", answer:"Diarchy ​", hindi:"", meaning:"Diarchy - Government by two  rulers or authorities  Monarchy - a system of government in   which a person, usually a kin", options:[{w:"Monarchy​",m:"Monarchy​"},{w:"Bureaucracy",m:"Bureaucracy"},{w:"Diarchy ​",m:"Diarchy ​"},{w:"Anarchy",m:"Anarchy"}], category:"Government", synonyms:[], antonyms:[] },
+  { q:589, text:"A living organism that steals  nourishment from other living beings", answer:"Parasite", hindi:"", meaning:"Parasite - a person who  habitually relies on or exploits others and  gives nothing in return    Vector - Organism trans", options:[{w:"Vector ​",m:"Vector ​"},{w:"Parasite",m:"Parasite"},{w:"Insect  ​",m:"Insect  ​"},{w:"Co-Dependent",m:"Co-Dependent"}], category:"General", synonyms:[], antonyms:[] },
+  { q:590, text:"A long wandering or voyage  usually marked by many changes of  fortune", answer:"Odyssey ​", hindi:"", meaning:"Odyssey - A long wandering   or voyage usually marked by many  changes of fortune  Ode - a poem that is written for a sp", options:[{w:"Odyssey ​",m:"Odyssey ​"},{w:"Ode",m:"Ode"},{w:"Pilgrimage  ​",m:"Pilgrimage  ​"},{w:"Trip",m:"Trip"}], category:"General", synonyms:[], antonyms:[] },
+  { q:591, text:"One who is 100 years old or older", answer:"Centenarian", hindi:"", meaning:"Centenarian - One who is  100 years old or older  Immortal - living forever, never dying", options:[{w:"Centenarian",m:"Centenarian"},{w:"Immortal",m:"Immortal"},{w:"Mortal ​",m:"Mortal ​"},{w:"Sententia",m:"Sententia"}], category:"People", synonyms:[], antonyms:[] },
+  { q:592, text:"A ground where the last funeral  rites are performed", answer:"Crematorium", hindi:"", meaning:"Crematorium - A ground  where the last funeral rites are performed  Tomb - a place where a dead person is  buried", options:[{w:"Tomb ​",m:"Tomb ​"},{w:"Crematorium",m:"Crematorium"},{w:"Barracks ​",m:"Barracks ​"},{w:"Mortuary",m:"Mortuary"}], category:"General", synonyms:[], antonyms:[] },
+  { q:593, text:"Destruction of a fetus", answer:"Feticide", hindi:"", meaning:"www", options:[{w:"Fratricide  ​",m:"Fratricide  ​"},{w:"Ellipse",m:"Ellipse"},{w:"Abhor​",m:"Abhor​"},{w:"Feticide",m:"Feticide"}], category:"General", synonyms:[], antonyms:[] },
+  { q:594, text:"To forbid something, especially  by law", answer:"Proscribe", hindi:"", meaning:"Proscribe  -  To  forbid  something, especially by law", options:[{w:"Propound​",m:"Propound​"},{w:"Proscribe",m:"Proscribe"},{w:"Quench ​",m:"Quench ​"},{w:"Quarantine",m:"Quarantine"}], category:"General", synonyms:[], antonyms:[] },
+  { q:595, text:"Impossible to change or reverse", answer:"Irrevocable ​", hindi:"", meaning:"Irrevocable - Impossible to  change or reverse  Order - The arrangement of people or  things in a particular sequence, p", options:[{w:"Irrevocable ​",m:"Irrevocable ​"},{w:"Order",m:"Order"},{w:"Coerce​",m:"Coerce​"},{w:"Intimidate",m:"Intimidate"}], category:"General", synonyms:[], antonyms:[] },
+  { q:596, text:"An inscription on or at a tomb or a  grave", answer:"Epitaph", hindi:"", meaning:"Epitaph - An inscription on or  at a tomb or a grave  Ode - A type of lyric poem that expresses  strong emotions", options:[{w:"Ode",m:"Ode"},{w:"Imprint",m:"Imprint"},{w:"Epitaph",m:"Epitaph"},{w:"Carving",m:"Carving"}], category:"General", synonyms:[], antonyms:[] },
+  { q:597, text:"A person holding conversational  belief especially in matter of religion", answer:"Orthodox​", hindi:"", meaning:"Orthodox - A person holding   conversational belief especially in matter  of religion  Prudent - Showing careful and sen", options:[{w:"Orthodox​",m:"Orthodox​"},{w:"Prudent",m:"Prudent"},{w:"Compere​",m:"Compere​"},{w:"Arsonist",m:"Arsonist"}], category:"People", synonyms:[], antonyms:[] },
+  { q:598, text:"Information, especially of a  biased or misleading nature, used to  promote a political cause or point of  view.", answer:"Propaganda", hindi:"", meaning:"Propaganda - Information,  especially of a biased or misleading  nature, used to promote a political cause  or point of", options:[{w:"Welter​",m:"Welter​"},{w:"Propaganda",m:"Propaganda"},{w:"Potable ​",m:"Potable ​"},{w:"Orchard",m:"Orchard"}], category:"General", synonyms:[], antonyms:[] },
+  { q:599, text:"A  container  for  housing  honeybees", answer:"Hive", hindi:"", meaning:"Hive - A container for  housing honeybees  Colonies - a group of ants  Pack - a group of animals such as   wolves, hound", options:[{w:"Colonies",m:"Colonies"},{w:"Hive",m:"Hive"},{w:"Pack",m:"Pack"},{w:"Shoal",m:"Shoal"}], category:"General", synonyms:[], antonyms:[] },
+  { q:600, text:"Ethically good behaviour one has", answer:"Virtue", hindi:"", meaning:"virtue  -  Ethically  good  behaviour one has  Belief - an acceptance that something is  true", options:[{w:"Belief",m:"Belief"},{w:"Virtual",m:"Virtual"},{w:"Virtue",m:"Virtue"},{w:"Values",m:"Values"}], category:"General", synonyms:[], antonyms:[] },
+  { q:601, text:"A calculated move to gain an  advantage", answer:"Gambit", hindi:"", meaning:"Gambit - A calculated move  to gain an advantage", options:[{w:"Grunt",m:"Grunt"},{w:"Bonsai",m:"Bonsai"},{w:"Gambit",m:"Gambit"},{w:"Profit",m:"Profit"}], category:"General", synonyms:[], antonyms:[] },
+  { q:602, text:"Urging or requesting (someone)  solemnly or earnestly to do something", answer:"Adjure", hindi:"", meaning:"Adjure - Urging or requesting   (someone) solemnly or earnestly to do   something  Arrears  - Unpaid debt or overdue  am", options:[{w:"Arrears",m:"Arrears"},{w:"Adjure",m:"Adjure"},{w:"Armada",m:"Armada"},{w:"Arena",m:"Arena"}], category:"General", synonyms:[], antonyms:[] },
+  { q:603, text:"A violent wind that has a circular  movement", answer:"Regalia", hindi:"", meaning:"Hurricane - A violent wind  that has a circular movement  Drought  -  A  prolonged  period  of  abnormally low rainfall", options:[{w:"Sinecure",m:"Sinecure"},{w:"Panacea",m:"Panacea"},{w:"Souvenir",m:"Souvenir"},{w:"Regalia",m:"Regalia"}], category:"General", synonyms:[], antonyms:[] },
+  { q:605, text:"Opposing or taking arms against  a government or ruler.", answer:"Rebel", hindi:"", meaning:"Rebel - opposing or taking  arms against a government or ruler", options:[{w:"Volunteer ​",m:"Volunteer ​"},{w:"Rebel",m:"Rebel"},{w:"Rubel​",m:"Rubel​"},{w:"Participant",m:"Participant"}], category:"Government", synonyms:[], antonyms:[] },
+  { q:606, text:"License granted to an individual  or group to market a company's goods or  services in a particular territory", answer:"Franchise", hindi:"", meaning:"Franchise - licence granted  to an individual or group to market a   company's goods or services in a  particular territ", options:[{w:"Branding ​",m:"Branding ​"},{w:"Marketing",m:"Marketing"},{w:"Monopoly ​",m:"Monopoly ​"},{w:"Franchise",m:"Franchise"}], category:"General", synonyms:[], antonyms:[] },
+  { q:607, text:"A sacred place", answer:"Sanctum​", hindi:"", meaning:"Sanctum - A sacred place  Relic - an object kept for its association  with the past  Museum - a building where collectio", options:[{w:"Relic​​",m:"Relic​​"},{w:"Museum",m:"Museum"},{w:"Sanctum​",m:"Sanctum​"},{w:"Retreat",m:"Retreat"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:608, text:"To reveal a secret", answer:"Divulge", hindi:"", meaning:"Divulge - To reveal a secret  Vilify - To speak or write about someone  in a highly negative or defamatory  manner", options:[{w:"Vilify ​",m:"Vilify ​"},{w:"Divulge",m:"Divulge"},{w:"Conceal ​",m:"Conceal ​"},{w:"Discern",m:"Discern"}], category:"General", synonyms:[], antonyms:[] },
+  { q:609, text:"Select the word from the options  which is similar in meaning to the  bracketed part given in the sentence  below.  The women stared at me with (great         www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS         interest or concern).", answer:"curiosity  ​", hindi:"", meaning:"Curiosity - great interest or concern", options:[{w:"intellect  ​",m:"intellect  ​"},{w:"control",m:"control"},{w:"curiosity  ​",m:"curiosity  ​"},{w:"possession",m:"possession"}], category:"General", synonyms:[], antonyms:[] },
+  { q:610, text:"Sets of principles concerned with  the nature and appreciation of beauty", answer:"Aesthetics", hindi:"", meaning:"Aesthetics  -  Sets  of  principles concerned with the nature and  appreciation of beauty", options:[{w:"Asylum ​",m:"Asylum ​"},{w:"Aesthetics",m:"Aesthetics"},{w:"Atonement​",m:"Atonement​"},{w:"Aspersion",m:"Aspersion"}], category:"General", synonyms:[], antonyms:[] },
+  { q:611, text:"One who gives shape to stone", answer:"Sculptor", hindi:"", meaning:"Sculptor - One who gives  shape to stone  Curator - one who oversees museum  collections", options:[{w:"Curator​",m:"Curator​"},{w:"Sculptor",m:"Sculptor"},{w:"Apostate​",m:"Apostate​"},{w:"Auditor",m:"Auditor"}], category:"People", synonyms:[], antonyms:[] },
+  { q:612, text:"A group of ants", answer:"Colony", hindi:"", meaning:"Colony - A group of ants", options:[{w:"Bushel",m:"Bushel"},{w:"Pack",m:"Pack"},{w:"Colony",m:"Colony"},{w:"Comb",m:"Comb"}], category:"General", synonyms:[], antonyms:[] },
+  { q:613, text:"A small structure with one or  more open sides that is used to vend  merchandise", answer:"Kiosk", hindi:"", meaning:"Kiosk - A small structure with  one or more open sides that is used to  vend merchandise  Podium - A raised platform use", options:[{w:"Kiosk",m:"Kiosk"},{w:"Podium",m:"Podium"},{w:"Vendor",m:"Vendor"},{w:"Stand",m:"Stand"}], category:"General", synonyms:[], antonyms:[] },
+  { q:614, text:"A place where snakes are kept", answer:"Serpentarium", hindi:"", meaning:"Serpentarium - a place where  snakes are kept", options:[{w:"Apiary​",m:"Apiary​"},{w:"Hive",m:"Hive"},{w:"Aviary​",m:"Aviary​"},{w:"Serpentarium",m:"Serpentarium"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:615, text:"A historical account or biography  written from personal knowledge", answer:"Memoir​", hindi:"", meaning:"Memoir  -  A  historical  account  or  biography  written from  personal knowledge  Chronicle - a factual account or rec", options:[{w:"Chronicle​",m:"Chronicle​"},{w:"Thesis",m:"Thesis"},{w:"Memoir​",m:"Memoir​"},{w:"Blog",m:"Blog"}], category:"People", synonyms:[], antonyms:[] },
+  { q:616, text:"Disappointed and annoyed about  something", answer:"Disgruntled", hindi:"", meaning:"Disgruntled - Disappointed  and annoyed about something", options:[{w:"Contented​",m:"Contented​"},{w:"Disgruntled",m:"Disgruntled"},{w:"Dissuade​",m:"Dissuade​"},{w:"Surreal",m:"Surreal"}], category:"General", synonyms:[], antonyms:[] },
+  { q:617, text:"A specialist of kidney", answer:"Nephrologist", hindi:"", meaning:"Nephrologist - A specialist of kidney  Obstetrician - doctor with special training  in taking care of pregnant women and", options:[{w:"Obstetrician  ​",m:"Obstetrician  ​"},{w:"Nephrologist",m:"Nephrologist"},{w:"Pathologist  ​",m:"Pathologist  ​"},{w:"Primatologist",m:"Primatologist"}], category:"General", synonyms:[], antonyms:[] },
+  { q:618, text:"One who does not know reading  or writing", answer:"Illiterate", hindi:"", meaning:"Illiterate - One who does not  know reading or writing  Scholar - a person who studies and has a  lot of knowledge about", options:[{w:"Scholar ​",m:"Scholar ​"},{w:"Illiterate",m:"Illiterate"},{w:"Erudite ​",m:"Erudite ​"},{w:"Fastidious",m:"Fastidious"}], category:"People", synonyms:[], antonyms:[] },
+  { q:619, text:"Recovering from an illness or  medical treatment.", answer:"Convalescent  ​", hindi:"", meaning:"Convalescent -  Recovering  from an illness or medical treatment  Bohemian - A person who disregards  conventional stand", options:[{w:"Bohemian ​",m:"Bohemian ​"},{w:"Connoisseur",m:"Connoisseur"},{w:"Convalescent  ​",m:"Convalescent  ​"},{w:"Cosmopolitan",m:"Cosmopolitan"}], category:"General", synonyms:[], antonyms:[] },
+  { q:620, text:"One who cures eye disease.", answer:"Ophthalmologist", hindi:"", meaning:"Ophthalmologist -  One who  cures eye disease  Biologist - one who focuses on living  organisms, including plants and an", options:[{w:"Biologist​",m:"Biologist​"},{w:"Phonologist",m:"Phonologist"},{w:"Prologist​",m:"Prologist​"},{w:"Ophthalmologist",m:"Ophthalmologist"}], category:"People", synonyms:[], antonyms:[] },
+  { q:621, text:"A person who is never happy with   what he has", answer:"Malcontent​", hindi:"", meaning:"Malcontent - A person who is  never happy with what he has  Miser - someone unwilling to spend   money  Heresy - belief", options:[{w:"Miser ​",m:"Miser ​"},{w:"Heresy",m:"Heresy"},{w:"Malcontent​",m:"Malcontent​"},{w:"Malleable",m:"Malleable"}], category:"People", synonyms:[], antonyms:[] },
+  { q:622, text:"A person who has escaped from   captivity or is in hiding.", answer:"Fugitive​", hindi:"", meaning:"Fugitive - A person who has  escaped from captivity or is in hiding", options:[{w:"Fastidious​",m:"Fastidious​"},{w:"Fanatic",m:"Fanatic"},{w:"Fugitive​",m:"Fugitive​"},{w:"Farce",m:"Farce"}], category:"People", synonyms:[], antonyms:[] },
+  { q:623, text:"Affecting all or most people,  places, things, etc.", answer:"General", hindi:"", meaning:"General -  Affecting all or  most people, places, things, etc", options:[{w:"Particular​",m:"Particular​"},{w:"Pertain",m:"Pertain"},{w:"Genre​",m:"Genre​"},{w:"General",m:"General"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:624, text:"Overly concerned with minute  details or formalisms", answer:"Pedantic", hindi:"", meaning:"Pedantic - Overly concerned  with minute details or formalisms  Blasphemy - the action of speaking  sacrilegiously about", options:[{w:"Blasphemy​",m:"Blasphemy​"},{w:"Rhapsodic",m:"Rhapsodic"},{w:"Bohemian​",m:"Bohemian​"},{w:"Pedantic",m:"Pedantic"}], category:"General", synonyms:[], antonyms:[] },
+  { q:625, text:"A  publication  containing  astronomical  or  meteorological  information", answer:"Almanac", hindi:"", meaning:"Almanac - A publication  containing  astronomical  or  meteorological information  Allegory - a story, play, picture, et", options:[{w:"Allegory ​",m:"Allegory ​"},{w:"Bane",m:"Bane"},{w:"Conscription",m:"Conscription"},{w:"Almanac",m:"Almanac"}], category:"General", synonyms:[], antonyms:[] },
+  { q:626, text:"A substance for killing algae", answer:"Algaecide ​", hindi:"", meaning:"Algaecide - A substance for killing algae  Prepuce - the fold of skin surrounding  the clitoris", options:[{w:"Algaecide ​",m:"Algaecide ​"},{w:"Prepuce",m:"Prepuce"},{w:"Fungicide ​",m:"Fungicide ​"},{w:"Ruthenium",m:"Ruthenium"}], category:"General", synonyms:[], antonyms:[] },
+  { q:627, text:"A person who is interested in  material  gains  and  is  hostile  to  art/culture", answer:"Philistine ​", hindi:"", meaning:"Philistine - A person who is  interested in material gains and is hostile  to art/culture  Perfectionist - a person who", options:[{w:"Perfectionist ​",m:"Perfectionist ​"},{w:"Sage",m:"Sage"},{w:"Philistine ​",m:"Philistine ​"},{w:"Egghead",m:"Egghead"}], category:"People", synonyms:[], antonyms:[] },
+  { q:628, text:"Give off gas bubbles", answer:"Effervescent", hindi:"", meaning:"Effervescent - Give off gas bubbles  Buoyant - able to keep afloat or rise to  the top of a liquid or gas  Flat - Parall", options:[{w:"Buoyant",m:"Buoyant"},{w:"Effervescent",m:"Effervescent"},{w:"Flat",m:"Flat"},{w:"Effuse",m:"Effuse"}], category:"General", synonyms:[], antonyms:[] },
+  { q:629, text:"One who is against religion.", answer:"Heretic", hindi:"", meaning:"Heretic - One who is against religion  Poacher - someone who catches and  kills animals illegally  Lunatic - affected wi", options:[{w:"Poacher ​",m:"Poacher ​"},{w:"Lunatic",m:"Lunatic"},{w:"Bandit​",m:"Bandit​"},{w:"Heretic",m:"Heretic"}], category:"People", synonyms:[], antonyms:[] },
+  { q:630, text:"Rhythmic flow of sounds or  words.", answer:"Cadence​", hindi:"", meaning:"Cadence - Rhythmic flow of  sounds or words", options:[{w:"Credence​",m:"Credence​"},{w:"Crescents",m:"Crescents"},{w:"Cadence​",m:"Cadence​"},{w:"Copious",m:"Copious"}], category:"General", synonyms:[], antonyms:[] },
+  { q:631, text:"Fear of heights.", answer:"Acrophobia​", hindi:"", meaning:"Acrophobia - Fear of heights  Claustrophobia - Fear of closed space  Agoraphobia - fear of entering open or  crowded pla", options:[{w:"Agoraphobia​",m:"Agoraphobia​"},{w:"Claustrophobia",m:"Claustrophobia"},{w:"Acrophobia​",m:"Acrophobia​"},{w:"Homophobia",m:"Homophobia"}], category:"Phobias", synonyms:[], antonyms:[] },
+  { q:632, text:"A person who attacks or criticizes  cherished beliefs or institutions.", answer:"Iconoclast​", hindi:"", meaning:"Iconoclast - A person who  attacks or criticizes cherished beliefs or  institutions", options:[{w:"Iconoclast​",m:"Iconoclast​"},{w:"Impregnable",m:"Impregnable"},{w:"Immoral​",m:"Immoral​"},{w:"Insolvent",m:"Insolvent"}], category:"People", synonyms:[], antonyms:[] },
+  { q:633, text:"The origin or birth of a thing", answer:"Genesis​", hindi:"", meaning:"Genesis - the origin or birth of a thing  Culmination - the point at which an event  or series of events ends  Coda - th", options:[{w:"Genesis​",m:"Genesis​"},{w:"Culmination",m:"Culmination"},{w:"Coda​​",m:"Coda​​"},{w:"Quietus",m:"Quietus"}], category:"General", synonyms:[], antonyms:[] },
+  { q:634, text:"A religions war", answer:"Crusade", hindi:"", meaning:"Crusade - A religions war  Inscription  -  writing  carved  into  something made of stone or metal  Colonialism - domina", options:[{w:"Inscription  ​",m:"Inscription  ​"},{w:"Colonialism",m:"Colonialism"},{w:"Colloquial   ​",m:"Colloquial   ​"},{w:"Crusade",m:"Crusade"}], category:"General", synonyms:[], antonyms:[] },
+  { q:635, text:"Lion like characteristics", answer:"Leonine ​", hindi:"", meaning:"Leonine - Lion like characteristics  Feline  - connected with an animal of the  cat family; like a cat  Porcine - relati", options:[{w:"Leonine ​",m:"Leonine ​"},{w:"Feline",m:"Feline"},{w:"Porcine ​",m:"Porcine ​"},{w:"Lionize",m:"Lionize"}], category:"General", synonyms:[], antonyms:[] },
+  { q:636, text:"A game that results neither in  victory nor in defeat", answer:"Draw", hindi:"", meaning:"Draw - A game that results  neither in victory nor in defeat  Void - a large hole or empty space  Cynic - a person who b", options:[{w:"Void",m:"Void"},{w:"Cynic",m:"Cynic"},{w:"Draw",m:"Draw"},{w:"Fawn",m:"Fawn"}], category:"General", synonyms:[], antonyms:[] },
+  { q:637, text:"The violation or profanation of  anything sacred or held sacred", answer:"Sacrilege", hindi:"", meaning:"Sacrilege -  The violation or  profanation of anything sacred or held  sacred  Pious - strict in religious beliefs and", options:[{w:"Pious​",m:"Pious​"},{w:"Sacramental",m:"Sacramental"},{w:"Holy​ ​",m:"Holy​ ​"},{w:"Sacrilege",m:"Sacrilege"}], category:"General", synonyms:[], antonyms:[] },
+  { q:638, text:"Travelling from place to place", answer:"Itinerant", hindi:"", meaning:"Itinerant - Travelling from  place to place  Recluse - a person who lives alone or  apart from society  Arcane - mysteri", options:[{w:"Recluse​",m:"Recluse​"},{w:"Arcane",m:"Arcane"},{w:"Reverent​",m:"Reverent​"},{w:"Itinerant",m:"Itinerant"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:639, text:"A lover of good food", answer:"Gourmand​", hindi:"", meaning:"Gourmand - A lover of good food  Esoteric - the quality of having an inner  or secret meaning  Chauvinist  -  feeling  o", options:[{w:"Esoteric​",m:"Esoteric​"},{w:"Chauvinist",m:"Chauvinist"},{w:"Gourmand​",m:"Gourmand​"},{w:"Ergophile",m:"Ergophile"}], category:"General", synonyms:[], antonyms:[] },
+  { q:640, text:"Study of body functions", answer:"Physiology", hindi:"", meaning:"Physiology -  Study of body functions  Genealogy - study of the history of the  past and present members of a family or", options:[{w:"Genealogy ​",m:"Genealogy ​"},{w:"Physiology",m:"Physiology"},{w:"Psychology ​",m:"Psychology ​"},{w:"Astrology",m:"Astrology"}], category:"Studies", synonyms:[], antonyms:[] },
+  { q:641, text:"A leader who sways his followers  by his oratory", answer:"Demagogue", hindi:"", meaning:"Demagogue - A leader who  sways his followers by his oratory  Fugitive - who is running away to avoid  being captured", options:[{w:"Fugitive​",m:"Fugitive​"},{w:"Narcissist",m:"Narcissist"},{w:"Impostor​",m:"Impostor​"},{w:"Demagogue",m:"Demagogue"}], category:"General", synonyms:[], antonyms:[] },
+  { q:642, text:"A fall of water from a great  height.", answer:"Cascade", hindi:"", meaning:"Cascade - A fall of water  from a great height", options:[{w:"River​​",m:"River​​"},{w:"Stream",m:"Stream"},{w:"Typhoon​",m:"Typhoon​"},{w:"Cascade",m:"Cascade"}], category:"General", synonyms:[], antonyms:[] },
+  { q:643, text:"Exaggerated claims, not meant to  be taken seriously", answer:"Hyperbole", hindi:"", meaning:"Hyperbole - Exaggerated  claims, not meant to be taken seriously  Hyperpyrexia  -  When  your  body  temperature exceeds", options:[{w:"Hyperpyrexia​",m:"Hyperpyrexia​"},{w:"Hyperbole",m:"Hyperbole"},{w:"Hypergamy​",m:"Hypergamy​"},{w:"Hyperreal",m:"Hyperreal"}], category:"General", synonyms:[], antonyms:[] },
+  { q:644, text:"Photographers  who  follow  celebrities to get their pictures to sell  them", answer:"Paparazzi​", hindi:"", meaning:"Paparazzi - photographers  who follow celebrities to get their  pictures to sell them  Reporter - a person who writes ab", options:[{w:"Paparazzi​",m:"Paparazzi​"},{w:"Reporter",m:"Reporter"},{w:"Editor​",m:"Editor​"},{w:"Interviewer",m:"Interviewer"}], category:"General", synonyms:[], antonyms:[] },
+  { q:645, text:"The science and art of growing  vegetables, fruits and flowers", answer:"Horticulture", hindi:"", meaning:"Horticulture - the science  and art of growing vegetables, fruits and  flowers  Herpetology - the branch of zoology  con", options:[{w:"Herpetology​",m:"Herpetology​"},{w:"Horticulture",m:"Horticulture"},{w:"Haplology​",m:"Haplology​"},{w:"Herding",m:"Herding"}], category:"Studies", synonyms:[], antonyms:[] },
+  { q:646, text:"A piece of a living tissue or plant  that is transplanted surgically", answer:"Graft", hindi:"", meaning:"Graft", options:[{w:"Gratis​",m:"Gratis​"},{w:"Gourmet",m:"Gourmet"},{w:"Gracious​",m:"Gracious​"},{w:"Graft",m:"Graft"}], category:"General", synonyms:[], antonyms:[] },
+  { q:647, text:"Giving the worrying impression  that something bad is going to happen", answer:"Ominous​", hindi:"", meaning:"Ominous  -  giving  the  worrying impression that something bad  is going to happen  Desolate - lonely, very unhappy and", options:[{w:"Desolate​",m:"Desolate​"},{w:"Suspicious",m:"Suspicious"},{w:"Ominous​",m:"Ominous​"},{w:"Bleak",m:"Bleak"}], category:"General", synonyms:[], antonyms:[] },
+  { q:648, text:"A shortened version of a larger  work", answer:"Abridgement", hindi:"", meaning:"Abridgement - a shortened  version of a larger work  Summary - a short description of the  main ideas or points of somet", options:[{w:"Summary ​",m:"Summary ​"},{w:"Précis",m:"Précis"},{w:"Shorts​",m:"Shorts​"},{w:"Abridgement",m:"Abridgement"}], category:"General", synonyms:[], antonyms:[] },
+  { q:649, text:"Having or showing an excessively  high  opinion  of  one's  appearance,  abilities, or worth", answer:"Vain", hindi:"", meaning:"Vain - having or showing an  excessively  high  opinion  of  one's  appearance, abilities, or worth  Superior - better t", options:[{w:"Superior​",m:"Superior​"},{w:"Vain",m:"Vain"},{w:"Otiose ​",m:"Otiose ​"},{w:"Domineering",m:"Domineering"}], category:"General", synonyms:[], antonyms:[] },
+  { q:650, text:"A loud appeal or demand", answer:"Clamour​", hindi:"", meaning:"Clamour - a loud appeal or demand  Protest - a statement or action that  shows that you do not like or approve of  somet", options:[{w:"Protest​",m:"Protest​"},{w:"Entourage",m:"Entourage"},{w:"Clamour​",m:"Clamour​"},{w:"Gambit        www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS",m:"Gambit        www.ssccglpinnacle.com                                                 Download Pinnacle Exam Preparation App    Pinnacle          ​ ​ ​ ​ ​                                                                                                                       OWS"}], category:"General", synonyms:[], antonyms:[] },
+  { q:651, text:"The study of languages", answer:"Philology​", hindi:"", meaning:"Philology - the study of  languages  Anthropology - the study of human  beings, especially of their origin,   developmen", options:[{w:"Philology​",m:"Philology​"},{w:"Anthropology",m:"Anthropology"},{w:"Lexicography",m:"Lexicography"},{w:"Philosophy",m:"Philosophy"}], category:"Studies", synonyms:[], antonyms:[] },
+  { q:652, text:"Sharp and direct", answer:"Acerbic​", hindi:"", meaning:"Acerbic - sharp and direct  Zoonotic - a disease able to spread from  animals to humans  Anodyne - a painkilling drug or", options:[{w:"Acerbic​",m:"Acerbic​"},{w:"Zoonic",m:"Zoonic"},{w:"Anodyne​",m:"Anodyne​"},{w:"Acidic",m:"Acidic"}], category:"General", synonyms:[], antonyms:[] },
+  { q:653, text:"The act of washing oneself", answer:"Ablutions​", hindi:"", meaning:"Ablutions - the act of  washing oneself  Solutions - a way of solving a problem,  dealing with a difficult situation, et", options:[{w:"Ablutions​",m:"Ablutions​"},{w:"Solutions",m:"Solutions"},{w:"Steaming​",m:"Steaming​"},{w:"Bathing",m:"Bathing"}], category:"General", synonyms:[], antonyms:[] },
+  { q:654, text:"Rearing of silk worms is called  horticulture.", answer:"sericulture​", hindi:"", meaning:"Sericulture - rearing of silk worms   Pisciculture - the controlled breeding and  rearing of fish  Agriculture  -  keepi", options:[{w:"pisciculture​",m:"pisciculture​"},{w:"agriculture",m:"agriculture"},{w:"sericulture​",m:"sericulture​"},{w:"apiculture",m:"apiculture"}], category:"General", synonyms:[], antonyms:[] },
+  { q:655, text:"The act of killing one's mother", answer:"Matricide", hindi:"", meaning:"Matricide - the act of killing  one's mother  Regicide - the action of killing a king  Homicide - the illegal killing of", options:[{w:"Regicide​",m:"Regicide​"},{w:"Homicide",m:"Homicide"},{w:"Uxoricide​",m:"Uxoricide​"},{w:"Matricide",m:"Matricide"}], category:"General", synonyms:[], antonyms:[] },
+  { q:656, text:"Existing in a land from the earliest   times or from before the arrival of  colonists", answer:"Aboriginal ​", hindi:"", meaning:"Aboriginal - existing in a land   from the earliest times or from before  the arrival of colonists  Native - connected w", options:[{w:"Native  ​",m:"Native  ​"},{w:"Ancient",m:"Ancient"},{w:"Aboriginal ​",m:"Aboriginal ​"},{w:"Original",m:"Original"}], category:"Time", synonyms:[], antonyms:[] },
+  { q:657, text:"Holding on to something or  keeping an opinion with determination", answer:"Tenacious", hindi:"", meaning:"Tenacious - holding on to  something or keeping an opinion with  determination  Gracious - kind, polite and generous  Ob", options:[{w:"Gracious​",m:"Gracious​"},{w:"Tenacious",m:"Tenacious"},{w:"Obnoxious​",m:"Obnoxious​"},{w:"Loquacious",m:"Loquacious"}], category:"General", synonyms:[], antonyms:[] },
+  { q:658, text:"Select the option that can be used  as a one-word substitute for the given  group of words/phrase.  Fail to notice; ignore; condone (an  offence etc.)", answer:"Overlook", hindi:"", meaning:"Overlook - fail to notice;  ignore; condone an offence etc", options:[{w:"Overlong​",m:"Overlong​"},{w:"Overlie",m:"Overlie"},{w:"Overly​",m:"Overly​"},{w:"Overlook",m:"Overlook"}], category:"General", synonyms:[], antonyms:[] },
+  { q:659, text:"The action of damaging the good   reputation of someone", answer:"Defamation​", hindi:"", meaning:"Defamation - the action of  damaging  the  good  reputation  of  someone  Delegate - a person who has been  chosen to sp", options:[{w:"Delegate​",m:"Delegate​"},{w:"Degeneration",m:"Degeneration"},{w:"Defamation​",m:"Defamation​"},{w:"Defection",m:"Defection"}], category:"General", synonyms:[], antonyms:[] },
+  { q:660, text:"An exaggerated statement not to  be taken seriously or literally", answer:"Hyperbole", hindi:"", meaning:"Hyperbole - an exaggerated  statement not to be taken seriously or  literally  Hypertext - text displayed on a computer", options:[{w:"Hypertext​",m:"Hypertext​"},{w:"Hyperbole",m:"Hyperbole"},{w:"Hypocrisy​",m:"Hypocrisy​"},{w:"Hippocrates",m:"Hippocrates"}], category:"General", synonyms:[], antonyms:[] },
+  { q:661, text:"Cancel or do away with (a law or  agreement)", answer:"Abrogate​", hindi:"", meaning:"Abrogate - cancel or do away  with a law or agreement  Cancellation - the act of cancelling  something  Ultimation - the", options:[{w:"Abrogate​",m:"Abrogate​"},{w:"Cancellation",m:"Cancellation"},{w:"Ultimation​",m:"Ultimation​"},{w:"Prorogation",m:"Prorogation"}], category:"General", synonyms:[], antonyms:[] },
+  { q:662, text:"A battle or anything involving or  causing much bloodshed", answer:"Sanguinary", hindi:"", meaning:"Sanguinary - a battle or  anything involving or causing much  bloodshed  Autocracy - a system of government of a  countr", options:[{w:"Autocracy​",m:"Autocracy​"},{w:"Sanguinary",m:"Sanguinary"},{w:"Ineffable​",m:"Ineffable​"},{w:"Redtapism",m:"Redtapism"}], category:"General", synonyms:[], antonyms:[] },
+  { q:663, text:"to give up completely or agree to  forgo, especially in favour of another", answer:"Surrender​", hindi:"", meaning:"Surrender - to give up  completely or agree to forgo, especially   in favour of another  Waive - refrain stop oneself fr", options:[{w:"Waive​",m:"Waive​"},{w:"Forfeit",m:"Forfeit"},{w:"Surrender​",m:"Surrender​"},{w:"Cosign",m:"Cosign"}], category:"General", synonyms:[], antonyms:[] },
+  { q:664, text:"A poll taken of voters leaving the  voting place that is usually used for  predicting the winners.", answer:"Exit poll", hindi:"", meaning:"Exit poll - a poll taken of  voters leaving the voting place that is  usually used for predicting the winners  Consensus", options:[{w:"Consensus ​",m:"Consensus ​"},{w:"Results",m:"Results"},{w:"Census​",m:"Census​"},{w:"Exit poll",m:"Exit poll"}], category:"Places", synonyms:[], antonyms:[] },
+  { q:665, text:"A list or collection of books or   informative graphics", answer:"Catalogue", hindi:"", meaning:"Catalogue- a list or collection  of books or informative graphics  Bale- a large wrapped or bound bundle of   paper, hay", options:[{w:"Bale​ ​",m:"Bale​ ​"},{w:"Hamlet",m:"Hamlet"},{w:"Gallery​",m:"Gallery​"},{w:"Catalogue",m:"Catalogue"}], category:"Literature", synonyms:[], antonyms:[] },
+  { q:666, text:"Showing  astute  powers  of  judgment; clever and judicious", answer:"Shrewd​", hindi:"", meaning:"Shrewd - Showing astute  powers  of  ‘judgement’  clever  and  judicious", options:[{w:"Shriek​",m:"Shriek​"},{w:"Shrift",m:"Shrift"},{w:"Shrewd​",m:"Shrewd​"},{w:"Shrike",m:"Shrike"}], category:"General", synonyms:[], antonyms:[] },
+  { q:667, text:"Profitable, yielding financial gain", answer:"Lucrative", hindi:"", meaning:"Lucrative - Profitable, yielding  financial gain", options:[{w:"Ludicrous​",m:"Ludicrous​"},{w:"Lucrative",m:"Lucrative"},{w:"Luddite​",m:"Luddite​"},{w:"Lugger",m:"Lugger"}], category:"General", synonyms:[], antonyms:[] },
+  { q:668, text:"Cause to continue; keep up;  preserve (a state of affairs, an activity  etc)", answer:"maintain​", hindi:"", meaning:"Maintain  Maintain - Cause to continue; Keep up;  preserve a state of affairs, an activity etc", options:[{w:"maintop​",m:"maintop​"},{w:"mainly",m:"mainly"},{w:"maintain​",m:"maintain​"},{w:"mainstay",m:"mainstay"}], category:"General", synonyms:[], antonyms:[] },
+  { q:669, text:"Taking heed or care; being  conscious", answer:"Mindful​", hindi:"", meaning:"Mindful   Mindful - Taking heed or care; Being  conscious  Mindless - Acting or done without  justification and with no", options:[{w:"Mindful​",m:"Mindful​"},{w:"Mindless",m:"Mindless"},{w:"Mindset​",m:"Mindset​"},{w:"Mind-read",m:"Mind-read"}], category:"General", synonyms:[], antonyms:[] },
+  { q:670, text:"Honour  given  for  some  achievement.", answer:"Laurel", hindi:"", meaning:"Laurel  Laurel  -  Honour  given  for  some  achievement", options:[{w:"Placard",m:"Placard"},{w:"Laurel",m:"Laurel"},{w:"Party",m:"Party"},{w:"Gift",m:"Gift"}], category:"General", synonyms:[], antonyms:[] },
+  { q:671, text:"Killing of a person by another", answer:"Homicide   ​", hindi:"", meaning:"Homicide   Homicide - Killing of a person by another", options:[{w:"Homicide   ​",m:"Homicide   ​"},{w:"Democide",m:"Democide"},{w:"Genocide ​",m:"Genocide ​"},{w:"Euthanasia",m:"Euthanasia"}], category:"People", synonyms:[], antonyms:[] },
+  { q:672, text:"Treat with a vaccine, usually by  injection to promote immunity against a  disease", answer:"Inoculate", hindi:"", meaning:"Inoculate - treat with a  vaccine, usually by injection to promote  immunity against a disease  Innuendo - an indirect w", options:[{w:"Innuendo​",m:"Innuendo​"},{w:"Inoculate",m:"Inoculate"},{w:"Innumerate​",m:"Innumerate​"},{w:"Innovate",m:"Innovate"}], category:"General", synonyms:[], antonyms:[] },
+  { q:673, text:"None of the countries involved in  war were ready to broach the issue of  retreat.", answer:"bring up for discussion", hindi:"", meaning:"‘Broach’ means to bring up  for discussion or to start talking about a  particular subject", options:[{w:"turn down thoughtlessly",m:"turn down thoughtlessly"},{w:"bring up for discussion",m:"bring up for discussion"},{w:"underestimate the worth of",m:"underestimate the worth of"},{w:"disregard contemptuously",m:"disregard contemptuously"}], category:"General", synonyms:[], antonyms:[] },
+  { q:674, text:"Seeing the danger of a group  governed by old people, Ratan planned  to recruit young people for his project.", answer:"gerontocracy​", hindi:"", meaning:"Gerontocracy - a group  governed by old people  Adhocracy - a system of flexible and   informal organization and managem", options:[{w:"adhocracy ​",m:"adhocracy ​"},{w:"plutocracy",m:"plutocracy"},{w:"gerontocracy​",m:"gerontocracy​"},{w:"autocracy",m:"autocracy"}], category:"General", synonyms:[], antonyms:[] },
+  { q:675, text:"Take hold of forcibly or suddenly", answer:"Seize​​", hindi:"", meaning:"Seize - take hold of forcibly  or suddenly  Liberate - to allow somebody/something   to be free  Release - to allow some", options:[{w:"Seize​​",m:"Seize​​"},{w:"Liberate",m:"Liberate"},{w:"Release​",m:"Release​"},{w:"Relinquish",m:"Relinquish"}], category:"General", synonyms:[], antonyms:[] },
+  { q:676, text:"Try hard to do or achieve  something", answer:"Endeavour  ​", hindi:"", meaning:"Endeavour - try hard to do or  achieve something  Endanger  -  to  cause  danger  to  somebody/something  Hardworking -", options:[{w:"Endanger ​",m:"Endanger ​"},{w:"Hardworking",m:"Hardworking"},{w:"Endeavour  ​",m:"Endeavour  ​"},{w:"Indent",m:"Indent"}], category:"General", synonyms:[], antonyms:[] },
+  { q:677, text:"The Bishop criticised the   Government for its having no sympathy   and an uncaring attitude to the homeless   and the unemployed.", answer:"callous", hindi:"", meaning:"Callous - having no sympathy  Merciful - feeling or showing mercy  Tender - kind and loving  Compassionate - feeling or", options:[{w:"merciful ​",m:"merciful ​"},{w:"callous",m:"callous"},{w:"tender  ​",m:"tender  ​"},{w:"compassionate",m:"compassionate"}], category:"Government", synonyms:[], antonyms:[] },
+  { q:678, text:"Hatred", answer:"Malevolence", hindi:"", meaning:"Hatred - a very strong feeling   of not liking somebody/something  Malevolence - the quality of causing or  wanting to c", options:[{w:"Malleable​",m:"Malleable​"},{w:"Malevolence",m:"Malevolence"},{w:"Magnanimous",m:"Magnanimous"},{w:"Malapropos",m:"Malapropos"}], category:"General", synonyms:[], antonyms:[] },
+  { q:679, text:"a large single detached house  with single or double story", answer:"Bungalow​", hindi:"", meaning:"Bungalow  Bungalow - a large single detached  house with single or double story", options:[{w:"Suite​​",m:"Suite​​"},{w:"Apartment",m:"Apartment"},{w:"Bungalow​",m:"Bungalow​"},{w:"Penthouse",m:"Penthouse"}], category:"Literature", synonyms:[], antonyms:[] },
+  { q:680, text:"one who speaks for others", answer:"spokesperson​", hindi:"", meaning:"Spokesperson  Spokesperson - one who speaks for  others", options:[{w:"spokesperson​",m:"spokesperson​"},{w:"orator",m:"orator"},{w:"verbose​",m:"verbose​"},{w:"talkative",m:"talkative"}], category:"People", synonyms:[], antonyms:[] },
+  { q:681, text:"A doctor who specializes in heart  diseases", answer:"Cardiologist", hindi:"", meaning:"Cardiologist  Cardiologist - a doctor who specializes in  heart diseases", options:[{w:"Urologist​",m:"Urologist​"},{w:"Cardiologist",m:"Cardiologist"},{w:"Nephrologist​",m:"Nephrologist​"},{w:"Dermatologist",m:"Dermatologist"}], category:"General", synonyms:[], antonyms:[] }
+];
+
+// ===== CATEGORIES =====
+const CATEGORIES = [...new Set(OWS_DATA.map(q => q.category))].sort();
+
+// ===== RENDER =====
+const grid = document.getElementById('owsGrid');
+const filtersContainer = document.getElementById('categoryFilters');
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const noResults = document.getElementById('noResults');
+const filterInfo = document.getElementById('filterInfo');
+const showingCount = document.getElementById('showingCount');
+const totalCount = document.getElementById('totalCount');
+const backToTop = document.getElementById('backToTop');
+
+let activeCategory = 'all';
+let searchTerm = '';
+
+// Update stats
+document.getElementById('totalCategories').textContent = CATEGORIES.length;
+
+// Render category filters
+function renderFilters() {
+  filtersContainer.innerHTML = `<button class="cat-btn active" data-cat="all">All <span class="cat-count">${OWS_DATA.length}</span></button>`;
+  CATEGORIES.forEach(cat => {
+    const count = OWS_DATA.filter(q => q.category === cat).length;
+    filtersContainer.innerHTML += `<button class="cat-btn" data-cat="${cat}">${cat} <span class="cat-count">${OWS_DATA.filter(q=>q.category===cat).length}</span></button>`;
+  });
+}
+renderFilters();
+
+// Filter click
+filtersContainer.addEventListener('click', e => {
+  const btn = e.target.closest('.cat-btn');
+  if (!btn) return;
+  activeCategory = btn.dataset.cat;
+  filtersContainer.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+});
+
+// Search
+searchInput.addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  searchClear.classList.toggle('visible', searchTerm.length > 0);
+  renderCards();
+});
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  searchTerm = '';
+  searchClear.classList.remove('visible');
+  renderCards();
+});
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); }
+  if (e.key === 'Escape') { searchInput.value = ''; searchTerm = ''; searchClear.classList.remove('visible'); renderCards(); }
+});
+
+// Clear filters
+function clearFilters() {
+  activeCategory = 'all';
+  searchTerm = '';
+  searchInput.value = '';
+  searchClear.classList.remove('visible');
+  filtersContainer.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  filtersContainer.querySelector('[data-cat="all"]').classList.add('active');
+  renderCards();
+}
+
+// Pronunciation
+function pronounce(word) {
+  if ('speechSynthesis' in window) {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = 'en-US';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  }
+}
+
+// Jump to question
+function jumpToQ() {
+  const num = parseInt(document.getElementById('jumpInput').value);
+  const el = document.getElementById('ows-q' + num);
+  if (el) {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.querySelector('.sidebar-overlay').classList.remove('visible');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.style.animation = 'pulse 0.6s ease';
+    setTimeout(() => el.style.animation = '', 600);
+  }
+}
+
+// Render cards
+function renderCards() {
+  const filtered = OWS_DATA.filter(q => {
+    const catMatch = activeCategory === 'all' || q.category === activeCategory;
+    const searchMatch = !searchTerm ||
+      q.answer.toLowerCase().includes(searchTerm) ||
+      q.text.toLowerCase().includes(searchTerm) ||
+      q.meaning.toLowerCase().includes(searchTerm) ||
+      q.hindi.includes(searchTerm) ||
+      q.category.toLowerCase().includes(searchTerm) ||
+      q.options.some(o => o.w.toLowerCase().includes(searchTerm) || o.m.toLowerCase().includes(searchTerm)) ||
+      (q.synonyms && q.synonyms.some(s => s.toLowerCase().includes(searchTerm))) ||
+      (q.antonyms && q.antonyms.some(a => a.toLowerCase().includes(searchTerm)));
+    return catMatch && searchMatch;
+  });
+
+  showingCount.textContent = filtered.length;
+  totalCount.textContent = OWS_DATA.length;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    noResults.classList.add('visible');
+    filterInfo.style.display = 'none';
+    return;
+  }
+
+  noResults.classList.remove('visible');
+  filterInfo.style.display = 'flex';
+
+  grid.innerHTML = filtered.map(q => {
+    const syns = (q.synonyms && q.synonyms.length) ? `<div class="ows-extra-block"><div class="ows-extra-label">📝 Synonyms</div><div class="ows-extra-items">${q.synonyms.map(s=>`<span class="ows-extra-chip syn-chip">${s}</span>`).join('')}</div></div>` : '';
+    const ants = (q.antonyms && q.antonyms.length) ? `<div class="ows-extra-block"><div class="ows-extra-label">🔄 Antonyms</div><div class="ows-extra-items">${q.antonyms.map(a=>`<span class="ows-extra-chip ant-chip">${a}</span>`).join('')}</div></div>` : '';
+    const extras = syns || ants ? `<div class="ows-extras">${syns}${ants}</div>` : '';
+
+    return `
+    <article class="ows-card" id="ows-q${q.q}">
+      <div class="ows-header">
+        <div class="ows-badge">${q.q}</div>
+        <div class="ows-question-area">
+          <div class="ows-question">${q.text}</div>
+        </div>
+        <div class="ows-meta">
+          <span class="ows-tag">${q.category}</span>
+          <span class="ows-source">📘 Pinnacle SSC CGL</span>
+        </div>
+      </div>
+      <div class="ows-body">
+        <div class="ows-answer-box">
+          <div class="ows-answer-label">✅ Correct Answer</div>
+          <div class="ows-answer-word">
+            ${q.answer}
+            <button class="pronunciation-btn" onclick="pronounce('${q.answer}')" title="Listen to pronunciation">🔊</button>
+          </div>
+          <div class="ows-answer-meaning">${q.meaning}</div>
+          <div class="ows-hindi">🇮🇳 Hindi: ${q.hindi}</div>
+        </div>
+        <div class="ows-options-title">All Options</div>
+        <div class="ows-options-grid">
+          ${q.options.map(o => `
+            <div class="ows-option${o.w===q.answer?' correct-opt':''}">
+              <div class="ows-option-word">${o.w===q.answer?'✅ ':''}${o.w}</div>
+              <div class="ows-option-meaning">${o.m}</div>
+            </div>
+          `).join('')}
+        </div>
+        ${extras}
+      </div>
+    </article>`;
+  }).join('');
+
+  // Observe for scroll animation
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.ows-card').forEach(card => observer.observe(card));
+  });
+}
+
+// Scroll animation observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+// Back to top
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+  // Progress bar
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.querySelector('.progress-bar').style.width = (winScroll / height * 100) + '%';
+});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+function setTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeToggle.innerHTML = dark ? '☀️ <span>Light</span>' : '🌙 <span>Dark</span>';
+  localStorage.setItem('ows-theme', dark ? 'dark' : 'light');
+}
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  setTheme(!isDark);
+});
+// Load saved theme
+if (localStorage.getItem('ows-theme') === 'dark' || (!localStorage.getItem('ows-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  setTheme(true);
+}
+
+// Initial render
+renderCards();
+</script>
+</body>
+</html>
