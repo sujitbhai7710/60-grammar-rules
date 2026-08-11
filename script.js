@@ -12,7 +12,13 @@
   let scrollTicking = false;
   let searchTimeout;
 
-  document.addEventListener('DOMContentLoaded', init);
+  // Handle both cases: script with defer (DOM ready) or normal (DOM not ready)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    // DOM already ready (defer case) — run init immediately
+    init();
+  }
 
   function init() {
     body = document.body;
