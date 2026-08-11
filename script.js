@@ -21,6 +21,8 @@
   }
 
   function init() {
+    window._initRan = (window._initRan || 0) + 1;
+    console.log('init() called, run #' + window._initRan);
     body = document.body;
     progressBar = document.querySelector('.progress-bar');
     themeToggle = document.querySelector('.theme-toggle');
@@ -66,6 +68,8 @@
 
   // ===== Card Reveal (CRITICAL — adds .visible class so opacity goes from 0 to 1) =====
   function initCardReveal() {
+    window._cardRevealRan = true;
+    console.log('initCardReveal() called, ruleCards count: ' + ruleCards.length);
     const observerOptions = {
       root: null,
       rootMargin: '200px 0px -50px 0px',
@@ -83,6 +87,16 @@
       card.style.transitionDelay = Math.min(i * 30, 300) + 'ms';
       observer.observe(card);
     });
+    // Also add .visible immediately to any card already in viewport (in case observer doesn't fire on load)
+    setTimeout(() => {
+      ruleCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
+          card.classList.add('visible');
+        }
+      });
+      console.log('After initial check, visible cards: ' + document.querySelectorAll('.rule-card.visible').length);
+    }, 100);
   }
 
   // ===== Lazy-Load Questions =====
