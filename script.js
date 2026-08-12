@@ -99,19 +99,23 @@
     // Start fetching questions.json immediately
     questionsLoading = fetch('questions.json').then(r => r.json()).then(data => {
       questionsData = data;
+      console.log('Questions loaded:', Object.keys(data).length, 'rules');
+      // After data loads, render ALL questions immediately
+      ruleCards.forEach(card => {
+        renderQuestionsForRule(card);
+      });
     }).catch(err => {
       console.error('Failed to load questions:', err);
     });
 
-    // Set up IntersectionObserver to render questions when rule card is near viewport
+    // Also set up IntersectionObserver as a fallback for any cards not yet rendered
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           renderQuestionsForRule(entry.target);
-          io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '500px 0px' });
+    }, { rootMargin: '1000px 0px' });
 
     ruleCards.forEach(card => io.observe(card));
   }
@@ -119,6 +123,8 @@
   function renderQuestionsForRule(card) {
     const placeholder = card.querySelector('.examples-list.prev-year-questions[data-rule]');
     if (!placeholder) return;
+    // Skip if already rendered
+    if (placeholder.querySelector('.example.prev-year')) return;
     const ruleNum = placeholder.getAttribute('data-rule');
     questionsLoading.then(() => {
       if (!questionsData || !questionsData[ruleNum]) {
