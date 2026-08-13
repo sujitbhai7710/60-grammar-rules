@@ -1,5 +1,5 @@
-// ===== Grammar Rules Website - Lazy-Loaded Script =====
-// Performance: questions loaded from JSON, rendered on-scroll via IntersectionObserver
+// ===== Grammar Rules Website - Paginated Script =====
+// Performance: questions loaded from JSON, paginated 5 per page per rule
 
 (function() {
   'use strict';
@@ -11,12 +11,14 @@
   let ruleCards = null, navLinks = null;
   let scrollTicking = false;
   let searchTimeout;
+  const QUESTIONS_PER_PAGE = 5;
 
-  // Handle both cases: script with defer (DOM ready) or normal (DOM not ready)
+  // Pagination state: { ruleNum: currentPage }
+  let paginationState = {};
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    // DOM already ready (defer case) — run init immediately
     init();
   }
 
@@ -42,7 +44,6 @@
     initCounters();
     initKeyboardShortcuts();
     initLazyQuestions();
-    // Reveal rule cards on scroll (this is what was missing!)
     initCardReveal();
     updateActiveNav();
   }
@@ -64,7 +65,7 @@
     themeToggle.innerHTML = theme === 'dark' ? '☀️ <span>Light</span>' : '🌙 <span>Dark</span>';
   }
 
-  // ===== Card Reveal (CRITICAL — adds .visible class so opacity goes from 0 to 1) =====
+  // ===== Card Reveal =====
   function initCardReveal() {
     const observerOptions = {
       root: null,
@@ -80,10 +81,9 @@
     }, observerOptions);
 
     ruleCards.forEach((card, i) => {
-      card.style.transitionDelay = Math.min(i * 30, 300) + 'ms';
+      card.style.transitionDelay = Math.min(i * 20, 200) + 'ms';
       observer.observe(card);
     });
-    // Fallback: also add .visible immediately to any card already in viewport on load
     setTimeout(() => {
       ruleCards.forEach(card => {
         const rect = card.getBoundingClientRect();
@@ -94,13 +94,11 @@
     }, 100);
   }
 
-  // ===== Lazy-Load Questions =====
+  // ===== Lazy-Load Questions with Pagination =====
   function initLazyQuestions() {
-    // Start fetching questions.json immediately
     questionsLoading = fetch('questions.json').then(r => r.json()).then(data => {
       questionsData = data;
       console.log('Questions loaded:', Object.keys(data).length, 'rules');
-      // After data loads, render ALL questions immediately
       ruleCards.forEach(card => {
         renderQuestionsForRule(card);
       });
@@ -108,14 +106,13 @@
       console.error('Failed to load questions:', err);
     });
 
-    // Also set up IntersectionObserver as a fallback for any cards not yet rendered
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           renderQuestionsForRule(entry.target);
         }
       });
-    }, { rootMargin: '1000px 0px' });
+    }, { rootMargin: '500px 0px' });
 
     ruleCards.forEach(card => io.observe(card));
   }
@@ -123,23 +120,126 @@
   function renderQuestionsForRule(card) {
     const placeholder = card.querySelector('.examples-list.prev-year-questions[data-rule]');
     if (!placeholder) return;
-    // Skip if already rendered
-    if (placeholder.querySelector('.example.prev-year')) return;
+    if (placeholder.querySelector('.pagination-controls')) return; // Already rendered
     const ruleNum = placeholder.getAttribute('data-rule');
     questionsLoading.then(() => {
       if (!questionsData || !questionsData[ruleNum]) {
-        placeholder.innerHTML = '<div class="example neutral"><div class="example-icon">→</div><div class="example-content"><div class="example-text"><em>Questions could not be loaded. Please refresh the page.</em></div></div></div>';
+        placeholder.innerHTML = '<div class="example neutral"><div class="example-icon">→</div><div class="example-content"><div class="example-text"><em>No questions available for this rule yet.</em></div></div></div>';
         return;
       }
       const questions = questionsData[ruleNum];
-      const html = questions.map(q => renderQuestionHTML(q)).join('');
-      placeholder.innerHTML = html;
+      if (questions.length === 0) {
+        placeholder.innerHTML = '<div class="example neutral"><div class="example-icon">→</div><div class="example-content"><div class="example-text"><em>No questions available for this rule yet.</em></div></div></div>';
+        return;
+      }
+      paginationState[ruleNum] = 1;
+      renderPage(placeholder, ruleNum, questions, 1);
     });
   }
 
-  function renderQuestionHTML(q) {
+  function renderPage(placeholder, ruleNum, questions, pageNum) {
+    const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
+    const start = (pageNum - 1) * QUESTIONS_PER_PAGE;
+    const end = Math.min(start + QUESTIONS_PER_PAGE, questions.length);
+    const pageQuestions = questions.slice(start, end);
+
+    let html = '';
+    // Render questions
+    pageQuestions.forEach((q, idx) => {
+      html += renderQuestionHTML(q, start + idx + 1);
+    });
+
+    // Pagination controls
+    html += renderPaginationControls(ruleNum, pageNum, totalPages, questions.length);
+
+    placeholder.innerHTML = html;
+    paginationState[ruleNum] = pageNum;
+
+    // Attach pagination event listeners
+    attachPaginationListeners(placeholder, ruleNum, questions);
+  }
+
+  function renderPaginationControls(ruleNum, currentPage, totalPages, totalQuestions) {
+    if (totalPages <= 1) {
+      return `<div class="pagination-controls">
+        <div class="pagination-info">Showing all ${totalQuestions} questions</div>
+      </div>`;
+    }
+
+    let html = '<div class="pagination-controls">';
+    html += '<div class="pagination-info">';
+
+    // Prev button
+    if (currentPage > 1) {
+      html += `<button class="page-btn page-prev" data-rule="${ruleNum}" data-page="${currentPage - 1}">← Prev</button>`;
+    }
+
+    // Page numbers (show max 7 pages around current)
+    const maxVisible = 7;
+    let startPage = Math.max(1, currentPage - 3);
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    if (endPage - startPage < maxVisible - 1) {
+      startPage = Math.max(1, endPage - maxVisible + 1);
+    }
+
+    if (startPage > 1) {
+      html += `<button class="page-btn page-num" data-rule="${ruleNum}" data-page="1">1</button>`;
+      if (startPage > 2) html += '<span class="page-ellipsis">…</span>';
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      if (i === currentPage) {
+        html += `<button class="page-btn page-num active" data-rule="${ruleNum}" data-page="${i}">${i}</button>`;
+      } else {
+        html += `<button class="page-btn page-num" data-rule="${ruleNum}" data-page="${i}">${i}</button>`;
+      }
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) html += '<span class="page-ellipsis">…</span>';
+      html += `<button class="page-btn page-num" data-rule="${ruleNum}" data-page="${totalPages}">${totalPages}</button>`;
+    }
+
+    // Next button
+    if (currentPage < totalPages) {
+      html += `<button class="page-btn page-next" data-rule="${ruleNum}" data-page="${currentPage + 1}">Next →</button>`;
+    }
+
+    html += `</div>`;
+    html += `<div class="page-count-info">Page ${currentPage} of ${totalPages} · ${totalQuestions} questions total</div>`;
+    html += '</div>';
+    return html;
+  }
+
+  function attachPaginationListeners(placeholder, ruleNum, questions) {
+    const buttons = placeholder.querySelectorAll('.page-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const newPage = parseInt(btn.getAttribute('data-page'));
+        if (newPage === paginationState[ruleNum]) return;
+
+        // Re-render with new page
+        renderPage(placeholder, ruleNum, questions, newPage);
+
+        // Scroll to the rule header (so user sees the new questions)
+        const card = placeholder.closest('.rule-card');
+        if (card) {
+          const headerOffset = 90;
+          const elementPosition = card.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          // Only scroll if the rule is above viewport
+          if (elementPosition < 0 || elementPosition > window.innerHeight) {
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
+  function renderQuestionHTML(q, displayNum) {
     const qnum = q[0], year = q[1], exam = q[2], qtext = q[3], options = q[4], ca = q[5], explanation = q[6];
-    let html = '<div class="example prev-year" data-qnum="' + qnum + '"';
+    let html = '<div class="example prev-year" data-qnum="' + displayNum + '"';
     if (year) html += ' data-year="' + escapeAttr(year) + '"';
     if (exam) html += ' data-exam="' + escapeAttr(exam) + '"';
     html += '>';
@@ -148,12 +248,17 @@
     html += '<div class="example-meta">';
     if (exam) html += '<span class="exam-badge">' + escapeHtml(exam) + '</span>';
     if (year) html += '<span class="year-badge">' + escapeHtml(year) + '</span>';
+    html += '<span class="q-num-badge">Q' + displayNum + '</span>';
     html += '</div>';
     html += '<div class="example-text">' + qtext + '</div>';
     html += '<div class="options-grid">';
-    options.forEach(opt => {
+    options.forEach((opt, i) => {
       const text = opt[0], isCorrect = opt[1];
-      html += '<div class="option" data-correct="' + (isCorrect ? 'true' : 'false') + '">' + text + '</div>';
+      const letter = String.fromCharCode(97 + i); // a, b, c, d, e
+      html += '<div class="option" data-correct="' + (isCorrect ? 'true' : 'false') + '">';
+      html += '<span class="option-letter">' + letter + '</span>';
+      html += '<span class="option-text">' + text + '</span>';
+      html += '</div>';
     });
     html += '</div>';
     html += '<div class="correct-answer" hidden>' + ca + '</div>';
