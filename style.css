@@ -81,3 +81,49 @@ html{scroll-behavior:smooth}
 /* ===== Loading state - improved ===== */
 .questions-loading{padding:24px 20px;text-align:center;color:var(--text-muted);font-style:italic;background:linear-gradient(135deg,rgba(108,92,231,0.06),rgba(233,69,96,0.04));border-radius:12px;animation:shimmer 2s ease-in-out infinite;border:1px dashed var(--purple-light)}
 @keyframes shimmer{0%,100%{opacity:0.7}50%{opacity:1}}
+
+
+/* ===== Extended Theory (Nimisha Bansal) - Point-wise formatting ===== */
+.pdf-supplementary{padding:16px 20px !important;border-radius:12px;background:linear-gradient(135deg,rgba(108,92,231,0.04),rgba(233,69,96,0.03));border:1px solid rgba(108,92,231,0.12)}
+.rule-section-subtitle{font-size:1.02rem !important;font-weight:700 !important;color:var(--purple) !important;margin-bottom:14px !important;padding-bottom:8px !important;border-bottom:2px solid rgba(108,92,231,0.15)}
+.rule-point-list{list-style:none !important;padding:0 !important;margin:0 0 12px 0 !important;display:flex;flex-direction:column;gap:8px}
+.rule-point{position:relative;padding-left:22px !important;font-size:0.92rem !important;line-height:1.7 !important;color:var(--text-secondary) !important;margin:0 !important}
+.rule-point::before{content:'';position:absolute;left:4px;top:10px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 0 0 3px rgba(108,92,231,0.1)}
+.rule-point strong{color:var(--text-primary)}
+.rule-example-block{display:flex;align-items:flex-start;gap:8px;padding:10px 14px;margin:8px 0;background:rgba(255,255,255,0.05);border-left:3px solid var(--pink);border-radius:0 8px 8px 0;font-size:0.9rem;line-height:1.6}
+.rule-example-label{font-weight:700;color:var(--pink);flex-shrink:0;min-width:28px}
+.rule-example-text{color:var(--text-primary);flex:1}
+.rule-example-note{color:var(--green);font-size:0.82rem;font-style:italic;margin-left:6px}
+.rule-note-box{display:flex;align-items:flex-start;gap:8px;padding:12px 16px;margin:12px 0 4px 0;background:linear-gradient(135deg,rgba(255,193,7,0.08),rgba(255,152,0,0.05));border:1px solid rgba(255,193,7,0.25);border-radius:10px;font-size:0.88rem;line-height:1.6}
+.rule-note-icon{flex-shrink:0}
+.rule-note-text{color:var(--text-primary);flex:1}
+.rule-note-text strong{color:#ff9800}
+
+/* ===== Mobile MCQ margin fix - match theory width ===== */
+@media (max-width:768px){
+  .rule-body{padding:18px 14px !important}
+  .prev-year{padding:14px 12px !important;margin-left:0 !important;margin-right:0 !important}
+  .prev-year .example-content{padding-left:0 !important}
+  .example.prev-year{padding:14px 12px !important}
+  .example-text{padding:8px 10px !important;margin:6px 0 10px 0 !important}
+  .options-grid{margin:8px 0 !important}
+  .option{padding:8px 10px !important}
+  .correct-answer{padding:8px 10px !important;margin:8px 0 6px 0 !important}
+  .explanation-detail{padding:10px 12px !important;margin-top:8px !important}
+  .pdf-supplementary{padding:14px 12px !important}
+  .rule-point{padding-left:20px !important;font-size:0.88rem !important}
+  .rule-example-block{padding:8px 10px !important;font-size:0.85rem}
+  .rule-note-box{padding:10px 12px !important;font-size:0.83rem}
+}
+@media (max-width:480px){
+  .rule-body{padding:14px 10px !important}
+  .prev-year{padding:12px 10px !important}
+  .example.prev-year{padding:12px 10px !important}
+  .example-text{padding:6px 8px !important;font-size:0.87rem !important}
+  .option{padding:7px 8px !important;font-size:0.82rem !important}
+  .correct-answer{padding:7px 9px !important;font-size:0.83rem !important}
+  .explanation-detail{padding:8px 10px !important;font-size:0.8rem !important}
+  .pdf-supplementary{padding:12px 10px !important}
+  .rule-section-subtitle{font-size:0.95rem !important}
+  .rule-point{padding-left:18px !important;font-size:0.85rem !important}
+}
